@@ -1,3 +1,5 @@
+require "pathname"
+
 module RunLabs
   module_function
 
