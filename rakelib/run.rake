@@ -14,7 +14,14 @@ module RunLabs
       @command_output = "$ #{command}"
     else
       output = `#{command.strip} 2>&1`
-      @command_output = "$ #{command}#{output}"
+      if output.include?(Dir.home)
+        auto_dir = Pathname.new(__FILE__).join('../../auto').to_s
+        jims_path = '/Users/jim/Downloads/git_tutorial/work'
+        jims_output = output.gsub(auto_dir, jims_path)
+        @command_output = "$ #{command}#{jims_output}"
+      else
+        @command_output = "$ #{command}#{output}"
+      end
       print output
     end
   end
