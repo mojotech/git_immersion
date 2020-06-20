@@ -606,7 +606,7 @@ alias ga='git add '
 alias gb='git branch '
 alias gc='git commit'
 alias gd='git diff'
-alias go='git checkout '
+alias gco='git checkout '
 alias gk='gitk --all&'
 alias gx='gitx --all'
 
@@ -614,10 +614,10 @@ alias got='git '
 alias get='git '
 EOF
 
-p. The @go@ abbreviation for @git checkout@ is particularly nice.  It
+p. The @gco@ abbreviation for @git checkout@ is particularly nice.  It
 allows me to type:
 
-pre(instructions). go <branch>
+pre(instructions). gco <branch>
 
 p. to checkout a particular branch.
 
