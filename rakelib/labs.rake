@@ -42,9 +42,9 @@ module Labs
     mode = :direct
     gathered_line = ''
     io.each do |line|
-      next if line =~ /^\s*-+\s*$/ # omit dividers
-      next if line =~ /^[+][a-z]/  # omit hidden commands
-      line.sub!(/^[-!]/,'')        # remove force and execute ignore chars
+      next if line =~ /^\s*-+\s*$/ && mode != :file # omit dividers
+      next if line =~ /^[+][a-z]/  && mode != :file # omit hidden commands
+      line.sub!(/^[-!]/,'')        if mode != :file # remove force and execute ignore chars
       case mode
       when :direct
         if line =~ /^h1.\s+(.+)$/
