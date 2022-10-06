@@ -139,6 +139,21 @@ directory.  There are no outstanding changes to record.
 p. We will use the @git status@ command to continue to monitor the
 state between the repository and the working directory.
 
+h2. Check for any changes to the repository
+
+p. Use the @git diff@ command to view any pending changes to be committed.
+
+Execute:
+git diff
+=diff
+
+p. You should see no output because there are no changes yet. Not to worry,
+you'll be adding some changes in the next lesson.
+
+Output:
+=diff
+EOF
+
 ----------------------------------------------------------------------
 h1. Making Changes
 
@@ -177,6 +192,21 @@ p. Also notice that the status message gives you hints about what you
 need to do next.  If you want to add these changes to the repository,
 then use the @git add@ command.  Otherwise the @git checkout@ command
 can be used to discard the changes.
+
+p. Now check what the changes are.
+
+Execute:
+git diff
+=diff
+
+p. You'll see that there is a line starting with a '-' character which
+indicates a line that was removed. There is also a line starting with a '+'
+character which indicates a line that was added. When you change a line of
+text, git treats it as a removal and an addition.
+
+Output:
+=diff
+EOF
 
 h2. Up Next
 
@@ -579,7 +609,22 @@ Output:
 # aborted and the hunk is left unchanged.
 EOF
 
-p. Save and exit, then commit the file.
+p. Save and exit, then let's check that we did everything correctly.
+
+Execute:
+git diff --staged
+=diff1
+
+p. You should see output like below
+
+p(note). *Note:* the @--staged@ option to @git diff@ will only show your
+currently staged changes.
+
+Output:
+=diff1
+EOF
+
+p. Finally let's commit the change.
 
 Execute:
 git commit -m "Rename variable to match its usage"
