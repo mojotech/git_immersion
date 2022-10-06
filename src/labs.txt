@@ -446,6 +446,177 @@ Execute:
 git commit -m "Added a comment"
 
 ----------------------------------------------------------------------
+h1. Working with Changes Directly
+
+h2. Goals
+
+* Now that you've learned how git works with changes to files rather than files themselves, you will learn how to manipulate changes before staging them.
+
+p. Git provides rich functionality to choose precisely what changes you want to
+stage. This includes both choosing individual lines to stage as well as editing
+the changes before they are staged without changing the existing file. These
+capabilities allow you to make and commit secondary changes while working on a
+task with minimal distractions.
+
+h2. First Change: Allow Any Number of Names
+
+p. Change the "Hello, World" program to allow users to input any number of names.
+
+File: hello.rb
+name = ARGV || ["World"]
+
+puts "Hello, #{name.join(" ")}!"
+EOF
+
+h2. Add and Commit the Change
+
+p. Now you'll add the change using @git add --patch@. This will present you
+with an interactive interface to select "hunks" which are sets of changes. For
+now, you'll have one hunk. Press the 'y' key to select it for staging. You can
+press the '?' key to get help about the other options.
+
+Execute:
+yes | git add --patch
+=addpatch1
+
+Execute:
+git commit -m "Can specify multiple names"
+=addpatch2
+
+p(note). *Note:* I used a utility called @yes@ to simulate pressing the 'y' key
+when the @git add --patch@ command prompted me for it. I recommend you don't do
+this and instead enter your input manually.
+
+Output:
+=addpatch1
+
+=addpatch2
+EOF
+
+h2. Second Change: Add Some More Output
+
+p. Change the "Hello, World" program to print out the number of names a user entered.
+
+File: hello.rb
+name = ARGV || ["World"]
+
+puts "Hello, #{name.join(" ")}!"
+puts "You have #{name.length} names!"
+EOF
+
+h2. Third Change: Rename the @name@ Variable
+
+p. The @name@ variable is indicating it's singular when it's actually plural.
+Change its name to match its usage.
+
+File: hello.rb
+names = ARGV || ["World"]
+
+puts "Hello, #{names.join(" ")}!"
+puts "You have #{names.length} names!"
+EOF
+
+h2. Add The Changes
+
+p. Now you've made two changes which should be committed as two commits.
+Instead of undoing one of the changes, committing it, and redoing it you'll use
+@git add --patch@ to let you do it directly. Run the following command and press
+the 'e' key when prompted.
+
+Execute:
+-git add --patch
++tail -n1 hello.rb > lastline
++echo -e ":\$d\\n:x" | vim -E -s hello.rb
++git add hello.rb
++cat lastline >> hello.rb
++rm lastline
+
+p. You'll see the following open up in your editor. It is a description of the
+changes git will stage when the file is saved and closed. Editing this file
+will change exactly what is staged.
+
+Output:
+# Manual hunk edit mode -- see bottom for a quick guide.
+@@ -1,3 +1,4 @@
+-name = ARGV || ["World"]
++names = ARGV || ["World"]
+
+-puts "Hello, #{name.join(" ")}!"
++puts "Hello, #{names.join(" ")}!"
++puts "You have #{names.length} names!"
+# ---
+# To remove '-' lines, make them ' ' lines (context).
+# To remove '+' lines, delete them.
+# Lines starting with # will be removed.
+#
+# If the patch applies cleanly, the edited hunk will immediately be
+# marked for staging.
+# If it does not apply cleanly, you will be given an opportunity to
+# edit again.  If all lines of the hunk are removed, then the edit is
+# aborted and the hunk is left unchanged.
+EOF
+
+p. Let's do the variable rename first. Edit the file so it matches the example
+below. I just removed the last line starting with a '+'.
+
+Output:
+# Manual hunk edit mode -- see bottom for a quick guide.
+@@ -1,3 +1,4 @@
+-name = ARGV || ["World"]
++names = ARGV || ["World"]
+
+-puts "Hello, #{name.join(" ")}!"
++puts "Hello, #{names.join(" ")}!"
+# ---
+# To remove '-' lines, make them ' ' lines (context).
+# To remove '+' lines, delete them.
+# Lines starting with # will be removed.
+#
+# If the patch applies cleanly, the edited hunk will immediately be
+# marked for staging.
+# If it does not apply cleanly, you will be given an opportunity to
+# edit again.  If all lines of the hunk are removed, then the edit is
+# aborted and the hunk is left unchanged.
+EOF
+
+p. Save and exit, then commit the file.
+
+Execute:
+git commit -m "Rename variable to match its usage"
+=addpatch3
+
+Output:
+=addpatch3
+EOF
+
+p. Now you'll add the new output. This one isn't necessary to edit, so you can
+just press the 'y' key to add it.
+
+Execute:
+yes | git add --patch
+=addpatch4
+
+Execute:
+git commit -m "Tell user how many names they have"
+=addpatch5
+
+Output:
+=addpatch4
+
+=addpatch5
+EOF
+
+h2. Wrapping Up
+
+p. In this lab you learned how to interact directly with the changes to be
+staged before they are staged. You simply staged some lines independently of
+others, but you could also have modified the content of the lines as well. Note
+that while the interface through git can be somewhat cumbersome there are
+several tools that integrate with your editor to do this for you. "Here is an
+example of one for
+VSCode":https://marketplace.visualstudio.com/items?itemName=kahole.magit
+
+----------------------------------------------------------------------
 h1. History
 
 h2. Goals
