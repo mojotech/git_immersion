@@ -2686,6 +2686,61 @@ p. Next you'll learn about the @--autosquash@ option and how to automate simple
 rebase tasks.
 
 ----------------------------------------------------------------------
+h1. Rebasing Automatically
+
+h2. Goals
+
+* Use @git rebase --autosquash@ to automatically fix up old commits.
+
+h2. Getting Ready
+
+p. The rebase tool follows certain conventions regarding commit messages that
+allow it to work automatically for simple situations. If a commit message
+starts with "squash!", "fixup!" or "amend!" and follows with a target commit
+hash or the first line of the target commit message, then that commit will be
+merged into the target commit using the specified action on a rebase. To start
+this lab we must first undo the latest commit.
+
+Execute:
+git reset HEAD^
+
+h2. Making the Commit
+
+p. Next we will recommit the changes using a new option to the @git commit@
+command. You will want to find the commit hash for the "Added greeter class"
+commit to do this step.
+
+Set: hash=hash_for("Added greeter class")
+Execute:
+git add lib/greeter.rb
+git commit --fixup=<hash>
+git show
+=commit
+
+p. The resulting commit should appear similar to the below example.
+
+Output:
+=commit
+EOF
+
+h2. Rebasing
+
+p. Now you can use git rebase to automatically update the old commit. As in the
+previous rebase exercise we will rebase using the commit before our target
+commit as the rebase point.
+
+Set: hash=hash_for("[a-f0-9]+ Added greeter class")
+Execute:
+-git rebase -i --autosquash <hash>^
++git -c core.editor=cat rebase -i --autosquash <hash>^
+git log --oneline
+=hist
+
+Output:
+=hist
+EOF
+
+----------------------------------------------------------------------
 h1. Multiple Repositories
 
 p. Up to this point we have been working with a single git repository.
