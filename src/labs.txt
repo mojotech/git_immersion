@@ -2056,6 +2056,100 @@ p. Now that you know how to cherry-pick you might wonder how to get work that
 isn't already in your git repository. You'll learn how to use patch-apply next.
 
 ----------------------------------------------------------------------
+h1. Applying Patches
+
+h2. Goals
+
+* Create a patch and apply it manually to the @greet@ branch.
+
+p. A patch is simply a special file that records changes to other files. Git
+can create these patches for you to send to other collaborators and it can
+apply patches from collaborators to your local repository.
+
+h2. Create the Patch
+
+p. Switch back to the @excited@ branch and add this change.
+
+Execute:
+git checkout excitement
+
+File: lib/greeter.rb
+  def initialize(who, excited = true, unsure = true)
+    @who = who
+    @excited = excited
+    @unsure = unsure
+  end
+  def greet
+    "Hello, #{@who}#{punctuation}"
+  end
+  def punctuation
+    punct = ""
+    if @excited
+        punct += "!"
+    else
+        punct += "."
+    end
+    if @unsure
+        punct += "?"
+    end
+    punct
+  end
+end
+EOF
+
+p. Now to create the patch all you need to do is show the changes and save the
+output.
+
+Execute:
+git diff
+=diff
+git diff > suspicion.patch
+=diff2
+
+Output:
+=diff
+=diff2
+EOF
+
+h2. Switch Back to the Greet Branch
+
+p. Switch back to the greet branch, resetting any local changes to the files to
+allow applying the patch manually.
+
+Execute:
+git checkout -f greet
+
+h2. Apply the Patch
+
+p. Now you can apply the patch using @git apply@. Make sure to also confirm it
+applied successfully. The output from @git diff@ should match the output from
+above.
+
+Execute:
+git apply suspicion.patch
+=apply
+git diff
+=apply2
+
+Output:
+=apply
+=apply2
+EOF
+
+p. Notice that this did not commit the changes. You can commit them as usual.
+
+Execute:
+git add lib/greeter.rb
+git commit -m "Add some suspicion"
+
+h2. Cleanup
+
+p. You can remove the patch file now that it's been applied.
+
+Execute:
+rm suspicion.patch
+
+----------------------------------------------------------------------
 h1. Creating a Conflict
 
 h2. Goals
