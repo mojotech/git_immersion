@@ -242,7 +242,7 @@ _permanently_ recorded in the repository yet.  The next commit
 operation will include the staged changes.
 
 p. If you decide you _don't_ want to commit that change after all, the
-status command reminds you that the @git reset@ command can be used to
+status command reminds you that the @git restore@ command can be used to
 unstage that change.
 
 ----------------------------------------------------------------------
