@@ -1994,6 +1994,68 @@ p. But first, what if the changes in master conflict with the changes
 in greet?
 
 ----------------------------------------------------------------------
+h1. Cherry-Picking
+
+h2. Goals
+
+* Learn how to get work from another branch by cherry-picking the commit into your branch.
+
+h2. Switch to a New Branch and Create a New Change
+
+p. Let's make a new branch with a new change.
+
+Execute:
+git checkout -b excitement
+
+File: lib/greeter.rb
+class Greeter
+  def initialize(who, excited = true)
+    @who = who
+    @excited = excited
+  end
+  def greet
+    "Hello, #{@who}#{punctuation}"
+  end
+  def punctuation
+    @excited ? "!" : "."
+  end
+end
+EOF
+
+Execute:
+git add lib/greeter.rb
+git commit -m "Add excitement"
+
+h2. Switch Back to the Greeter Branch and Cherry-Pick the Change
+
+p. The cherry-pick operation allows you to copy commits directly onto your
+branch. The commits can come from anywhere as long as git knows about their
+hash identifier. This is useful when you don't necessarily want all of the work
+from a colleague's branch and just want part of it.
+
+p. Execute the following commands using the hash for the commit you just
+created. Before doing the cherry-pick you'll confirm that this is indeed the
+correct commit by viewing it.
+
+Set: hash=hash_for("Add excitement")
+Execute:
+git checkout greet
+git show <hash>
+=show
+git cherry-pick <hash>
+=cherry
+
+Output:
+=show
+=cherry
+EOF
+
+h2. Up Next
+
+p. Now that you know how to cherry-pick you might wonder how to get work that
+isn't already in your git repository. You'll learn how to use patch-apply next.
+
+----------------------------------------------------------------------
 h1. Creating a Conflict
 
 h2. Goals
