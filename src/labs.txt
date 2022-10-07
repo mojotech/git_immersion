@@ -2480,6 +2480,159 @@ EOF
 p. The greet and master branches are now identical.
 
 ----------------------------------------------------------------------
+h1. Using Rebase to Modify Old Commits
+
+h2. Goals
+
+p. Suppose you found a change that should be made in an old commit. You can use
+@git rebase@ to add that change to the commit seamlessly.
+
+h2. Fix a Bug in the Greeter Class
+
+p. Our greeter class doesn't use proper punctuation when greeting the user.
+Let's fix that by adding a period to our greeting line.
+
+File: lib/greeter.rb
+class Greeter
+  def initialize(who)
+    @who = who
+  end
+  def greet
+    "Hello, #{@who}."
+  end
+end
+EOF
+
+Execute:
+git add lib/greeter.rb
+git commit -m "Add missing punctuation"
+
+p. If we haven't made the greeter class public yet there's no need to keep this
+as a separate commit. It would just add noise to the final history. You can use
+@git rebase@ to squash this commit into the one that added the greeter class.
+First, you'll need to find a rebase starting point. Usually the @master@ branch
+is good for this when working on your own branch, but for this exercise we'll
+use the commit before the one that added the greeter class.
+
+p. First find the commit that added the greeter class.
+
+Execute:
+git hist
+=hist1
+
+Output:
+=hist1
+EOF
+
+p. Then perform the rebase
+
+Set: hash=hash_for("Added greeter class")
+Execute:
+-git rebase -i <hash>^
++echo -e "/punctuation\\rddggpcefixup\\e:x\\r" > script
++git -c "core.editor=vim -s script" rebase -i <hash>^
++rm script
+
+p. You should see a file open in your editor that looks similar to the example below.
+
+Output:
+pick 0b741fa Added greeter class
+pick b597367 Hello uses Greeter
+pick d1233fa Updated Rakefile
+pick dc9d1f3 Add missing punctuation
+pick e62cb79 Changed README in original repo
+pick 6cac757 Added shared comment to readme
+
+# Rebase 827c6b1..6cac757 onto 827c6b1 (6 commands)
+#
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup [-C | -c] <commit> = like "squash" but keep only the previous
+#                    commit's log message, unless -C is used, in which case
+#                    keep only this commit's message; -c is same as -C but
+#                    opens the editor
+# x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop <commit> = remove commit
+# l, label <label> = label current HEAD with a name
+# t, reset <label> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified); use -c <commit> to reword the commit message
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+EOF
+
+p. The bottom portion includes some instructions and reminders of the possible
+commands. By default, the rebase operation will "pick" each commit and add them
+one after the other in the order specified. We will want to use the "fixup"
+command. Change the file to match the example below.
+
+Output:
+pick 0b741fa Added greeter class
+fixup dc9d1f3 Add missing punctuation
+pick b597367 Hello uses Greeter
+pick d1233fa Updated Rakefile
+pick e62cb79 Changed README in original repo
+pick 6cac757 Added shared comment to readme
+
+# Rebase 827c6b1..6cac757 onto 827c6b1 (6 commands)
+#
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup [-C | -c] <commit> = like "squash" but keep only the previous
+#                    commit's log message, unless -C is used, in which case
+#                    keep only this commit's message; -c is same as -C but
+#                    opens the editor
+# x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop <commit> = remove commit
+# l, label <label> = label current HEAD with a name
+# t, reset <label> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified); use -c <commit> to reword the commit message
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+EOF
+
+p. Then save and exit and the rebase will continue as normal. If you look at
+the commit adding the greeter class now you will see that it includes the
+punctuation change we just added.
+
+Set: hash=hash_for("Added greeter class")
+Execute:
+git show <hash>
+=show
+
+Output:
+=show
+EOF
+
+h2. Up Next
+
+p. You'll learn how to automate this process with the @--autosquash@ option,
+but first you'll learn about the reflog.
+
+----------------------------------------------------------------------
 h1. Multiple Repositories
 
 p. Up to this point we have been working with a single git repository.
