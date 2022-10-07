@@ -341,6 +341,19 @@ messages.
 
 h2. Check the status
 
+p. Let's make sure the commit looks okay.
+
+Execute:
+git show
+=show
+
+You should see something similar to this with different timestamps and a
+different author.
+
+Output:
+=show
+EOF
+
 p. Finally let's check the status again.
 
 Execute:
@@ -865,8 +878,20 @@ EOF
 
 p. Examine the log output and find the hash for the first commit.  It
 should be the last line of the @git hist@ output.  Use that hash code
-(the first 7 characters are enough) in the command below.  Then check
-the contents of the hello.rb file.
+(the first 7 characters are enough) in the command below to see what that
+commit changed.
+
+Set: hash=hash_for("First Commit")
+Execute:
+git show <hash>
+=show
+
+Output:
+=show
+EOF
+
+p. Now let's checkout the commit and then check the contents of the hello.rb
+file.
 
 Set: hash=hash_for("First Commit")
 Execute:
