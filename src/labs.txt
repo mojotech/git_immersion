@@ -3233,52 +3233,6 @@ git pull shared master
 cat README
 
 ----------------------------------------------------------------------
-h1. Hosting your Git Repositories
-
-h2. Goals
-
-* Learn how to setup git server for sharing repositories.
-
-p. There are many ways to share git repositories over the network.
-Here is a quick and dirty way.
-
-h2. Start up the git server
-
-execute:
-# (From the work directory)
-git daemon --verbose --export-all --base-path=.
-
-p. Now, in a separate terminal window, go to your work directory
-
-execute:
-# (From the work directory)
-git clone git://localhost/hello.git network_hello
-cd network_hello
-ls
-
-p. You should see a copy of hello project.
-
-h2. Pushing to the Git Daemon
-
-p. If you want to push to the git daemon repository, add
-@--enable=receive-pack@ to the git daemon command.  Be careful because
-there is no authentication on this server, anyone could push to your
-repository.
-
-----------------------------------------------------------------------
-h1. Sharing Repos
-
-h2. Goals
-
-* Learn to share repos across WIFI.
-
-p. See if your neighbor is running the git daemon.  Exchange IP
-addresses and see if you can pull from each other's repositories.
-
-p(note). *NOTE:* The gitjour gem is really useful in sharing
-ad-hoc repositories.
-
-----------------------------------------------------------------------
 h1. Advanced / Future Topics
 
 p. Here are some topics you might want to research on your own:
@@ -3286,6 +3240,7 @@ p. Here are some topics you might want to research on your own:
 * Reverting Committed Changes
 * Cross OS Line Endings
 * Remote Servers
+* Hosting your git repository
 * Protocols
 * SSH Setup
 * Remote Branch Management
