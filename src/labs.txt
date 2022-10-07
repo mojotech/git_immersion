@@ -2633,6 +2633,59 @@ p. You'll learn how to automate this process with the @--autosquash@ option,
 but first you'll learn about the reflog.
 
 ----------------------------------------------------------------------
+h1. The Reflog
+
+h2. Goals
+
+* Learn what the reflog is and how to use it.
+
+p. The reference log (or "reflog") is useful to find the exact commit you were on
+at some time in the past. It comes in handy when trying to do undo things like
+complicated merges or rebases that might have gone wrong.
+
+h2. View the Reflog
+
+Execute:
+git reflog
+=reflog
+
+p. Each line in the output starts with a commit hash and has a reference of the
+form <code>HEAD@{1}</code>, followed by a description of how you got there and
+what the commit message was. You can enter that @HEAD@ value anywhere a hash
+would be used and go back in time to that exact point.
+
+Output:
+=reflog
+EOF
+
+h2. Go Back in Time
+
+p. The next lab is going to repeat the steps of the previous lab but automate
+it. For that to work you will need to reset your working directory back to
+before the previous rebase. Use the reflog to find the line with the content
+@commit: Add missing punctuation@. Note the @HEAD@ reference. Now perform the
+@git reset@ and confirm the status of the working directory and the log history.
+
+Execute:
+git reset --hard HEAD@{5}
+=reflog2
+git status
+=reflog3
+git hist
+=reflog4
+
+Output:
+=reflog2
+=reflog3
+=reflog4
+EOF
+
+h2. Next Up
+
+p. Next you'll learn about the @--autosquash@ option and how to automate simple
+rebase tasks.
+
+----------------------------------------------------------------------
 h1. Multiple Repositories
 
 p. Up to this point we have been working with a single git repository.
