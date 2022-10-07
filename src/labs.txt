@@ -1052,9 +1052,10 @@ Change hello.rb to have a bad comment.
 
 File: hello.rb
 # This is a bad comment.  We want to revert it.
-name = ARGV.first || "World"
+names = ARGV || ["World"]
 
-puts "Hello, #{name}!"
+puts "Hello, #{names.join(" ")}!"
+puts "You have #{names.length} names!"
 EOF
 
 h2. Check the Status
@@ -1108,9 +1109,10 @@ p. Modify the @hello.rb@ file to have a bad comment
 
 File: hello.rb
 # This is an unwanted but staged comment
-name = ARGV.first || "World"
+names = ARGV || ["World"]
 
-puts "Hello, #{name}!"
+puts "Hello, #{names.join(" ")}!"
+puts "You have #{names.length} names!"
 EOF
 
 p. And then go ahead and stage it.
@@ -1190,9 +1192,10 @@ p. Change the @hello.rb@ file to the following.
 
 File: hello.rb
 # This is an unwanted but committed change
-name = ARGV.first || "World"
+names = ARGV || ["World"]
 
-puts "Hello, #{name}!"
+puts "Hello, #{names.join(" ")}!"
+puts "You have #{names.length} names!"
 EOF
 
 Execute:
@@ -1395,9 +1398,10 @@ p. Add an author comment to the program.
 File: hello.rb
 # Default is World
 # Author: Jim Weirich
-name = ARGV.first || "World"
+names = ARGV || ["World"]
 
-puts "Hello, #{name}!"
+puts "Hello, #{names.join(" ")}!"
+puts "You have #{names.length} names!"
 EOF
 
 Execute:
@@ -1413,9 +1417,10 @@ email.
 File: hello.rb
 # Default is World
 # Author: Jim Weirich (jim@somewhere.com)
-name = ARGV.first || "World"
+names = ARGV || ["World"]
 
-puts "Hello, #{name}!"
+puts "Hello, #{names.join(" ")}!"
+puts "You have #{names.length} names!"
 EOF
 
 h2. Amend the Previous Commit
