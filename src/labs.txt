@@ -3250,6 +3250,6 @@ p. Here are some topics you might want to research on your own:
 h1. Thank You
 
 p. Thank you for trying out the Git Immersion Labs.  Feel free to send
-comments to daniel@mojotech.com
+comments to ops@mojotech.com
 
 ----------------------------------------------------------------------
