@@ -46,7 +46,7 @@ h2. Goals
 
 h2. Get the Tutorial package
 
-* Download from: "http://gitimmersion.com/git_tutorial.zip":http://gitimmersion.com/git_tutorial.zip
+* Download from: "https://git.withmojo.com/git_tutorial.zip":https://git.withmojo.com/git_tutorial.zip
 
 h2. Unzip the tutorial
 
