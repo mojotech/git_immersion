@@ -30,9 +30,9 @@ execute:
 git config --global core.autocrlf true
 git config --global core.safecrlf true
 
-h2. Setup Ruby 
+h2. Setup Ruby
 
-p. For this tutorial you need a working Ruby interpreter. If you haven´t one 
+p. For this tutorial you need a working Ruby interpreter. If you haven´t one
 installed yet, it is time to set it up now:
 
 "https://www.ruby-lang.org/en/installation/":https://www.ruby-lang.org/en/installation/
@@ -1525,10 +1525,10 @@ h2. Now add a Rakefile
 
 p. This lab assumes you have installed *rake*. Please
 do that before continuing. Check for your specific Operating System.
-Otherwise execute: 
+Otherwise execute:
 
 Execute:
-gem install rake 
+gem install rake
 
 p. Let's add a Rakefile to our repository.  The following one will do
 nicely.
