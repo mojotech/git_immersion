@@ -747,7 +747,7 @@ git log --pretty=oneline --all
 git log --patch
 git log -S "Hello"
 
-p. See man git-log for all the details.
+p. See @man git-log@ or @git log --help@ for all the details.
 
 h2. Getting Fancy
 
