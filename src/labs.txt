@@ -745,6 +745,7 @@ git log --pretty=oneline --until='5 minutes ago'
 git log --pretty=oneline --author=<your name>
 git log --pretty=oneline --all
 git log --patch
+git log -S "Hello"
 
 p. See man git-log for all the details.
 
