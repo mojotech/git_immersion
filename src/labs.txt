@@ -1087,19 +1087,19 @@ staged yet.
 
 h2. Revert the changes in the working directory
 
-p. Use the @checkout@ command to checkout the repository's version of
+p. Use the @restore@ command to checkout the repository's version of
 the @hello.rb@ file.
 
 Execute:
-git checkout hello.rb
-=checkout
+git restore hello.rb
+=restore
 !git status
 =status2
 cat hello.rb
 =cat
 
 Output:
-=checkout
+=restore
 =status2
 =cat
 EOF
@@ -1147,31 +1147,26 @@ EOF
 p. The status output shows that the change has been staged and is
 ready to be committed.
 
-h2. Reset the Staging Area
+h2. Restore the Staged File
 
-p. The @reset@ command resets the staging area to be whatever is in
-HEAD.  This clears the staging area of the change we just staged.
+p. The @restore@ command from the previous lab also works to unstage changes to
+a file.
 
 Execute:
-git reset HEAD hello.rb
-=reset
+git restore --staged hello.rb
+=restore
 
 Output:
-=reset
+=restore
 EOF
 
-p. The @reset@ command (by default) doesn't change the working
-directory.  So the working directory still has the unwanted comment in
-it.  We can use  the @checkout@ command of the previous lab to remove
-the unwanted change from the working directory.
+p. The @restore@ command only unstaged the file. We can repeat the command to
+remove the unwanted changes from the working directory.
 
-p(note). *Note*: You could also have used the @git restore@ command to restore
-just the single file.
-
-h2. Checkout the Committed Version
+h2. Restore the Committed Version
 
 Execute:
-git checkout hello.rb
+git restore hello.rb
 git status
 =status2
 
