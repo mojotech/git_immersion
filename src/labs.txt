@@ -519,7 +519,8 @@ now, you'll have one hunk. Press the 'y' key to select it for staging. You can
 press the '?' key to get help about the other options.
 
 Execute:
-yes | git add --patch
+-git add --patch
++yes | git add --patch
 =addpatch1
 
 Execute:
@@ -531,6 +532,7 @@ when the @git add --patch@ command prompted me for it. I recommend you don't do
 this and instead enter your input manually.
 
 Output:
+$ git add --patch
 =addpatch1
 
 =addpatch2
@@ -651,7 +653,8 @@ p. Now you'll add the new output. This one isn't necessary to edit, so you can
 just press the 'y' key to add it.
 
 Execute:
-yes | git add --patch
+-git add --patch
++yes | git add --patch
 =addpatch4
 
 Execute:
@@ -659,6 +662,7 @@ git commit -m "Tell user how many names they have"
 =addpatch5
 
 Output:
+$ git add --patch
 =addpatch4
 
 =addpatch5
