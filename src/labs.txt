@@ -744,6 +744,7 @@ git log --pretty=oneline --since='5 minutes ago'
 git log --pretty=oneline --until='5 minutes ago'
 git log --pretty=oneline --author=<your name>
 git log --pretty=oneline --all
+git log --patch
 
 p. See man git-log for all the details.
 
