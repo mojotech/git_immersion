@@ -146,7 +146,7 @@ Example:
     Output:
     git commit
     Waiting for Emacs...
-    [master 569aa96] Using ARGV
+    [main 569aa96] Using ARGV
      1 files changed, 1 insertions(+), 1 deletions(-)
     EOF
 
@@ -185,7 +185,7 @@ Execute section of a lab.
 Example:
 
     Execute:
-    git checkout master
+    git checkout main
     =checkout
     git status
     =status
