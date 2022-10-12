@@ -7,22 +7,23 @@ module RunLabs
     SAMPLES_DIR + ("/%03d_%s.txt" % [lab_number, word])
   end
 
-  def run_command(command, var)
+  def run_command(command, var, capture_command=true)
     command.gsub!(/<(\w+)>/) { |args, one| var[$1] }
+    command_to_output = capture_command ? "$ #{command}" : ''
     if command =~ /^cd +(\S+)$/
       dir = $1
       puts "Changing to '#{dir}'"
       Dir.chdir(dir)
-      @command_output = "$ #{command}"
+      @command_output = command_to_output
     else
       output = `#{command.strip} 2>&1`
       if output.include?(Dir.home)
         auto_dir = Pathname.new(__FILE__).join('../../auto').to_s
         jims_path = '/Users/jim/Downloads/git_tutorial/work'
         jims_output = output.gsub(auto_dir, jims_path)
-        @command_output = "$ #{command}#{jims_output}"
+        @command_output = "#{command_to_output}#{jims_output}"
       else
-        @command_output = "$ #{command}#{output}"
+        @command_output = "#{command_to_output}#{output}"
       end
       print output
     end
@@ -114,8 +115,9 @@ module RunLabs
           puts "SKIPPING: <#{line.strip}>"
         else
           puts "RUNNING: <#{line.strip}>"
+          output_command = (line =~ /^\+/).nil?
           line.sub!(/^\+/, '')
-          run_command(line, var)
+          run_command(line, var, output_command)
         end
       end
     end
