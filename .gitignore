@@ -9,3 +9,5 @@ samples
 served
 src/.sass-cache/*
 .sass-cache/*
+.bundle
+vendor
