@@ -2810,6 +2810,222 @@ Output:
 EOF
 
 ----------------------------------------------------------------------
+h1. Finding Commits That Introduced a Bug
+
+h2. Goals
+
+* Learn how to use @git bisect@ to find a commit that introduced a change.
+
+p. Bugs happen, and it can be necessary to find the cause of a bug without
+knowing what code specifically is involved. Git allows you to efficiently
+search a series of commits to find the commit that introduced the bug.
+
+p. Git bisect asks you to declare a known good commit and a known bad commit.
+Then git bisect will pick a commit in the middle of that set and ask you test
+that commit. You'll test your project at that point either manually or via an
+automated test, and then you'll mark the commit as good or bad. Git bisect will
+continue to pick the midpoint between the latest good and bad commits until you
+land on the exact commit that introduced the bug.
+
+p. In this lab we will be considering it a bug to allow users to specify their
+name and finding that commit that introduced that behavior.  While you could
+find it manually in this project, when there are hundreds or thousands of
+commits this becomes impractical. @git bisect@ will make this task trivial. We
+will not be changing any code, only finding the commit that introduced the
+behavior.
+
+h2. The Test
+
+p. The first thing we need is a test. @git bisect@ works by checking out
+different commits and seeing if the test succeeds or fails. The test can be
+anything. It can be a manual test you perform by running the project, a project
+test suite, or another command or script. For the bug we're searching for we'll
+need to run our program and inspect the output. If the output includes the name
+we specified then we know it still has the bug.
+
+Execute:
+ruby -Ilib lib/hello.rb BisectString
+=commandtest
+
+Output:
+=commandtest
+EOF
+
+p. This includes the name we specified, so it's still buggy.  This is of course
+because we didn't start the bisect yet but it is good practice to confirm your
+test works as expected.
+
+h2. Using @git bisect@
+
+p. Once you have your command using @git bisect@ is fairly straightforward. You
+need a known location that doesn't exhibit the bug and a known location that
+does. @git bisect@ calls these "bad" and "good" or "new" and "old" commits
+respectively. For our purposes, the bad commit is our @HEAD@ because it
+includes bug we are not looking for, and the good commit is the initial commit
+because it does not include the bug.  Let's get started.
+
+Set: hash=hash_for("First Commit")
+Execute:
+git bisect start
+=bisectstart1
+git bisect good <hash>
+=bisectstart2
+git bisect bad HEAD
+=bisectstart3
+
+Output:
+=bisectstart1
+=bisectstart2
+=bisectstart3
+EOF
+
+p. You'll see an estimate of how many steps are left. Run the test and based on
+its output run either @git bisect good@ or @git bisect bad@. Below is an
+example of what this might look like. One thing to note is that git starts you
+halfway between the two commits you gave it. This could mean your test process
+needs to change slightly to accommodate unrelated changes. In this instance the
+@hello.rb@ file changed locations, so the command to execute it needs to be
+modified. As you move through the bisect keep this in mind and use whichever
+command is appropriate to the current repository state. Also notice how the
+command output changes as you move through the bisect.
+
+Execute:
+ruby hello.rb BisectString
+=bisecttest1
+git bisect bad
+=bisecttest2
+
+Output:
+=bisecttest1
+=bisecttest2
+EOF
+
+p. Now, we repeat the process until the bisect is finished.
+
+Execute:
+ruby hello.rb BisectString
+=bisecttest3
+git bisect bad
+=bisecttest4
+ruby hello.rb BisectString
+=bisecttest5
+git bisect bad
+=bisecttest6
+ruby hello.rb BisectString
+=bisecttest7
+git bisect bad
+=bisecttest8
+
+Output:
+=bisecttest3
+
+=bisecttest4
+
+=bisecttest5
+
+=bisecttest6
+
+=bisecttest7
+
+=bisecttest8
+EOF
+
+p. @git bisect@ will leave your working directory checked out on the first bad
+commit. You can confirm that it is the commit that introduced the bug by
+checking out its parent and running the bisect script again.
+
+Execute:
+git checkout HEAD^
+=bisectbad1
+ruby hello.rb BisectString
+=bisectbad2
+
+Output:
+=bisectbad1
+=bisectbad2
+EOF
+
+p. You should not see your specified name in the output. Now that we've found
+the commit run the following command to get back to your starting point.
+
+Execute:
+git bisect reset
+
+h2. Automating the Bisect
+
+p. The bisect process can be automated by providing a script to execute at each
+bisect point. When it runs it should exit with a 0 code if the commit has the
+bug  and exit with 1 if the commit does not have the bug. Below is an example
+script you can use to automate this bisect process.
+
+File: bisect.sh
+#!/usr/bin/env bash
+
+if [ -e lib/hello.rb ]
+then
+    if ruby -Ilib lib/hello.rb BisectString | grep BisectString
+    then
+        exit 1
+    else
+        exit 0
+    fi
+elif [ -e hello.rb ]
+then
+    if ruby hello.rb BisectString | grep BisectString
+    then
+        exit 1
+    else
+        exit 0
+    fi
+fi
+EOF
+
+p. Make it executable.
+
+Execute:
+chmod +x bisect.sh
+
+p. Now to automate the bisect process we use the @git bisect run@ command.
+
+Set: hash=hash_for("First Commit")
+Execute:
+git bisect start
+=bisectauto1
+git bisect bad HEAD
+=bisectauto2
+git bisect good <hash>
+=bisectauto3
+git bisect run "./bisect.sh"
+=bisectauto4
+
+p. In your output you'll see that the bisect proceeded automatically and
+finished on the same commit as when we did it manually.
+
+Output:
+=bisectauto1
+=bisectauto2
+=bisectauto3
+=bisectauto4
+EOF
+
+
+h2. Bisect and the Importance of Atomic Commits
+
+p. Bisecting is a powerful technique for doing fault isolation in a codebase,
+but it can be difficult to use when the codebase is not created from atomic
+commits. An atomic commit is one that only incorporates a single change in
+functionality or code structure. That is, all of the changes are syntactically
+or functionally related to each other. When commits are not atomic, the commit
+that the bisect points to could be full of unrelated changes making it
+difficult to determine which one is the one you are looking for.
+
+p. Additionally, when a feature is partially implemented over the course of
+several commits and is not working until the last one then the commit that
+bisect points to may not have any of the changes you are looking for at all.
+There are a number of other reasons to prefer atomic commits but keep these in
+mind as you continue your work.
+
+----------------------------------------------------------------------
 h1. Multiple Repositories
 
 p. Up to this point we have been working with a single git repository.
