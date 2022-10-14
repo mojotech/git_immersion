@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lab 20 - Git Immersion</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 viewport-fit=cover"">
+    <meta name="description" content="A guided tour that walks through the fundamentals of Git">
+    <meta name="theme-color" content="#0000ff">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" media="screen" href="reset.css"> 
+    <link rel="stylesheet" media="screen" href="screen.css"> 
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1142510-7']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <script type="text/javascript" src="UI.js"></script>
+  </head>
+
+  <body data-lab-id="20">
+    <a href="#content" tabindex="1" class="skip-to-content">
+      Skip to content
+    </a>
+
+    <div class="layout">
+      <div id="index">
+        <p class="link-home">
+          <a href="index.html"><span>Git Immersion</span></a>
+        </p>
+        <button class="link-menu">Menu</button>
+        <nav tabindex="0">
+          <ol>
+              <li id="lab_1_link"><a href="lab_01.html">Setup</a></li>
+  <li id="lab_2_link"><a href="lab_02.html">More Setup</a></li>
+  <li id="lab_3_link"><a href="lab_03.html">Create a Project</a></li>
+  <li id="lab_4_link"><a href="lab_04.html">Checking Status</a></li>
+  <li id="lab_5_link"><a href="lab_05.html">Making Changes</a></li>
+  <li id="lab_6_link"><a href="lab_06.html">Staging Changes</a></li>
+  <li id="lab_7_link"><a href="lab_07.html">Staging and Committing</a></li>
+  <li id="lab_8_link"><a href="lab_08.html">Committing Changes</a></li>
+  <li id="lab_9_link"><a href="lab_09.html">Changes, not Files</a></li>
+  <li id="lab_10_link"><a href="lab_10.html">Working with Changes Directly</a></li>
+  <li id="lab_11_link"><a href="lab_11.html">History</a></li>
+  <li id="lab_12_link"><a href="lab_12.html">Aliases</a></li>
+  <li id="lab_13_link"><a href="lab_13.html">Getting Old Versions</a></li>
+  <li id="lab_14_link"><a href="lab_14.html">Tagging versions</a></li>
+  <li id="lab_15_link"><a href="lab_15.html">Undoing Local Changes (before staging)</a></li>
+  <li id="lab_16_link"><a href="lab_16.html">Undoing Staged Changes (before committing)</a></li>
+  <li id="lab_17_link"><a href="lab_17.html">Undoing Committed Changes</a></li>
+  <li id="lab_18_link"><a href="lab_18.html">Removing Commits from a Branch</a></li>
+  <li id="lab_19_link"><a href="lab_19.html">Remove the oops tag</a></li>
+  <li id="lab_20_link"><a href="lab_20.html">Amending Commits</a></li>
+  <li id="lab_21_link"><a href="lab_21.html">Moving Files</a></li>
+  <li id="lab_22_link"><a href="lab_22.html">More Structure</a></li>
+  <li id="lab_23_link"><a href="lab_23.html">Git Internals: The .git directory</a></li>
+  <li id="lab_24_link"><a href="lab_24.html">Git Internals: Working directly with Git Objects</a></li>
+  <li id="lab_25_link"><a href="lab_25.html">Creating a Branch</a></li>
+  <li id="lab_26_link"><a href="lab_26.html">Navigating Branches</a></li>
+  <li id="lab_27_link"><a href="lab_27.html">Changes in Master</a></li>
+  <li id="lab_28_link"><a href="lab_28.html">Viewing Diverging Branches</a></li>
+  <li id="lab_29_link"><a href="lab_29.html">Merging</a></li>
+  <li id="lab_30_link"><a href="lab_30.html">Cherry-Picking</a></li>
+  <li id="lab_31_link"><a href="lab_31.html">Applying Patches</a></li>
+  <li id="lab_32_link"><a href="lab_32.html">Creating a Conflict</a></li>
+  <li id="lab_33_link"><a href="lab_33.html">Resolving Conflicts</a></li>
+  <li id="lab_34_link"><a href="lab_34.html">Rebasing VS Merging</a></li>
+  <li id="lab_35_link"><a href="lab_35.html">Resetting the Greet Branch</a></li>
+  <li id="lab_36_link"><a href="lab_36.html">Resetting the Master Branch</a></li>
+  <li id="lab_37_link"><a href="lab_37.html">Rebasing</a></li>
+  <li id="lab_38_link"><a href="lab_38.html">Merging Back to Master</a></li>
+  <li id="lab_39_link"><a href="lab_39.html">Using Rebase to Modify Old Commits</a></li>
+  <li id="lab_40_link"><a href="lab_40.html">The Reflog</a></li>
+  <li id="lab_41_link"><a href="lab_41.html">Rebasing Automatically</a></li>
+  <li id="lab_42_link"><a href="lab_42.html">Multiple Repositories</a></li>
+  <li id="lab_43_link"><a href="lab_43.html">Cloning Repositories</a></li>
+  <li id="lab_44_link"><a href="lab_44.html">Review the Cloned Repository</a></li>
+  <li id="lab_45_link"><a href="lab_45.html">What is Origin?</a></li>
+  <li id="lab_46_link"><a href="lab_46.html">Remote Branches</a></li>
+  <li id="lab_47_link"><a href="lab_47.html">Change the Original Repository</a></li>
+  <li id="lab_48_link"><a href="lab_48.html">Fetching Changes</a></li>
+  <li id="lab_49_link"><a href="lab_49.html">Merging Pulled Changes</a></li>
+  <li id="lab_50_link"><a href="lab_50.html">Pulling Changes</a></li>
+  <li id="lab_51_link"><a href="lab_51.html">Adding a Tracking Branch</a></li>
+  <li id="lab_52_link"><a href="lab_52.html">Bare Repositories</a></li>
+  <li id="lab_53_link"><a href="lab_53.html">Adding a Remote Repository</a></li>
+  <li id="lab_54_link"><a href="lab_54.html">Pushing a Change</a></li>
+  <li id="lab_55_link"><a href="lab_55.html">Pulling Shared Changes</a></li>
+  <li id="lab_56_link"><a href="lab_56.html">Advanced / Future Topics</a></li>
+  <li id="lab_57_link"><a href="lab_57.html">Thank You</a></li>
+
+          </ol>
+        </nav>
+      </div>
+
+      <div id="content" tabindex="-1">
+        <h1 class="lab_title"><em>lab 20</em>  Amending Commits</h1>
+<h2>Goals</h2>
+<ul>
+	<li>Learn how to amend an existing commit</li>
+</ul>
+<h2>Change the program then commit</h2>
+<p>Add an author comment to the program.</p>
+<h3 class="file-heading"><em>hello.rb</em></h3>
+<pre class="file"># Default is World
+# Author: Jim Weirich
+names = ARGV || ["World"]
+
+puts "Hello, #{names.join(" ")}!"
+puts "You have #{names.length} names!"
+</pre>
+<h3><b>Execute:</b></h3>
+<pre class="instructions">git add hello.rb
+git commit -m "Add an author comment"</pre>
+<h2>Oops, Should have an Email</h2>
+<p>After you make the commit, you realize that any good author comment should have an email included.  Update the hello program to include an email.</p>
+<h3 class="file-heading"><em>hello.rb</em></h3>
+<pre class="file"># Default is World
+# Author: Jim Weirich (jim@somewhere.com)
+names = ARGV || ["World"]
+
+puts "Hello, #{names.join(" ")}!"
+puts "You have #{names.length} names!"
+</pre>
+<h2>Amend the Previous Commit</h2>
+<p>We really don&#8217;t want a separate commit for just the email.  Let&#8217;s amend the previous commit to include the email change.</p>
+<h3><b>Execute:</b></h3>
+<pre class="instructions">git add hello.rb
+git commit --amend -m "Add an author/email comment"</pre>
+<h3><b>Output:</b></h3>
+<pre class="sample">$ git add hello.rb
+$ git commit --amend -m "Add an author/email comment"
+[master 9efa86d] Add an author/email comment
+ Date: Fri Oct 14 20:57:12 2022 +0000
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+</pre>
+<h2>Review the History</h2>
+<h3><b>Execute:</b></h3>
+<pre class="instructions">git hist</pre>
+<h3><b>Output:</b></h3>
+<pre class="sample">$ git hist
+git: 'hist' is not a git command. See 'git --help'.
+
+The most similar command is
+	bisect
+</pre>
+<p>We can see the original &#8220;author&#8221; commit is now gone, and it is replaced by the &#8220;author/email&#8221; commit.  You can achieve the same effect by resetting the branch back one commit and then recommitting the new changes.</p>
+        <nav class="foot-navigation">
+      <a href="lab_19.html">
+      <svg version="1.1" width="36" height="36" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.66,15.61,18,6,8.34,15.61A1,1,0,1,0,9.75,17L17,9.81V28.94a1,1,0,1,0,2,0V9.81L26.25,17a1,1,0,0,0,1.41-1.42Z"></path></svg>
+      Previous
+    </a>
+  
+      <a href="lab_21.html">
+      <svg version="1.1" width="36" height="36" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.66,15.61,18,6,8.34,15.61A1,1,0,1,0,9.75,17L17,9.81V28.94a1,1,0,1,0,2,0V9.81L26.25,17a1,1,0,0,0,1.41-1.42Z"></path></svg>
+      Next
+    </a>
+  </nav>
+
+      </div>
+    </div>
+  </body>
+</html>
