@@ -134,7 +134,7 @@ Or undo this operation with:
 
 Turn off this advice by setting config variable advice.detachedHead to false
 
-HEAD is now at 09ffe0c Rename variable to match its usage
+HEAD is now at e9566c0 Rename variable to match its usage
 $ cat hello.rb
 names = ARGV || ["World"]
 
@@ -151,11 +151,11 @@ puts "You have #{names.length} names!"
 git checkout v1-beta</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git checkout v1
-Previous HEAD position was 09ffe0c Rename variable to match its usage
-HEAD is now at ca20e65 Tell user how many names they have
+Previous HEAD position was e9566c0 Rename variable to match its usage
+HEAD is now at 0b1350e Tell user how many names they have
 $ git checkout v1-beta
-Previous HEAD position was ca20e65 Tell user how many names they have
-HEAD is now at 09ffe0c Rename variable to match its usage
+Previous HEAD position was 0b1350e Tell user how many names they have
+HEAD is now at e9566c0 Rename variable to match its usage
 </pre>
 <h2>Viewing Tags using the <code>tag</code> command</h2>
 <p>You can see what tags are available using the <code>git tag</code> command.</p>
