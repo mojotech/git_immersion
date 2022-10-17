@@ -114,34 +114,17 @@ git hist</pre>
 <pre class="sample">$ git checkout greet
 Already on 'greet'
 $ git hist
-*   fc464d6 2022-10-07 | Merged master fixed conflict. (HEAD -&gt; greet) [Jim Weirich]
-|\  
-| * 14cbd30 2022-10-07 | Made interactive (master) [Jim Weirich]
-* | 191fe0c 2022-10-07 | Add some suspicion [Jim Weirich]
-* | 2bbfec5 2022-10-07 | Add excitement (excitement) [Jim Weirich]
-* | 3bd2dfe 2022-10-07 | Merge branch 'master' into greet [Jim Weirich]
-|\| 
-| * 1936641 2022-10-07 | Added README [Jim Weirich]
-* | e132fbb 2022-10-07 | Updated Rakefile [Jim Weirich]
-* | ef5cedc 2022-10-07 | Hello uses Greeter [Jim Weirich]
-* | 7ddd5e9 2022-10-07 | Added greeter class [Jim Weirich]
-|/  
-* f46eac7 2022-10-07 | Added a Rakefile. [Jim Weirich]
-* e9a353a 2022-10-07 | Moved hello.rb to lib [Jim Weirich]
-* 60c0a5f 2022-10-07 | Add an author/email comment [Jim Weirich]
-* 497a0fd 2022-10-07 | Tell user how many names they have (tag: v1) [Jim Weirich]
-* c183b27 2022-10-07 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
-* b803898 2022-10-07 | Can specify multiple names [Jim Weirich]
-* 22f59c5 2022-10-07 | Added a comment [Jim Weirich]
-* a90257b 2022-10-07 | Added a default value [Jim Weirich]
-* 5670bd9 2022-10-07 | Using ARGV [Jim Weirich]
-* e4e2034 2022-10-07 | First Commit [Jim Weirich]</pre>
+git: 'hist' is not a git command. See 'git --help'.
+
+The most similar command is
+	bisect
+</pre>
 <p>That&#8217;s a bit hard to read, but looking at the data we see that the &#8220;Updated Rakefile&#8221; commit was the last commit on the greet branch before merging.  Let&#8217;s reset the greet branch to that commit.</p>
 <h3><b>Execute:</b></h3>
 <pre class="instructions">git reset --hard &lt;hash&gt;</pre>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ git reset --hard e132fbb
-HEAD is now at e132fbb Updated Rakefile
+<pre class="sample">$ git reset --hard 8a7fe6c
+HEAD is now at 8a7fe6c Updated Rakefile
 </pre>
 <h2>Check the branch.</h2>
 <p>Look at the log for the greet branch.  We no longer have the merge commits in its history.</p>
@@ -149,26 +132,11 @@ HEAD is now at e132fbb Updated Rakefile
 <pre class="instructions">git hist --all</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git hist --all
-* 2bbfec5 2022-10-07 | Add excitement (excitement) [Jim Weirich]
-*   3bd2dfe 2022-10-07 | Merge branch 'master' into greet [Jim Weirich]
-|\  
-* | e132fbb 2022-10-07 | Updated Rakefile (HEAD -&gt; greet) [Jim Weirich]
-* | ef5cedc 2022-10-07 | Hello uses Greeter [Jim Weirich]
-* | 7ddd5e9 2022-10-07 | Added greeter class [Jim Weirich]
-| | * 14cbd30 2022-10-07 | Made interactive (master) [Jim Weirich]
-| |/  
-| * 1936641 2022-10-07 | Added README [Jim Weirich]
-|/  
-* f46eac7 2022-10-07 | Added a Rakefile. [Jim Weirich]
-* e9a353a 2022-10-07 | Moved hello.rb to lib [Jim Weirich]
-* 60c0a5f 2022-10-07 | Add an author/email comment [Jim Weirich]
-* 497a0fd 2022-10-07 | Tell user how many names they have (tag: v1) [Jim Weirich]
-* c183b27 2022-10-07 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
-* b803898 2022-10-07 | Can specify multiple names [Jim Weirich]
-* 22f59c5 2022-10-07 | Added a comment [Jim Weirich]
-* a90257b 2022-10-07 | Added a default value [Jim Weirich]
-* 5670bd9 2022-10-07 | Using ARGV [Jim Weirich]
-* e4e2034 2022-10-07 | First Commit [Jim Weirich]</pre>
+git: 'hist' is not a git command. See 'git --help'.
+
+The most similar command is
+	bisect
+</pre>
         <nav class="foot-navigation">
       <a href="lab_34.html">
       <svg version="1.1" width="36" height="36" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.66,15.61,18,6,8.34,15.61A1,1,0,1,0,9.75,17L17,9.81V28.94a1,1,0,1,0,2,0V9.81L26.25,17a1,1,0,0,0,1.41-1.42Z"></path></svg>

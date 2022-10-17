@@ -135,7 +135,7 @@ index 437e63c..d6755ed 100644
 (1/1) Stage this hunk [y,n,q,a,d,s,e,?]? 
 
 $ git commit -m "Can specify multiple names"
-[master b803898] Can specify multiple names
+[master f7bc9f0] Can specify multiple names
  1 file changed, 2 insertions(+), 3 deletions(-)
 </pre>
 <h2>Second Change: Add Some More Output</h2>
@@ -207,23 +207,24 @@ puts "You have #{names.length} names!"
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git diff --staged
 diff --git a/hello.rb b/hello.rb
-index d6755ed..b595253 100644
+index d6755ed..42754aa 100644
 --- a/hello.rb
 +++ b/hello.rb
-@@ -1,3 +1,3 @@
+@@ -1,3 +1,4 @@
 -name = ARGV || ["World"]
 +names = ARGV || ["World"]
  
 -puts "Hello, #{name.join(" ")}!"
 +puts "Hello, #{names.join(" ")}!"
++puts "You have #{names.length} names!"
 </pre>
 <p>Finally let&#8217;s commit the change.</p>
 <h3><b>Execute:</b></h3>
 <pre class="instructions">git commit -m "Rename variable to match its usage"</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git commit -m "Rename variable to match its usage"
-[master c183b27] Rename variable to match its usage
- 1 file changed, 2 insertions(+), 2 deletions(-)
+[master c0bf977] Rename variable to match its usage
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 </pre>
 <p>Now you&#8217;ll add the new output. This one isn&#8217;t necessary to edit, so you can just press the &#8216;y&#8217; key to add it.</p>
 <h3><b>Execute:</b></h3>
@@ -233,18 +234,18 @@ index d6755ed..b595253 100644
 <h3><b>Output:</b></h3>
 <pre class="sample">$ yes | git add --patch
 diff --git a/hello.rb b/hello.rb
-index b595253..42754aa 100644
+index 42754aa..1910891 100644
 --- a/hello.rb
 +++ b/hello.rb
-@@ -1,3 +1,4 @@
- names = ARGV || ["World"]
+@@ -2,3 +2,4 @@ names = ARGV || ["World"]
  
  puts "Hello, #{names.join(" ")}!"
+ puts "You have #{names.length} names!"
 +puts "You have #{names.length} names!"
 (1/1) Stage this hunk [y,n,q,a,d,e,?]? 
 
 $ git commit -m "Tell user how many names they have"
-[master 497a0fd] Tell user how many names they have
+[master f445da9] Tell user how many names they have
  1 file changed, 1 insertion(+)
 </pre>
 <h2>Wrapping Up</h2>

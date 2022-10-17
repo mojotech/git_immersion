@@ -134,11 +134,12 @@ Or undo this operation with:
 
 Turn off this advice by setting config variable advice.detachedHead to false
 
-HEAD is now at c183b27 Rename variable to match its usage
+HEAD is now at c0bf977 Rename variable to match its usage
 $ cat hello.rb
 names = ARGV || ["World"]
 
 puts "Hello, #{names.join(" ")}!"
+puts "You have #{names.length} names!"
 </pre>
 <p>See, this is the version with the default value <em>before</em> we added the comment.  Let&#8217;s make this v1-beta.</p>
 <h3><b>Execute:</b></h3>
@@ -150,11 +151,11 @@ puts "Hello, #{names.join(" ")}!"
 git checkout v1-beta</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git checkout v1
-Previous HEAD position was c183b27 Rename variable to match its usage
-HEAD is now at 497a0fd Tell user how many names they have
+Previous HEAD position was c0bf977 Rename variable to match its usage
+HEAD is now at f445da9 Tell user how many names they have
 $ git checkout v1-beta
-Previous HEAD position was 497a0fd Tell user how many names they have
-HEAD is now at c183b27 Rename variable to match its usage
+Previous HEAD position was f445da9 Tell user how many names they have
+HEAD is now at c0bf977 Rename variable to match its usage
 </pre>
 <h2>Viewing Tags using the <code>tag</code> command</h2>
 <p>You can see what tags are available using the <code>git tag</code> command.</p>
@@ -171,13 +172,11 @@ v1-beta
 <pre class="instructions">git hist master --all</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git hist master --all
-* 497a0fd 2022-10-07 | Tell user how many names they have (tag: v1, master) [Jim Weirich]
-* c183b27 2022-10-07 | Rename variable to match its usage (HEAD, tag: v1-beta) [Jim Weirich]
-* b803898 2022-10-07 | Can specify multiple names [Jim Weirich]
-* 22f59c5 2022-10-07 | Added a comment [Jim Weirich]
-* a90257b 2022-10-07 | Added a default value [Jim Weirich]
-* 5670bd9 2022-10-07 | Using ARGV [Jim Weirich]
-* e4e2034 2022-10-07 | First Commit [Jim Weirich]</pre>
+git: 'hist' is not a git command. See 'git --help'.
+
+The most similar command is
+	bisect
+</pre>
 <p>You can see both tags (<code>v1</code> and <code>v1-beta</code>) listed in the log output, along with the branch name (<code>master</code>).  Also <code>HEAD</code> shows you the currently checked out commit (which is <code>v1-beta</code> at the moment).</p>
         <nav class="foot-navigation">
       <a href="lab_13.html">
