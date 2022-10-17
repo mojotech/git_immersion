@@ -59,11 +59,8 @@ jobs:
         git checkout gh-pages
         mkdir -p $BRANCH/
         cp --recursive --force git_tutorial/html/* $BRANCH/
-        ls dist/
         cp --force dist/git_tutorial.zip $BRANCH/
         git add --all $BRANCH
-        cat .gitignore
-        git add $BRANCH/git_tutorial.zip
         git status
         git config user.name "github-actions"
         git config user.email "daniel@mojotech.com"
