@@ -125,8 +125,8 @@ git commit -m "Oops, we didn't want this commit"</pre>
 <pre class="instructions">git revert HEAD</pre>
 <p>This will pop you into the editor.  You can edit the default commit message or leave it as is.  Save and close the file. You should see &#8230;</p>
 <h3><b>Output:</b></h3>
-<pre class="sample">[main 3024469] Revert "Oops, we didn't want this commit"
- Date: Mon Oct 17 16:58:33 2022 +0000
+<pre class="sample">[main 35addac] Revert "Oops, we didn't want this commit"
+ Date: Mon Oct 17 19:11:38 2022 +0000
  1 file changed, 1 insertion(+), 1 deletion(-)
 </pre>
 <p>Since we were undoing the very last commit we made, we were able to use <code>HEAD</code> as the argument to revert.  We can revert any arbitrary commit earlier in history by simply specifying its hash value.</p>
