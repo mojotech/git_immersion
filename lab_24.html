@@ -62,7 +62,7 @@
   <li id="lab_24_link"><a href="lab_24.html">Git Internals: Working directly with Git Objects</a></li>
   <li id="lab_25_link"><a href="lab_25.html">Creating a Branch</a></li>
   <li id="lab_26_link"><a href="lab_26.html">Navigating Branches</a></li>
-  <li id="lab_27_link"><a href="lab_27.html">Changes in Master</a></li>
+  <li id="lab_27_link"><a href="lab_27.html">Changes in Main</a></li>
   <li id="lab_28_link"><a href="lab_28.html">Viewing Diverging Branches</a></li>
   <li id="lab_29_link"><a href="lab_29.html">Merging</a></li>
   <li id="lab_30_link"><a href="lab_30.html">Cherry-Picking</a></li>
@@ -71,9 +71,9 @@
   <li id="lab_33_link"><a href="lab_33.html">Resolving Conflicts</a></li>
   <li id="lab_34_link"><a href="lab_34.html">Rebasing VS Merging</a></li>
   <li id="lab_35_link"><a href="lab_35.html">Resetting the Greet Branch</a></li>
-  <li id="lab_36_link"><a href="lab_36.html">Resetting the Master Branch</a></li>
+  <li id="lab_36_link"><a href="lab_36.html">Resetting the Main Branch</a></li>
   <li id="lab_37_link"><a href="lab_37.html">Rebasing</a></li>
-  <li id="lab_38_link"><a href="lab_38.html">Merging Back to Master</a></li>
+  <li id="lab_38_link"><a href="lab_38.html">Merging Back to Main</a></li>
   <li id="lab_39_link"><a href="lab_39.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_40_link"><a href="lab_40.html">The Reflog</a></li>
   <li id="lab_41_link"><a href="lab_41.html">Rebasing Automatically</a></li>
@@ -124,18 +124,18 @@ The most similar command is
 git cat-file -p &lt;hash&gt;</pre>
 <p>Here&#8217;s my output &#8230;</p>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ git cat-file -t 3ed2cb1
+<pre class="sample">$ git cat-file -t dcc9183
 commit
-$ git cat-file -p 3ed2cb1
+$ git cat-file -p dcc9183
 tree 411af6240f8f5ada935b2116bb8c138b85bd6481
-parent c02d8eac4a4a007236ad320eea63e172e498b293
-author Jim Weirich &lt;jim (at) edgecase.com&gt; 1666017000 +0000
-committer Jim Weirich &lt;jim (at) edgecase.com&gt; 1666017000 +0000
+parent 6bae81a753a3ce029c45a0d94d0d36ed5a370694
+author Jim Weirich &lt;jim (at) edgecase.com&gt; 1666022862 +0000
+committer Jim Weirich &lt;jim (at) edgecase.com&gt; 1666022862 +0000
 
 Added a Rakefile.
 </pre>
 <p class="note"><strong><span class="caps">NOTE</span>:</strong> If you defined the &#8216;type&#8217; and &#8216;dump&#8217; aliases from the aliases lab, then you can type <code>git type</code> and <code>git dump</code> rather than the longer cat-file commands (which I never remember).</p>
-<p>This is the dump of the commit object that is at the head of the master branch.  It looks a lot like the commit object from the presentation earlier.</p>
+<p>This is the dump of the commit object that is at the head of the main branch.  It looks a lot like the commit object from the presentation earlier.</p>
 <h2>Finding the Tree</h2>
 <p>We can dump the directory tree referenced in the commit.  This should be a description of the (top level) files in our project (for that commit).  Use the SHA1 hash from the &#8220;tree&#8221; line listed above.</p>
 <h3><b>Execute:</b></h3>

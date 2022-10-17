@@ -62,7 +62,7 @@
   <li id="lab_24_link"><a href="lab_24.html">Git Internals: Working directly with Git Objects</a></li>
   <li id="lab_25_link"><a href="lab_25.html">Creating a Branch</a></li>
   <li id="lab_26_link"><a href="lab_26.html">Navigating Branches</a></li>
-  <li id="lab_27_link"><a href="lab_27.html">Changes in Master</a></li>
+  <li id="lab_27_link"><a href="lab_27.html">Changes in Main</a></li>
   <li id="lab_28_link"><a href="lab_28.html">Viewing Diverging Branches</a></li>
   <li id="lab_29_link"><a href="lab_29.html">Merging</a></li>
   <li id="lab_30_link"><a href="lab_30.html">Cherry-Picking</a></li>
@@ -71,9 +71,9 @@
   <li id="lab_33_link"><a href="lab_33.html">Resolving Conflicts</a></li>
   <li id="lab_34_link"><a href="lab_34.html">Rebasing VS Merging</a></li>
   <li id="lab_35_link"><a href="lab_35.html">Resetting the Greet Branch</a></li>
-  <li id="lab_36_link"><a href="lab_36.html">Resetting the Master Branch</a></li>
+  <li id="lab_36_link"><a href="lab_36.html">Resetting the Main Branch</a></li>
   <li id="lab_37_link"><a href="lab_37.html">Rebasing</a></li>
-  <li id="lab_38_link"><a href="lab_38.html">Merging Back to Master</a></li>
+  <li id="lab_38_link"><a href="lab_38.html">Merging Back to Main</a></li>
   <li id="lab_39_link"><a href="lab_39.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_40_link"><a href="lab_40.html">The Reflog</a></li>
   <li id="lab_41_link"><a href="lab_41.html">Rebasing Automatically</a></li>
@@ -99,20 +99,20 @@
       </div>
 
       <div id="content" tabindex="-1">
-        <h1 class="lab_title"><em>lab 27</em>  Changes in Master</h1>
+        <h1 class="lab_title"><em>lab 27</em>  Changes in Main</h1>
 <h2>Goals</h2>
 <ul>
 	<li>Learning how to deal with multiple branches with different (and possibly conflicting) changes.</li>
 </ul>
-<p>While you were changing the greet branch, someone else decided to update the master branch.  They added a <span class="caps">README</span>.</p>
-<h2>Switch to the master branch.</h2>
+<p>While you were changing the greet branch, someone else decided to update the main branch.  They added a <span class="caps">README</span>.</p>
+<h2>Switch to the main branch.</h2>
 <h3><b>Execute:</b></h3>
-<pre class="instructions">git checkout master</pre>
+<pre class="instructions">git checkout main</pre>
 <h2>Create the <span class="caps">README</span>.</h2>
 <h3 class="file-heading"><em><span class="caps">README</span></em></h3>
 <pre class="file">This is the Hello World example from the git tutorial.
 </pre>
-<h2>Commit the <span class="caps">README</span> to master.</h2>
+<h2>Commit the <span class="caps">README</span> to main.</h2>
 <h3><b>Execute:</b></h3>
 <pre class="instructions">git add README
 git commit -m "Added README"</pre>

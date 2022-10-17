@@ -62,7 +62,7 @@
   <li id="lab_24_link"><a href="lab_24.html">Git Internals: Working directly with Git Objects</a></li>
   <li id="lab_25_link"><a href="lab_25.html">Creating a Branch</a></li>
   <li id="lab_26_link"><a href="lab_26.html">Navigating Branches</a></li>
-  <li id="lab_27_link"><a href="lab_27.html">Changes in Master</a></li>
+  <li id="lab_27_link"><a href="lab_27.html">Changes in Main</a></li>
   <li id="lab_28_link"><a href="lab_28.html">Viewing Diverging Branches</a></li>
   <li id="lab_29_link"><a href="lab_29.html">Merging</a></li>
   <li id="lab_30_link"><a href="lab_30.html">Cherry-Picking</a></li>
@@ -71,9 +71,9 @@
   <li id="lab_33_link"><a href="lab_33.html">Resolving Conflicts</a></li>
   <li id="lab_34_link"><a href="lab_34.html">Rebasing VS Merging</a></li>
   <li id="lab_35_link"><a href="lab_35.html">Resetting the Greet Branch</a></li>
-  <li id="lab_36_link"><a href="lab_36.html">Resetting the Master Branch</a></li>
+  <li id="lab_36_link"><a href="lab_36.html">Resetting the Main Branch</a></li>
   <li id="lab_37_link"><a href="lab_37.html">Rebasing</a></li>
-  <li id="lab_38_link"><a href="lab_38.html">Merging Back to Master</a></li>
+  <li id="lab_38_link"><a href="lab_38.html">Merging Back to Main</a></li>
   <li id="lab_39_link"><a href="lab_39.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_40_link"><a href="lab_40.html">The Reflog</a></li>
   <li id="lab_41_link"><a href="lab_41.html">Rebasing Automatically</a></li>
@@ -134,7 +134,7 @@ Or undo this operation with:
 
 Turn off this advice by setting config variable advice.detachedHead to false
 
-HEAD is now at c0bf977 Rename variable to match its usage
+HEAD is now at 9085822 Rename variable to match its usage
 $ cat hello.rb
 names = ARGV || ["World"]
 
@@ -151,11 +151,11 @@ puts "You have #{names.length} names!"
 git checkout v1-beta</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git checkout v1
-Previous HEAD position was c0bf977 Rename variable to match its usage
-HEAD is now at f445da9 Tell user how many names they have
+Previous HEAD position was 9085822 Rename variable to match its usage
+HEAD is now at a9678f1 Tell user how many names they have
 $ git checkout v1-beta
-Previous HEAD position was f445da9 Tell user how many names they have
-HEAD is now at c0bf977 Rename variable to match its usage
+Previous HEAD position was a9678f1 Tell user how many names they have
+HEAD is now at 9085822 Rename variable to match its usage
 </pre>
 <h2>Viewing Tags using the <code>tag</code> command</h2>
 <p>You can see what tags are available using the <code>git tag</code> command.</p>
@@ -169,15 +169,15 @@ v1-beta
 <h2>Viewing Tags in the Logs</h2>
 <p>You can also check for tags in the log.</p>
 <h3><b>Execute:</b></h3>
-<pre class="instructions">git hist master --all</pre>
+<pre class="instructions">git hist main --all</pre>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ git hist master --all
+<pre class="sample">$ git hist main --all
 git: 'hist' is not a git command. See 'git --help'.
 
 The most similar command is
 	bisect
 </pre>
-<p>You can see both tags (<code>v1</code> and <code>v1-beta</code>) listed in the log output, along with the branch name (<code>master</code>).  Also <code>HEAD</code> shows you the currently checked out commit (which is <code>v1-beta</code> at the moment).</p>
+<p>You can see both tags (<code>v1</code> and <code>v1-beta</code>) listed in the log output, along with the branch name (<code>main</code>).  Also <code>HEAD</code> shows you the currently checked out commit (which is <code>v1-beta</code> at the moment).</p>
         <nav class="foot-navigation">
       <a href="lab_13.html">
       <svg version="1.1" width="36" height="36" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.66,15.61,18,6,8.34,15.61A1,1,0,1,0,9.75,17L17,9.81V28.94a1,1,0,1,0,2,0V9.81L26.25,17a1,1,0,0,0,1.41-1.42Z"></path></svg>

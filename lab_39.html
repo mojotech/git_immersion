@@ -62,7 +62,7 @@
   <li id="lab_24_link"><a href="lab_24.html">Git Internals: Working directly with Git Objects</a></li>
   <li id="lab_25_link"><a href="lab_25.html">Creating a Branch</a></li>
   <li id="lab_26_link"><a href="lab_26.html">Navigating Branches</a></li>
-  <li id="lab_27_link"><a href="lab_27.html">Changes in Master</a></li>
+  <li id="lab_27_link"><a href="lab_27.html">Changes in Main</a></li>
   <li id="lab_28_link"><a href="lab_28.html">Viewing Diverging Branches</a></li>
   <li id="lab_29_link"><a href="lab_29.html">Merging</a></li>
   <li id="lab_30_link"><a href="lab_30.html">Cherry-Picking</a></li>
@@ -71,9 +71,9 @@
   <li id="lab_33_link"><a href="lab_33.html">Resolving Conflicts</a></li>
   <li id="lab_34_link"><a href="lab_34.html">Rebasing VS Merging</a></li>
   <li id="lab_35_link"><a href="lab_35.html">Resetting the Greet Branch</a></li>
-  <li id="lab_36_link"><a href="lab_36.html">Resetting the Master Branch</a></li>
+  <li id="lab_36_link"><a href="lab_36.html">Resetting the Main Branch</a></li>
   <li id="lab_37_link"><a href="lab_37.html">Rebasing</a></li>
-  <li id="lab_38_link"><a href="lab_38.html">Merging Back to Master</a></li>
+  <li id="lab_38_link"><a href="lab_38.html">Merging Back to Main</a></li>
   <li id="lab_39_link"><a href="lab_39.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_40_link"><a href="lab_40.html">The Reflog</a></li>
   <li id="lab_41_link"><a href="lab_41.html">Rebasing Automatically</a></li>
@@ -117,7 +117,7 @@ end
 <h3><b>Execute:</b></h3>
 <pre class="instructions">git add lib/greeter.rb
 git commit -m "Add missing punctuation"</pre>
-<p>If we haven&#8217;t made the greeter class public yet there&#8217;s no need to keep this as a separate commit. It would just add noise to the final history. You can use <code>git rebase</code> to squash this commit into the one that added the greeter class. First, you&#8217;ll need to find a rebase starting point. Usually the <code>master</code> branch is good for this when working on your own branch, but for this exercise we&#8217;ll use the commit before the one that added the greeter class.</p>
+<p>If we haven&#8217;t made the greeter class public yet there&#8217;s no need to keep this as a separate commit. It would just add noise to the final history. You can use <code>git rebase</code> to squash this commit into the one that added the greeter class. First, you&#8217;ll need to find a rebase starting point. Usually the <code>main</code> branch is good for this when working on your own branch, but for this exercise we&#8217;ll use the commit before the one that added the greeter class.</p>
 <p>First find the commit that added the greeter class.</p>
 <h3><b>Execute:</b></h3>
 <pre class="instructions">git hist</pre>
@@ -209,10 +209,10 @@ pick 6cac757 Added shared comment to readme
 <h3><b>Execute:</b></h3>
 <pre class="instructions">git show &lt;hash&gt;</pre>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ git show b842594
-commit b842594c11cf5044a9e3edc5d5cc491c9b5276d7
+<pre class="sample">$ git show 9641dfb
+commit 9641dfb10fe81d8b1272e06a2608fb5903210d32
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Mon Oct 17 14:30:00 2022 +0000
+Date:   Mon Oct 17 16:07:42 2022 +0000
 
     Added greeter class
 

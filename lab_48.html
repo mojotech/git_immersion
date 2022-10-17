@@ -62,7 +62,7 @@
   <li id="lab_24_link"><a href="lab_24.html">Git Internals: Working directly with Git Objects</a></li>
   <li id="lab_25_link"><a href="lab_25.html">Creating a Branch</a></li>
   <li id="lab_26_link"><a href="lab_26.html">Navigating Branches</a></li>
-  <li id="lab_27_link"><a href="lab_27.html">Changes in Master</a></li>
+  <li id="lab_27_link"><a href="lab_27.html">Changes in Main</a></li>
   <li id="lab_28_link"><a href="lab_28.html">Viewing Diverging Branches</a></li>
   <li id="lab_29_link"><a href="lab_29.html">Merging</a></li>
   <li id="lab_30_link"><a href="lab_30.html">Cherry-Picking</a></li>
@@ -71,9 +71,9 @@
   <li id="lab_33_link"><a href="lab_33.html">Resolving Conflicts</a></li>
   <li id="lab_34_link"><a href="lab_34.html">Rebasing VS Merging</a></li>
   <li id="lab_35_link"><a href="lab_35.html">Resetting the Greet Branch</a></li>
-  <li id="lab_36_link"><a href="lab_36.html">Resetting the Master Branch</a></li>
+  <li id="lab_36_link"><a href="lab_36.html">Resetting the Main Branch</a></li>
   <li id="lab_37_link"><a href="lab_37.html">Rebasing</a></li>
-  <li id="lab_38_link"><a href="lab_38.html">Merging Back to Master</a></li>
+  <li id="lab_38_link"><a href="lab_38.html">Merging Back to Main</a></li>
   <li id="lab_39_link"><a href="lab_39.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_40_link"><a href="lab_40.html">The Reflog</a></li>
   <li id="lab_41_link"><a href="lab_41.html">Rebasing Automatically</a></li>
@@ -112,7 +112,7 @@ git hist --all</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git fetch
 From /Users/jim/Downloads/git_tutorial/work/hello
-   f03b118..ba3ac00  master     -&gt; origin/master
+   a644df0..7b18745  main       -&gt; origin/main
 $ git hist --all
 git: 'hist' is not a git command. See 'git --help'.
 
@@ -120,8 +120,8 @@ The most similar command is
 	bisect
 </pre>
 <p>At this point the repository has all the commits from the original repository, but they are not integrated into the cloned repository&#8217;s local branches.</p>
-<p>Find the &#8220;Changed <span class="caps">README</span> in original repo&#8221; commit in the history above.  Notice that the commit includes &#8220;origin/master&#8221; and &#8220;origin/<span class="caps">HEAD</span>&#8221;.</p>
-<p>Now look at the &#8220;Updated Rakefile&#8221; commit.  You will see that the local master branch points to this commit, not to the new commit that we just fetched.</p>
+<p>Find the &#8220;Changed <span class="caps">README</span> in original repo&#8221; commit in the history above.  Notice that the commit includes &#8220;origin/main&#8221; and &#8220;origin/<span class="caps">HEAD</span>&#8221;.</p>
+<p>Now look at the &#8220;Updated Rakefile&#8221; commit.  You will see that the local main branch points to this commit, not to the new commit that we just fetched.</p>
 <p>The upshot of this is that the &#8220;git fetch&#8221; command will fetch new commits from the remote repository, but it will not merge these commits into the local branches.</p>
 <h2>Check the <span class="caps">README</span></h2>
 <p>We can demonstrate that the cloned <span class="caps">README</span> is unchanged.</p>

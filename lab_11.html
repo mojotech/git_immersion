@@ -62,7 +62,7 @@
   <li id="lab_24_link"><a href="lab_24.html">Git Internals: Working directly with Git Objects</a></li>
   <li id="lab_25_link"><a href="lab_25.html">Creating a Branch</a></li>
   <li id="lab_26_link"><a href="lab_26.html">Navigating Branches</a></li>
-  <li id="lab_27_link"><a href="lab_27.html">Changes in Master</a></li>
+  <li id="lab_27_link"><a href="lab_27.html">Changes in Main</a></li>
   <li id="lab_28_link"><a href="lab_28.html">Viewing Diverging Branches</a></li>
   <li id="lab_29_link"><a href="lab_29.html">Merging</a></li>
   <li id="lab_30_link"><a href="lab_30.html">Cherry-Picking</a></li>
@@ -71,9 +71,9 @@
   <li id="lab_33_link"><a href="lab_33.html">Resolving Conflicts</a></li>
   <li id="lab_34_link"><a href="lab_34.html">Rebasing VS Merging</a></li>
   <li id="lab_35_link"><a href="lab_35.html">Resetting the Greet Branch</a></li>
-  <li id="lab_36_link"><a href="lab_36.html">Resetting the Master Branch</a></li>
+  <li id="lab_36_link"><a href="lab_36.html">Resetting the Main Branch</a></li>
   <li id="lab_37_link"><a href="lab_37.html">Rebasing</a></li>
-  <li id="lab_38_link"><a href="lab_38.html">Merging Back to Master</a></li>
+  <li id="lab_38_link"><a href="lab_38.html">Merging Back to Main</a></li>
   <li id="lab_39_link"><a href="lab_39.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_40_link"><a href="lab_40.html">The Reflog</a></li>
   <li id="lab_41_link"><a href="lab_41.html">Rebasing Automatically</a></li>
@@ -110,45 +110,45 @@
 <p>You should see &#8230;</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git log
-commit f445da9bb6b08a95835c63d33f456b40f0d7c64b
+commit a9678f1ed2f9164af332e787a63dc7a5517ad8b0
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Mon Oct 17 14:29:59 2022 +0000
+Date:   Mon Oct 17 16:07:41 2022 +0000
 
     Tell user how many names they have
 
-commit c0bf97774bc480822e2d52f90bfb9d14c0302ec5
+commit 9085822ed3c23ab2c1421f0b27f153dcacd0db4d
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Mon Oct 17 14:29:59 2022 +0000
+Date:   Mon Oct 17 16:07:41 2022 +0000
 
     Rename variable to match its usage
 
-commit f7bc9f0fa2635c01e3e2f5f0b37087a38eef1908
+commit 66df6ac366fe3318e7d25a254276832f70395c1a
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Mon Oct 17 14:29:57 2022 +0000
+Date:   Mon Oct 17 16:07:41 2022 +0000
 
     Can specify multiple names
 
-commit b83bd828e914ce7ae839f102adf7fe7f414562dc
+commit 40459ec63980137948fb0e5ef0d051eecba1462c
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Mon Oct 17 14:29:57 2022 +0000
+Date:   Mon Oct 17 16:07:41 2022 +0000
 
     Added a comment
 
-commit b7901e6b078fcfaf1be0eda38d1d7adb389b59fd
+commit 22232e0d85d4211e1bd78a33fcfaaf4984608f0b
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Mon Oct 17 14:29:57 2022 +0000
+Date:   Mon Oct 17 16:07:41 2022 +0000
 
     Added a default value
 
-commit 7383fa7cb6112d6c6946086c1ba673f0b8ac8455
+commit f9b9383ebf52cbba4be0ec8e550ccd53975a5023
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Mon Oct 17 14:29:57 2022 +0000
+Date:   Mon Oct 17 16:07:41 2022 +0000
 
     Using ARGV
 
-commit 9d8f1f1c5be5ed3f844a71b05661bf37e5295126
+commit e036630be6f24ece6098bfce3850a7444075d4f5
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Mon Oct 17 14:29:57 2022 +0000
+Date:   Mon Oct 17 16:07:41 2022 +0000
 
     First Commit
 </pre>
@@ -160,13 +160,13 @@ Date:   Mon Oct 17 14:29:57 2022 +0000
 <p>You should see &#8230;</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git log --pretty=oneline
-f445da9bb6b08a95835c63d33f456b40f0d7c64b Tell user how many names they have
-c0bf97774bc480822e2d52f90bfb9d14c0302ec5 Rename variable to match its usage
-f7bc9f0fa2635c01e3e2f5f0b37087a38eef1908 Can specify multiple names
-b83bd828e914ce7ae839f102adf7fe7f414562dc Added a comment
-b7901e6b078fcfaf1be0eda38d1d7adb389b59fd Added a default value
-7383fa7cb6112d6c6946086c1ba673f0b8ac8455 Using ARGV
-9d8f1f1c5be5ed3f844a71b05661bf37e5295126 First Commit
+a9678f1ed2f9164af332e787a63dc7a5517ad8b0 Tell user how many names they have
+9085822ed3c23ab2c1421f0b27f153dcacd0db4d Rename variable to match its usage
+66df6ac366fe3318e7d25a254276832f70395c1a Can specify multiple names
+40459ec63980137948fb0e5ef0d051eecba1462c Added a comment
+22232e0d85d4211e1bd78a33fcfaaf4984608f0b Added a default value
+f9b9383ebf52cbba4be0ec8e550ccd53975a5023 Using ARGV
+e036630be6f24ece6098bfce3850a7444075d4f5 First Commit
 </pre>
 <h2>Controlling Which Entries are Displayed</h2>
 <p>There are a lot of options for selecting which entries are displayed in the log.  Play around with the following options:</p>
@@ -186,13 +186,13 @@ git log --pretty=oneline --all</pre>
 <p>It looks like this:</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-* f445da9 2022-10-17 | Tell user how many names they have (HEAD -&gt; master) [Jim Weirich]
-* c0bf977 2022-10-17 | Rename variable to match its usage [Jim Weirich]
-* f7bc9f0 2022-10-17 | Can specify multiple names [Jim Weirich]
-* b83bd82 2022-10-17 | Added a comment [Jim Weirich]
-* b7901e6 2022-10-17 | Added a default value [Jim Weirich]
-* 7383fa7 2022-10-17 | Using ARGV [Jim Weirich]
-* 9d8f1f1 2022-10-17 | First Commit [Jim Weirich]</pre>
+* a9678f1 2022-10-17 | Tell user how many names they have (HEAD -&gt; main) [Jim Weirich]
+* 9085822 2022-10-17 | Rename variable to match its usage [Jim Weirich]
+* 66df6ac 2022-10-17 | Can specify multiple names [Jim Weirich]
+* 40459ec 2022-10-17 | Added a comment [Jim Weirich]
+* 22232e0 2022-10-17 | Added a default value [Jim Weirich]
+* f9b9383 2022-10-17 | Using ARGV [Jim Weirich]
+* e036630 2022-10-17 | First Commit [Jim Weirich]</pre>
 <p>Let&#8217;s look at it in detail:</p>
 <ul>
 	<li><code>--pretty="..."</code> defines the format of the output.</li>

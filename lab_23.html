@@ -62,7 +62,7 @@
   <li id="lab_24_link"><a href="lab_24.html">Git Internals: Working directly with Git Objects</a></li>
   <li id="lab_25_link"><a href="lab_25.html">Creating a Branch</a></li>
   <li id="lab_26_link"><a href="lab_26.html">Navigating Branches</a></li>
-  <li id="lab_27_link"><a href="lab_27.html">Changes in Master</a></li>
+  <li id="lab_27_link"><a href="lab_27.html">Changes in Main</a></li>
   <li id="lab_28_link"><a href="lab_28.html">Viewing Diverging Branches</a></li>
   <li id="lab_29_link"><a href="lab_29.html">Merging</a></li>
   <li id="lab_30_link"><a href="lab_30.html">Cherry-Picking</a></li>
@@ -71,9 +71,9 @@
   <li id="lab_33_link"><a href="lab_33.html">Resolving Conflicts</a></li>
   <li id="lab_34_link"><a href="lab_34.html">Rebasing VS Merging</a></li>
   <li id="lab_35_link"><a href="lab_35.html">Resetting the Greet Branch</a></li>
-  <li id="lab_36_link"><a href="lab_36.html">Resetting the Master Branch</a></li>
+  <li id="lab_36_link"><a href="lab_36.html">Resetting the Main Branch</a></li>
   <li id="lab_37_link"><a href="lab_37.html">Rebasing</a></li>
-  <li id="lab_38_link"><a href="lab_38.html">Merging Back to Master</a></li>
+  <li id="lab_38_link"><a href="lab_38.html">Merging Back to Main</a></li>
   <li id="lab_39_link"><a href="lab_39.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_40_link"><a href="lab_40.html">The Reflog</a></li>
   <li id="lab_41_link"><a href="lab_41.html">Rebasing Automatically</a></li>
@@ -119,16 +119,16 @@ HEAD		branches   description	index  logs  packed-refs
 <pre class="instructions">ls -C .git/objects</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ ls -C .git/objects
-09  16	27  2f	3a  3e	41  43	59  73	87  9c	af  b7	c0  f4	f7  info
-11  19	28  35	3d  3f	42  49	69  78	90  9d	b2  b8	d6  f5	fc  pack
+11  1d	27  2f	3a  3f	41  43	66  6b	7f  87	9c  a9	b2  d6	e0  fc	  pack
+19  22	28  35	3d  40	42  59	69  78	86  90	9d  af	cd  dc	f9  info
 </pre>
 <p>You should see a bunch of directories with 2 letter names.  The directory names are the first two letters of the sha1 hash of the object stored in git.</p>
 <h2>Deeper into the Object Store</h2>
 <h3><b>Execute:</b></h3>
 <pre class="instructions">ls -C .git/objects/&lt;dir&gt;</pre>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ ls -C .git/objects/09
-d0f9a6051bf4fe80e4cb703401f129d9ed5bcc
+<pre class="sample">$ ls -C .git/objects/11
+b345c2fc315b5f7ae6db2e0f6b0570780c20d1
 </pre>
 <p>Look in one of the two-letter directories.  You should see some files with 38-character names.  These are the files that contain the objects stored in git.  These files are compressed and encoded, so looking at their contents directly won&#8217;t be very helpful, but we will take a closer look in a bit.</p>
 <h2>Config File</h2>
@@ -157,23 +157,23 @@ cat .git/refs/tags/v1</pre>
 heads
 tags
 $ ls .git/refs/heads
-master
+main
 $ ls .git/refs/tags
 v1
 v1-beta
 $ cat .git/refs/tags/v1
-f445da9bb6b08a95835c63d33f456b40f0d7c64b
+a9678f1ed2f9164af332e787a63dc7a5517ad8b0
 </pre>
 <p>You should recognize the files in the tags subdirectory.  Each file corresponds to a tag you created with the <code>git tag</code> command earlier. Its content is just the hash of the commit tied to the tag.</p>
-<p>The heads directory is similar, but is used for branches rather than tags.  We only have one branch at the moment, so all you will see is master in this directory.</p>
+<p>The heads directory is similar, but is used for branches rather than tags.  We only have one branch at the moment, so all you will see is main in this directory.</p>
 <h2>The <span class="caps">HEAD</span> File</h2>
 <h3><b>Execute:</b></h3>
 <pre class="instructions">cat .git/HEAD</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ cat .git/HEAD
-ref: refs/heads/master
+ref: refs/heads/main
 </pre>
-<p>The <span class="caps">HEAD</span> file contains a reference to the current branch.  It should be a reference to master at this point.</p>
+<p>The <span class="caps">HEAD</span> file contains a reference to the current branch.  It should be a reference to main at this point.</p>
         <nav class="foot-navigation">
       <a href="lab_22.html">
       <svg version="1.1" width="36" height="36" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.66,15.61,18,6,8.34,15.61A1,1,0,1,0,9.75,17L17,9.81V28.94a1,1,0,1,0,2,0V9.81L26.25,17a1,1,0,0,0,1.41-1.42Z"></path></svg>
