@@ -5,6 +5,7 @@
 !**/*.html
 !**/*.css
 !**/*.js
+!**/git_tutorial.zip
 auto/
 git_tutorial/
 dist/
