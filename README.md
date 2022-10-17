@@ -44,7 +44,7 @@ from github.
 
 Manually modifying the files in the `gh-pages` branch is probably the
 wrong thing to do.  Modify the appropriate template or css file on the
-master branch, then run `rake publish`.
+main branch, then run `rake publish`.
 
 ## Lab Format Directives
 
