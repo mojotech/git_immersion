@@ -134,14 +134,13 @@ no changes added to commit (use "git add" and/or "git commit -a")
 </pre>
 <p>We see that the <code>hello.rb</code> file has been modified, but hasn&#8217;t been staged yet.</p>
 <h2>Revert the changes in the working directory</h2>
-<p>Use the <code>checkout</code> command to checkout the repository&#8217;s version of the <code>hello.rb</code> file.</p>
+<p>Use the <code>restore</code> command to checkout the repository&#8217;s version of the <code>hello.rb</code> file.</p>
 <h3><b>Execute:</b></h3>
-<pre class="instructions">git checkout hello.rb
+<pre class="instructions">git restore hello.rb
 git status
 cat hello.rb</pre>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ git checkout hello.rb
-Updated 1 path from the index
+<pre class="sample">$ git restore hello.rb
 $ git status
 On branch main
 nothing to commit, working tree clean

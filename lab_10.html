@@ -115,12 +115,12 @@ puts "Hello, #{name.join(" ")}!"
 <h2>Add and Commit the Change</h2>
 <p>Now you&#8217;ll add the change using <code>git add --patch</code>. This will present you with an interactive interface to select &#8220;hunks&#8221; which are sets of changes. For now, you&#8217;ll have one hunk. Press the &#8216;y&#8217; key to select it for staging. You can press the &#8216;?&#8217; key to get help about the other options.</p>
 <h3><b>Execute:</b></h3>
-<pre class="instructions">yes | git add --patch</pre>
+<pre class="instructions">git add --patch</pre>
 <h3><b>Execute:</b></h3>
 <pre class="instructions">git commit -m "Can specify multiple names"</pre>
 <p class="note"><strong>Note:</strong> I used a utility called <code>yes</code> to simulate pressing the &#8216;y&#8217; key when the <code>git add --patch</code> command prompted me for it. I recommend you don&#8217;t do this and instead enter your input manually.</p>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ yes | git add --patch
+<pre class="sample">$ git add --patch
 diff --git a/hello.rb b/hello.rb
 index 437e63c..d6755ed 100644
 --- a/hello.rb
@@ -135,7 +135,7 @@ index 437e63c..d6755ed 100644
 (1/1) Stage this hunk [y,n,q,a,d,s,e,?]? 
 
 $ git commit -m "Can specify multiple names"
-[main 66df6ac] Can specify multiple names
+[main c7e3d2f] Can specify multiple names
  1 file changed, 2 insertions(+), 3 deletions(-)
 </pre>
 <h2>Second Change: Add Some More Output</h2>
@@ -223,16 +223,16 @@ index d6755ed..42754aa 100644
 <pre class="instructions">git commit -m "Rename variable to match its usage"</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git commit -m "Rename variable to match its usage"
-[main 9085822] Rename variable to match its usage
+[main 7fdd868] Rename variable to match its usage
  1 file changed, 3 insertions(+), 2 deletions(-)
 </pre>
 <p>Now you&#8217;ll add the new output. This one isn&#8217;t necessary to edit, so you can just press the &#8216;y&#8217; key to add it.</p>
 <h3><b>Execute:</b></h3>
-<pre class="instructions">yes | git add --patch</pre>
+<pre class="instructions">git add --patch</pre>
 <h3><b>Execute:</b></h3>
 <pre class="instructions">git commit -m "Tell user how many names they have"</pre>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ yes | git add --patch
+<pre class="sample">$ git add --patch
 diff --git a/hello.rb b/hello.rb
 index 42754aa..1910891 100644
 --- a/hello.rb
@@ -245,7 +245,7 @@ index 42754aa..1910891 100644
 (1/1) Stage this hunk [y,n,q,a,d,e,?]? 
 
 $ git commit -m "Tell user how many names they have"
-[main a9678f1] Tell user how many names they have
+[main 3ccbd23] Tell user how many names they have
  1 file changed, 1 insertion(+)
 </pre>
 <h2>Wrapping Up</h2>
