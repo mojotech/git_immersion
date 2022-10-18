@@ -120,10 +120,10 @@ The most similar command is
 <h3><b>Execute:</b></h3>
 <pre class="instructions">git show &lt;hash&gt;</pre>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ git show eb29131
-commit eb29131602ec55fd8a4af77488ae780fde0fae25
+<pre class="sample">$ git show 082d195
+commit 082d195c5f82693c1f4f86c46e662a24542ac6ff
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Mon Oct 17 19:11:37 2022 +0000
+Date:   Tue Oct 18 14:59:24 2022 +0000
 
     First Commit
 
@@ -143,8 +143,8 @@ cat hello.rb</pre>
 <p class="note"><strong>Note:</strong> Many commands depend on the hash values in the repository.  Since your hash values will vary from mine, whenever you see something like &lt;hash&gt; or &lt;treehash&gt; in the command, substitute in the proper hash value for your repository.</p>
 <p>You should see &#8230;</p>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ git checkout eb29131
-Note: switching to 'eb29131'.
+<pre class="sample">$ git checkout 082d195
+Note: switching to '082d195'.
 
 You are in 'detached HEAD' state. You can look around, make experimental
 changes and commit them, and you can discard any commits you make in this
@@ -161,7 +161,7 @@ Or undo this operation with:
 
 Turn off this advice by setting config variable advice.detachedHead to false
 
-HEAD is now at eb29131 First Commit
+HEAD is now at 082d195 First Commit
 $ cat hello.rb
 puts "Hello, World"
 </pre>
@@ -174,7 +174,7 @@ cat hello.rb</pre>
 <p>You should see &#8230;</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git checkout main
-Previous HEAD position was eb29131 First Commit
+Previous HEAD position was 082d195 First Commit
 Switched to branch 'main'
 $ cat hello.rb
 names = ARGV || ["World"]
