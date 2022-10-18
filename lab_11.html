@@ -110,45 +110,45 @@
 <p>You should see &#8230;</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git log
-commit a30661441ae0e3f7fb54fc2e7d300b3b500db25b
+commit 0d6c821e777b417dd1b96b37282a8404c91f5dfd
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Tue Oct 18 15:00:10 2022 +0000
+Date:   Tue Oct 18 15:49:41 2022 +0000
 
     Tell user how many names they have
 
-commit c1ae89f7a01fb8ba0beac28e4559f905765650ba
+commit b4f756fcda35c51ac814a415aacae1e8bf6dd647
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Tue Oct 18 15:00:10 2022 +0000
+Date:   Tue Oct 18 15:49:41 2022 +0000
 
     Rename variable to match its usage
 
-commit d8775744f177caa7b31d038af07ed0f3a7c0c5d9
+commit 52fa327341ab7ffc63ad41e5c8e5f136a99a46c1
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Tue Oct 18 15:00:10 2022 +0000
+Date:   Tue Oct 18 15:49:40 2022 +0000
 
     Can specify multiple names
 
-commit b5fb78b3108a69409fd8937dbdbf6e74a4a167c1
+commit 540e0d7133604c4641ecad0e69c2e8c8c0ccf213
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Tue Oct 18 15:00:10 2022 +0000
+Date:   Tue Oct 18 15:49:40 2022 +0000
 
     Added a comment
 
-commit b939fe0117eb6c6a1a6640ff97d39e67207b3fa2
+commit 568e287d9cf94c97c8d37583ca290a4b1b4488e7
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Tue Oct 18 15:00:10 2022 +0000
+Date:   Tue Oct 18 15:49:40 2022 +0000
 
     Added a default value
 
-commit 6582d60baf533b0e2c05bf234db0ccdb1ce19e5c
+commit aa89d221540914c702eecfc2a245eb68f9a9f363
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Tue Oct 18 15:00:10 2022 +0000
+Date:   Tue Oct 18 15:49:40 2022 +0000
 
     Using ARGV
 
-commit 414bbbd900380c9a486336d551767a2b8f356bc0
+commit aef3f27ec1a74e0eac861f71d42ba32720dbd1b5
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Tue Oct 18 15:00:09 2022 +0000
+Date:   Tue Oct 18 15:49:40 2022 +0000
 
     First Commit
 </pre>
@@ -160,13 +160,13 @@ Date:   Tue Oct 18 15:00:09 2022 +0000
 <p>You should see &#8230;</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git log --pretty=oneline
-a30661441ae0e3f7fb54fc2e7d300b3b500db25b Tell user how many names they have
-c1ae89f7a01fb8ba0beac28e4559f905765650ba Rename variable to match its usage
-d8775744f177caa7b31d038af07ed0f3a7c0c5d9 Can specify multiple names
-b5fb78b3108a69409fd8937dbdbf6e74a4a167c1 Added a comment
-b939fe0117eb6c6a1a6640ff97d39e67207b3fa2 Added a default value
-6582d60baf533b0e2c05bf234db0ccdb1ce19e5c Using ARGV
-414bbbd900380c9a486336d551767a2b8f356bc0 First Commit
+0d6c821e777b417dd1b96b37282a8404c91f5dfd Tell user how many names they have
+b4f756fcda35c51ac814a415aacae1e8bf6dd647 Rename variable to match its usage
+52fa327341ab7ffc63ad41e5c8e5f136a99a46c1 Can specify multiple names
+540e0d7133604c4641ecad0e69c2e8c8c0ccf213 Added a comment
+568e287d9cf94c97c8d37583ca290a4b1b4488e7 Added a default value
+aa89d221540914c702eecfc2a245eb68f9a9f363 Using ARGV
+aef3f27ec1a74e0eac861f71d42ba32720dbd1b5 First Commit
 </pre>
 <h2>Controlling Which Entries are Displayed</h2>
 <p>There are a lot of options for selecting which entries are displayed in the log.  Play around with the following options:</p>
@@ -174,8 +174,10 @@ b939fe0117eb6c6a1a6640ff97d39e67207b3fa2 Added a default value
 git log --pretty=oneline --since='5 minutes ago'
 git log --pretty=oneline --until='5 minutes ago'
 git log --pretty=oneline --author=&lt;your name&gt;
-git log --pretty=oneline --all</pre>
-<p>See man git-log for all the details.</p>
+git log --pretty=oneline --all
+git log --patch
+git log -S "Hello"</pre>
+<p>See <code>man git-log</code> or <code>git log --help</code> for all the details.</p>
 <h2>Getting Fancy</h2>
 <p>Here&#8217;s what I use to review the changes made in the last week. I&#8217;ll add <code>--author=jim</code> if I only want to see changes I made.</p>
 <pre class="instructions">git log --all --pretty=format:'%h %cd %s (%an)' --since='7 days ago'</pre>
@@ -186,13 +188,13 @@ git log --pretty=oneline --all</pre>
 <p>It looks like this:</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-* a306614 2022-10-18 | Tell user how many names they have (HEAD -&gt; main) [Jim Weirich]
-* c1ae89f 2022-10-18 | Rename variable to match its usage [Jim Weirich]
-* d877574 2022-10-18 | Can specify multiple names [Jim Weirich]
-* b5fb78b 2022-10-18 | Added a comment [Jim Weirich]
-* b939fe0 2022-10-18 | Added a default value [Jim Weirich]
-* 6582d60 2022-10-18 | Using ARGV [Jim Weirich]
-* 414bbbd 2022-10-18 | First Commit [Jim Weirich]</pre>
+* 0d6c821 2022-10-18 | Tell user how many names they have (HEAD -&gt; main) [Jim Weirich]
+* b4f756f 2022-10-18 | Rename variable to match its usage [Jim Weirich]
+* 52fa327 2022-10-18 | Can specify multiple names [Jim Weirich]
+* 540e0d7 2022-10-18 | Added a comment [Jim Weirich]
+* 568e287 2022-10-18 | Added a default value [Jim Weirich]
+* aa89d22 2022-10-18 | Using ARGV [Jim Weirich]
+* aef3f27 2022-10-18 | First Commit [Jim Weirich]</pre>
 <p>Let&#8217;s look at it in detail:</p>
 <ul>
 	<li><code>--pretty="..."</code> defines the format of the output.</li>
