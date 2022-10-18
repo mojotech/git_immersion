@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lab 42 - Git Immersion</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 viewport-fit=cover"">
+    <meta name="description" content="A guided tour that walks through the fundamentals of Git">
+    <meta name="theme-color" content="#0000ff">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" media="screen" href="reset.css"> 
+    <link rel="stylesheet" media="screen" href="screen.css"> 
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1142510-7']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <script type="text/javascript" src="UI.js"></script>
+  </head>
+
+  <body data-lab-id="42">
+    <a href="#content" tabindex="1" class="skip-to-content">
+      Skip to content
+    </a>
+
+    <div class="layout">
+      <div id="index">
+        <p class="link-home">
+          <a href="index.html"><span>Git Immersion</span></a>
+        </p>
+        <button class="link-menu">Menu</button>
+        <nav tabindex="0">
+          <ol>
+              <li id="lab_1_link"><a href="lab_01.html">Setup</a></li>
+  <li id="lab_2_link"><a href="lab_02.html">More Setup</a></li>
+  <li id="lab_3_link"><a href="lab_03.html">Create a Project</a></li>
+  <li id="lab_4_link"><a href="lab_04.html">Checking Status</a></li>
+  <li id="lab_5_link"><a href="lab_05.html">Making Changes</a></li>
+  <li id="lab_6_link"><a href="lab_06.html">Staging Changes</a></li>
+  <li id="lab_7_link"><a href="lab_07.html">Staging and Committing</a></li>
+  <li id="lab_8_link"><a href="lab_08.html">Committing Changes</a></li>
+  <li id="lab_9_link"><a href="lab_09.html">Changes, not Files</a></li>
+  <li id="lab_10_link"><a href="lab_10.html">Working with Changes Directly</a></li>
+  <li id="lab_11_link"><a href="lab_11.html">History</a></li>
+  <li id="lab_12_link"><a href="lab_12.html">Aliases</a></li>
+  <li id="lab_13_link"><a href="lab_13.html">Getting Old Versions</a></li>
+  <li id="lab_14_link"><a href="lab_14.html">Tagging versions</a></li>
+  <li id="lab_15_link"><a href="lab_15.html">Undoing Local Changes (before staging)</a></li>
+  <li id="lab_16_link"><a href="lab_16.html">Undoing Staged Changes (before committing)</a></li>
+  <li id="lab_17_link"><a href="lab_17.html">Undoing Committed Changes</a></li>
+  <li id="lab_18_link"><a href="lab_18.html">Removing Commits from a Branch</a></li>
+  <li id="lab_19_link"><a href="lab_19.html">Remove the oops tag</a></li>
+  <li id="lab_20_link"><a href="lab_20.html">Amending Commits</a></li>
+  <li id="lab_21_link"><a href="lab_21.html">Using Git Blame to Find Help</a></li>
+  <li id="lab_22_link"><a href="lab_22.html">Moving Files</a></li>
+  <li id="lab_23_link"><a href="lab_23.html">More Structure</a></li>
+  <li id="lab_24_link"><a href="lab_24.html">Git Internals: The .git directory</a></li>
+  <li id="lab_25_link"><a href="lab_25.html">Git Internals: Working directly with Git Objects</a></li>
+  <li id="lab_26_link"><a href="lab_26.html">Creating a Branch</a></li>
+  <li id="lab_27_link"><a href="lab_27.html">Navigating Branches</a></li>
+  <li id="lab_28_link"><a href="lab_28.html">Changes in Main</a></li>
+  <li id="lab_29_link"><a href="lab_29.html">Viewing Diverging Branches</a></li>
+  <li id="lab_30_link"><a href="lab_30.html">Merging</a></li>
+  <li id="lab_31_link"><a href="lab_31.html">Cherry-Picking</a></li>
+  <li id="lab_32_link"><a href="lab_32.html">Applying Patches</a></li>
+  <li id="lab_33_link"><a href="lab_33.html">Creating a Conflict</a></li>
+  <li id="lab_34_link"><a href="lab_34.html">Resolving Conflicts</a></li>
+  <li id="lab_35_link"><a href="lab_35.html">Rebasing VS Merging</a></li>
+  <li id="lab_36_link"><a href="lab_36.html">Resetting the Greet Branch</a></li>
+  <li id="lab_37_link"><a href="lab_37.html">Resetting the Main Branch</a></li>
+  <li id="lab_38_link"><a href="lab_38.html">Rebasing</a></li>
+  <li id="lab_39_link"><a href="lab_39.html">Merging Back to Main</a></li>
+  <li id="lab_40_link"><a href="lab_40.html">Using Rebase to Modify Old Commits</a></li>
+  <li id="lab_41_link"><a href="lab_41.html">The Reflog</a></li>
+  <li id="lab_42_link"><a href="lab_42.html">Rebasing Automatically</a></li>
+  <li id="lab_43_link"><a href="lab_43.html">Multiple Repositories</a></li>
+  <li id="lab_44_link"><a href="lab_44.html">Cloning Repositories</a></li>
+  <li id="lab_45_link"><a href="lab_45.html">Review the Cloned Repository</a></li>
+  <li id="lab_46_link"><a href="lab_46.html">What is Origin?</a></li>
+  <li id="lab_47_link"><a href="lab_47.html">Remote Branches</a></li>
+  <li id="lab_48_link"><a href="lab_48.html">Change the Original Repository</a></li>
+  <li id="lab_49_link"><a href="lab_49.html">Fetching Changes</a></li>
+  <li id="lab_50_link"><a href="lab_50.html">Merging Pulled Changes</a></li>
+  <li id="lab_51_link"><a href="lab_51.html">Pulling Changes</a></li>
+  <li id="lab_52_link"><a href="lab_52.html">Adding a Tracking Branch</a></li>
+  <li id="lab_53_link"><a href="lab_53.html">Bare Repositories</a></li>
+  <li id="lab_54_link"><a href="lab_54.html">Adding a Remote Repository</a></li>
+  <li id="lab_55_link"><a href="lab_55.html">Pushing a Change</a></li>
+  <li id="lab_56_link"><a href="lab_56.html">Pulling Shared Changes</a></li>
+  <li id="lab_57_link"><a href="lab_57.html">Advanced / Future Topics</a></li>
+  <li id="lab_58_link"><a href="lab_58.html">Thank You</a></li>
+
+          </ol>
+        </nav>
+      </div>
+
+      <div id="content" tabindex="-1">
+        <h1 class="lab_title"><em>lab 42</em>  Rebasing Automatically</h1>
+<h2>Goals</h2>
+<ul>
+	<li>Use <code>git rebase --autosquash</code> to automatically fix up old commits.</li>
+</ul>
+<h2>Getting Ready</h2>
+<p>The rebase tool follows certain conventions regarding commit messages that allow it to work automatically for simple situations. If a commit message starts with &#8220;squash!&#8221;, &#8220;fixup!&#8221; or &#8220;amend!&#8221; and follows with a target commit hash or the first line of the target commit message, then that commit will be merged into the target commit using the specified action on a rebase. To start this lab we must first undo the latest commit.</p>
+<h3><b>Execute:</b></h3>
+<pre class="instructions">git reset HEAD^</pre>
+<h2>Making the Commit</h2>
+<p>Next we will recommit the changes using a new option to the <code>git commit</code> command. You will want to find the commit hash for the &#8220;Added greeter class&#8221; commit to do this step.</p>
+<h3><b>Execute:</b></h3>
+<pre class="instructions">git add lib/greeter.rb
+git commit --fixup=&lt;hash&gt;
+git show</pre>
+<p>The resulting commit should appear similar to the below example.</p>
+<h3><b>Output:</b></h3>
+<pre class="sample">$ git show
+commit dee0abd01855651c48e01d4df3a70d5c4b620393
+Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
+Date:   Tue Oct 18 15:49:25 2022 +0000
+
+    fixup! Added greeter class
+
+diff --git a/lib/greeter.rb b/lib/greeter.rb
+index 69681ef..66e6370 100644
+--- a/lib/greeter.rb
++++ b/lib/greeter.rb
+@@ -3,6 +3,6 @@ class Greeter
+     @who = who
+   end
+   def greet
+-    "Hello, #{@who}"
++    "Hello, #{@who}."
+   end
+ end
+</pre>
+<h2>Rebasing</h2>
+<p>Now you can use git rebase to automatically update the old commit. As in the previous rebase exercise we will rebase using the commit before our target commit as the rebase point.</p>
+<h3><b>Execute:</b></h3>
+<pre class="instructions">git rebase -i --autosquash &lt;hash&gt;^
+git log --oneline</pre>
+<h3><b>Output:</b></h3>
+<pre class="sample">$ git log --oneline
+75343d7 Updated Rakefile
+06620ed Hello uses Greeter
+c129b6c Added greeter class
+b5658d0 Added README
+3bd8888 Added a Rakefile.
+cbefb50 Moved hello.rb to lib
+50fc978 Add an author/email comment
+47e2d51 Tell user how many names they have
+d9101c6 Rename variable to match its usage
+79d05ff Can specify multiple names
+e28ee14 Added a comment
+8ab7b72 Added a default value
+2a9fac4 Using ARGV
+cde3994 First Commit
+</pre>
+        <nav class="foot-navigation">
+      <a href="lab_41.html">
+      <svg version="1.1" width="36" height="36" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.66,15.61,18,6,8.34,15.61A1,1,0,1,0,9.75,17L17,9.81V28.94a1,1,0,1,0,2,0V9.81L26.25,17a1,1,0,0,0,1.41-1.42Z"></path></svg>
+      Previous
+    </a>
+  
+      <a href="lab_43.html">
+      <svg version="1.1" width="36" height="36" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.66,15.61,18,6,8.34,15.61A1,1,0,1,0,9.75,17L17,9.81V28.94a1,1,0,1,0,2,0V9.81L26.25,17a1,1,0,0,0,1.41-1.42Z"></path></svg>
+      Next
+    </a>
+  </nav>
+
+      </div>
+    </div>
+  </body>
+</html>
