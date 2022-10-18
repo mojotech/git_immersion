@@ -1474,6 +1474,52 @@ effect by resetting the branch back one commit and then recommitting
 the new changes.
 
 ----------------------------------------------------------------------
+h1. Using Git Blame to Find Help
+
+h2. Goals
+
+* Learn how to use @git blame@ to figure out who made a change.
+
+h2. Git Blame
+
+p. The @blame@ command allows you to see the commit that was responsible for a
+line of code in a file. It will also show you the author and when the line was
+committed. You can use this tool to figure out who to ask about some code you
+have questions about. You only have one author in this repository so the output
+here will be of limited usefulness, but in a multi-person team this becomes
+indispensible. Let's try it out.
+
+Execute:
+git blame hello.rb
+=blame
+
+Output:
+=blame
+EOF
+
+p. You can see the different commit hashes for each line of code indicating who
+changed them and when they changed. It is also possible to pass a commit to
+@git blame@ to get the blame output starting at that commit. This is useful to
+follow the history of a line or multiple lines of code and learn the context
+around its changes. We'll try it below starting at the previous commit.
+
+Execute:
+git blame HEAD^ hello.rb
+=blame2
+
+Output:
+=blame2
+EOF
+
+h2. Wrapping Up
+
+p. The @git blame@ command is very useful in day-to-day usage. You can use it to
+learn the context and history around a file or to determine who to ask for
+help. Most git integrations for code editors support some form of the @blame@
+command. I recommend configuring a git integration for your editor just for
+this purpose so it is as easy as possible to use @git blame@.
+
+----------------------------------------------------------------------
 h1. Moving Files
 
 h2. Goals
