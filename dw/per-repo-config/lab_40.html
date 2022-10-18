@@ -111,65 +111,65 @@
 <p>Each line in the output starts with a commit hash and has a reference of the form <code>HEAD@{1}</code>, followed by a description of how you got there and what the commit message was. You can enter that <code>HEAD</code> value anywhere a hash would be used and go back in time to that exact point.</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git reflog
-d772668 HEAD@{0}: rebase (finish): returning to refs/heads/main
-d772668 HEAD@{1}: rebase (pick): Updated Rakefile
-9a8d184 HEAD@{2}: rebase (pick): Hello uses Greeter
-ae56f41 HEAD@{3}: rebase (fixup): Added greeter class
-9fc181c HEAD@{4}: rebase (start): checkout 9fc181c^
-4f746b9 HEAD@{5}: commit: Add missing punctuation
-98caf24 HEAD@{6}: merge greet: Fast-forward
-020ee1b HEAD@{7}: checkout: moving from greet to main
-98caf24 HEAD@{8}: rebase (finish): returning to refs/heads/greet
-98caf24 HEAD@{9}: rebase (pick): Updated Rakefile
-3c3a9f3 HEAD@{10}: rebase (pick): Hello uses Greeter
-9fc181c HEAD@{11}: rebase (pick): Added greeter class
-020ee1b HEAD@{12}: rebase (start): checkout main
-0e35137 HEAD@{13}: checkout: moving from main to greet
-020ee1b HEAD@{14}: reset: moving to 020ee1b
-a531020 HEAD@{15}: checkout: moving from greet to main
-0e35137 HEAD@{16}: reset: moving to 0e35137
-fff0fe3 HEAD@{17}: checkout: moving from greet to greet
-fff0fe3 HEAD@{18}: commit (merge): Merged main fixed conflict.
-c3c6e08 HEAD@{19}: checkout: moving from main to greet
-a531020 HEAD@{20}: commit: Made interactive
-020ee1b HEAD@{21}: checkout: moving from greet to main
-c3c6e08 HEAD@{22}: commit: Add some suspicion
-7d48d3c HEAD@{23}: checkout: moving from excitement to greet
-9f56e12 HEAD@{24}: checkout: moving from greet to excitement
-7d48d3c HEAD@{25}: cherry-pick: Add excitement
-0c1ce16 HEAD@{26}: checkout: moving from excitement to greet
-9f56e12 HEAD@{27}: commit: Add excitement
-0c1ce16 HEAD@{28}: checkout: moving from greet to excitement
-0c1ce16 HEAD@{29}: merge main: Merge made by the 'ort' strategy.
-0e35137 HEAD@{30}: checkout: moving from main to greet
-020ee1b HEAD@{31}: commit: Added README
-f7a1fff HEAD@{32}: checkout: moving from greet to main
-0e35137 HEAD@{33}: checkout: moving from main to greet
-f7a1fff HEAD@{34}: checkout: moving from greet to main
-0e35137 HEAD@{35}: commit: Updated Rakefile
-ce7698a HEAD@{36}: commit: Hello uses Greeter
-6cc1185 HEAD@{37}: commit: Added greeter class
-f7a1fff HEAD@{38}: checkout: moving from main to greet
-f7a1fff HEAD@{39}: commit: Added a Rakefile.
-f44d735 HEAD@{40}: commit: Moved hello.rb to lib
-e9c4a20 HEAD@{41}: commit (amend): Add an author/email comment
-59e7f1b HEAD@{42}: commit: Add an author comment
-0b1350e HEAD@{43}: reset: moving to v1
-7d85b91 HEAD@{44}: revert: Revert "Oops, we didn't want this commit"
-6e91f5d HEAD@{45}: commit: Oops, we didn't want this commit
-0b1350e HEAD@{46}: checkout: moving from e9566c07a386cab68a06d8eab730e55a3f277dd6 to main
-e9566c0 HEAD@{47}: checkout: moving from 0b1350ecb3c34bd28536d5b56559d4c71aa6a2d1 to v1-beta
-0b1350e HEAD@{48}: checkout: moving from e9566c07a386cab68a06d8eab730e55a3f277dd6 to v1
-e9566c0 HEAD@{49}: checkout: moving from main to v1^
-0b1350e HEAD@{50}: checkout: moving from c5f3a0fdce11efab81259ab7d9d6c666d99ea6d8 to main
-c5f3a0f HEAD@{51}: checkout: moving from main to c5f3a0f
-0b1350e HEAD@{52}: commit: Tell user how many names they have
-e9566c0 HEAD@{53}: commit: Rename variable to match its usage
-14ef0b9 HEAD@{54}: commit: Can specify multiple names
-fc0a9f0 HEAD@{55}: commit: Added a comment
-9178abd HEAD@{56}: commit: Added a default value
-37d041e HEAD@{57}: commit: Using ARGV
-c5f3a0f HEAD@{58}: commit (initial): First Commit
+dcfe8f3 HEAD@{0}: rebase (finish): returning to refs/heads/main
+dcfe8f3 HEAD@{1}: rebase (pick): Updated Rakefile
+19b649f HEAD@{2}: rebase (pick): Hello uses Greeter
+6e05112 HEAD@{3}: rebase (fixup): Added greeter class
+7d7eb3b HEAD@{4}: rebase (start): checkout 7d7eb3b^
+e9d19d7 HEAD@{5}: commit: Add missing punctuation
+d09b408 HEAD@{6}: merge greet: Fast-forward
+970b1e5 HEAD@{7}: checkout: moving from greet to main
+d09b408 HEAD@{8}: rebase (finish): returning to refs/heads/greet
+d09b408 HEAD@{9}: rebase (pick): Updated Rakefile
+0add48a HEAD@{10}: rebase (pick): Hello uses Greeter
+7d7eb3b HEAD@{11}: rebase (pick): Added greeter class
+970b1e5 HEAD@{12}: rebase (start): checkout main
+8f96cfe HEAD@{13}: checkout: moving from main to greet
+970b1e5 HEAD@{14}: reset: moving to 970b1e5
+09dd854 HEAD@{15}: checkout: moving from greet to main
+8f96cfe HEAD@{16}: reset: moving to 8f96cfe
+b6b444a HEAD@{17}: checkout: moving from greet to greet
+b6b444a HEAD@{18}: commit (merge): Merged main fixed conflict.
+32510ee HEAD@{19}: checkout: moving from main to greet
+09dd854 HEAD@{20}: commit: Made interactive
+970b1e5 HEAD@{21}: checkout: moving from greet to main
+32510ee HEAD@{22}: commit: Add some suspicion
+e4e79b2 HEAD@{23}: checkout: moving from excitement to greet
+e4e79b2 HEAD@{24}: checkout: moving from greet to excitement
+e4e79b2 HEAD@{25}: cherry-pick: Add excitement
+0a7f181 HEAD@{26}: checkout: moving from excitement to greet
+e4e79b2 HEAD@{27}: commit: Add excitement
+0a7f181 HEAD@{28}: checkout: moving from greet to excitement
+0a7f181 HEAD@{29}: merge main: Merge made by the 'ort' strategy.
+8f96cfe HEAD@{30}: checkout: moving from main to greet
+970b1e5 HEAD@{31}: commit: Added README
+ce3e5c8 HEAD@{32}: checkout: moving from greet to main
+8f96cfe HEAD@{33}: checkout: moving from main to greet
+ce3e5c8 HEAD@{34}: checkout: moving from greet to main
+8f96cfe HEAD@{35}: commit: Updated Rakefile
+c3553d9 HEAD@{36}: commit: Hello uses Greeter
+ae62075 HEAD@{37}: commit: Added greeter class
+ce3e5c8 HEAD@{38}: checkout: moving from main to greet
+ce3e5c8 HEAD@{39}: commit: Added a Rakefile.
+8198819 HEAD@{40}: commit: Moved hello.rb to lib
+8be803f HEAD@{41}: commit (amend): Add an author/email comment
+3e9f7be HEAD@{42}: commit: Add an author comment
+f702246 HEAD@{43}: reset: moving to v1
+2d63695 HEAD@{44}: revert: Revert "Oops, we didn't want this commit"
+63cf262 HEAD@{45}: commit: Oops, we didn't want this commit
+f702246 HEAD@{46}: checkout: moving from b8f210b4d0d441387a6b7a4f9d65eebcbe0fd0e9 to main
+b8f210b HEAD@{47}: checkout: moving from f702246cb3775be8671c1fb71a13f239a44bf79b to v1-beta
+f702246 HEAD@{48}: checkout: moving from b8f210b4d0d441387a6b7a4f9d65eebcbe0fd0e9 to v1
+b8f210b HEAD@{49}: checkout: moving from main to v1^
+f702246 HEAD@{50}: checkout: moving from b0429c80a177c4d9d6ab4a79fc60c6a7dd77f288 to main
+b0429c8 HEAD@{51}: checkout: moving from main to b0429c8
+f702246 HEAD@{52}: commit: Tell user how many names they have
+b8f210b HEAD@{53}: commit: Rename variable to match its usage
+be96c63 HEAD@{54}: commit: Can specify multiple names
+3b9e2ee HEAD@{55}: commit: Added a comment
+f1ed30e HEAD@{56}: commit: Added a default value
+e95a28d HEAD@{57}: commit: Using ARGV
+b0429c8 HEAD@{58}: commit (initial): First Commit
 </pre>
 <h2>Go Back in Time</h2>
 <p>The next lab is going to repeat the steps of the previous lab but automate it. For that to work you will need to reset your working directory back to before the previous rebase. Use the reflog to find the line with the content <code>commit: Add missing punctuation</code>. Note the <code>HEAD</code> reference. Now perform the <code>git reset</code> and confirm the status of the working directory and the log history.</p>
@@ -179,7 +179,7 @@ git status
 git hist</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git reset --hard HEAD@{5}
-HEAD is now at 4f746b9 Add missing punctuation
+HEAD is now at e9d19d7 Add missing punctuation
 $ git status
 On branch main
 nothing to commit, working tree clean

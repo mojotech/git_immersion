@@ -104,9 +104,14 @@
 <ul>
 	<li>To setup git and ruby so that it is ready for work.</li>
 </ul>
+<h2>Setup Name and Email</h2>
+<p>If you have never used git before, you need to do some setup first. Run the following commands to set your default name and email for all commits. If you have git already setup, you can skip down to the line ending section.</p>
+<h3><b>Execute:</b></h3>
+<pre class="instructions">git config --global user.name "Your Name"
+git config --global user.email "your_email@whatever.com"</pre>
+<p class="note"><strong>Note</strong>: Sometimes you will need to override the default name and email for specific projects. For example, it is not uncommon for client&#8217;s to provide us with an email to use when committing to their codebase. In this case, you can run the above commands inside the repository without using the <code>--global</code> option. This will set your name and email for that repository only.</p>
 <h2>Setup Line Ending Preferences</h2>
-<p>Different operating systems use different characters for ending lines. You&#8217;ll setup git to respect your operating system&#8217;s conventions.</p>
-<p>For Unix/Mac users:</p>
+<p>Also, for Unix/Mac users:</p>
 <h3><b>Execute:</b></h3>
 <pre class="instructions">git config --global core.autocrlf input
 git config --global core.safecrlf true</pre>
