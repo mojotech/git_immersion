@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lab 10 - Git Immersion</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 viewport-fit=cover"">
+    <meta name="description" content="A guided tour that walks through the fundamentals of Git">
+    <meta name="theme-color" content="#0000ff">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" media="screen" href="reset.css"> 
+    <link rel="stylesheet" media="screen" href="screen.css"> 
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1142510-7']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <script type="text/javascript" src="UI.js"></script>
+  </head>
+
+  <body data-lab-id="10">
+    <a href="#content" tabindex="1" class="skip-to-content">
+      Skip to content
+    </a>
+
+    <div class="layout">
+      <div id="index">
+        <p class="link-home">
+          <a href="index.html"><span>Git Immersion</span></a>
+        </p>
+        <button class="link-menu">Menu</button>
+        <nav tabindex="0">
+          <ol>
+              <li id="lab_1_link"><a href="lab_01.html">Setup</a></li>
+  <li id="lab_2_link"><a href="lab_02.html">More Setup</a></li>
+  <li id="lab_3_link"><a href="lab_03.html">Create a Project</a></li>
+  <li id="lab_4_link"><a href="lab_04.html">Checking Status</a></li>
+  <li id="lab_5_link"><a href="lab_05.html">Making Changes</a></li>
+  <li id="lab_6_link"><a href="lab_06.html">Staging Changes</a></li>
+  <li id="lab_7_link"><a href="lab_07.html">Staging and Committing</a></li>
+  <li id="lab_8_link"><a href="lab_08.html">Committing Changes</a></li>
+  <li id="lab_9_link"><a href="lab_09.html">Changes, not Files</a></li>
+  <li id="lab_10_link"><a href="lab_10.html">Working with Changes Directly</a></li>
+  <li id="lab_11_link"><a href="lab_11.html">History</a></li>
+  <li id="lab_12_link"><a href="lab_12.html">Aliases</a></li>
+  <li id="lab_13_link"><a href="lab_13.html">Getting Old Versions</a></li>
+  <li id="lab_14_link"><a href="lab_14.html">Tagging versions</a></li>
+  <li id="lab_15_link"><a href="lab_15.html">Undoing Local Changes (before staging)</a></li>
+  <li id="lab_16_link"><a href="lab_16.html">Undoing Staged Changes (before committing)</a></li>
+  <li id="lab_17_link"><a href="lab_17.html">Undoing Committed Changes</a></li>
+  <li id="lab_18_link"><a href="lab_18.html">Removing Commits from a Branch</a></li>
+  <li id="lab_19_link"><a href="lab_19.html">Remove the oops tag</a></li>
+  <li id="lab_20_link"><a href="lab_20.html">Amending Commits</a></li>
+  <li id="lab_21_link"><a href="lab_21.html">Using Git Blame to Find Help</a></li>
+  <li id="lab_22_link"><a href="lab_22.html">Moving Files</a></li>
+  <li id="lab_23_link"><a href="lab_23.html">More Structure</a></li>
+  <li id="lab_24_link"><a href="lab_24.html">Git Internals: The .git directory</a></li>
+  <li id="lab_25_link"><a href="lab_25.html">Git Internals: Working directly with Git Objects</a></li>
+  <li id="lab_26_link"><a href="lab_26.html">Creating a Branch</a></li>
+  <li id="lab_27_link"><a href="lab_27.html">Navigating Branches</a></li>
+  <li id="lab_28_link"><a href="lab_28.html">Changes in Main</a></li>
+  <li id="lab_29_link"><a href="lab_29.html">Viewing Diverging Branches</a></li>
+  <li id="lab_30_link"><a href="lab_30.html">Merging</a></li>
+  <li id="lab_31_link"><a href="lab_31.html">Cherry-Picking</a></li>
+  <li id="lab_32_link"><a href="lab_32.html">Applying Patches</a></li>
+  <li id="lab_33_link"><a href="lab_33.html">Creating a Conflict</a></li>
+  <li id="lab_34_link"><a href="lab_34.html">Resolving Conflicts</a></li>
+  <li id="lab_35_link"><a href="lab_35.html">Rebasing VS Merging</a></li>
+  <li id="lab_36_link"><a href="lab_36.html">Resetting the Greet Branch</a></li>
+  <li id="lab_37_link"><a href="lab_37.html">Resetting the Main Branch</a></li>
+  <li id="lab_38_link"><a href="lab_38.html">Rebasing</a></li>
+  <li id="lab_39_link"><a href="lab_39.html">Merging Back to Main</a></li>
+  <li id="lab_40_link"><a href="lab_40.html">Using Rebase to Modify Old Commits</a></li>
+  <li id="lab_41_link"><a href="lab_41.html">The Reflog</a></li>
+  <li id="lab_42_link"><a href="lab_42.html">Rebasing Automatically</a></li>
+  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Change</a></li>
+  <li id="lab_44_link"><a href="lab_44.html">Multiple Repositories</a></li>
+  <li id="lab_45_link"><a href="lab_45.html">Cloning Repositories</a></li>
+  <li id="lab_46_link"><a href="lab_46.html">Review the Cloned Repository</a></li>
+  <li id="lab_47_link"><a href="lab_47.html">What is Origin?</a></li>
+  <li id="lab_48_link"><a href="lab_48.html">Remote Branches</a></li>
+  <li id="lab_49_link"><a href="lab_49.html">Change the Original Repository</a></li>
+  <li id="lab_50_link"><a href="lab_50.html">Fetching Changes</a></li>
+  <li id="lab_51_link"><a href="lab_51.html">Merging Pulled Changes</a></li>
+  <li id="lab_52_link"><a href="lab_52.html">Pulling Changes</a></li>
+  <li id="lab_53_link"><a href="lab_53.html">Adding a Tracking Branch</a></li>
+  <li id="lab_54_link"><a href="lab_54.html">Bare Repositories</a></li>
+  <li id="lab_55_link"><a href="lab_55.html">Adding a Remote Repository</a></li>
+  <li id="lab_56_link"><a href="lab_56.html">Pushing a Change</a></li>
+  <li id="lab_57_link"><a href="lab_57.html">Pulling Shared Changes</a></li>
+  <li id="lab_58_link"><a href="lab_58.html">Advanced / Future Topics</a></li>
+  <li id="lab_59_link"><a href="lab_59.html">Thank You</a></li>
+
+          </ol>
+        </nav>
+      </div>
+
+      <div id="content" tabindex="-1">
+        <h1 class="lab_title"><em>lab 10</em>  Working with Changes Directly</h1>
+<h2>Goals</h2>
+<ul>
+	<li>Now that you&#8217;ve learned how git works with changes to files rather than files themselves, you will learn how to manipulate changes before staging them.</li>
+</ul>
+<p>Git provides rich functionality to choose precisely what changes you want to stage. This includes both choosing individual lines to stage as well as editing the changes before they are staged without changing the existing file. These capabilities allow you to make and commit secondary changes while working on a task with minimal distractions.</p>
+<h2>First Change: Allow Any Number of Names</h2>
+<p>Change the &#8220;Hello, World&#8221; program to allow users to input any number of names.</p>
+<h3 class="file-heading"><em>hello.rb</em></h3>
+<pre class="file">name = ARGV || ["World"]
+
+puts "Hello, #{name.join(" ")}!"
+</pre>
+<h2>Add and Commit the Change</h2>
+<p>Now you&#8217;ll add the change using <code>git add --patch</code>. This will present you with an interactive interface to select &#8220;hunks&#8221; which are sets of changes. For now, you&#8217;ll have one hunk. Press the &#8216;y&#8217; key to select it for staging. You can press the &#8216;?&#8217; key to get help about the other options.</p>
+<h3><b>Execute:</b></h3>
+<pre class="instructions">git add --patch</pre>
+<h3><b>Execute:</b></h3>
+<pre class="instructions">git commit -m "Can specify multiple names"</pre>
+<p class="note"><strong>Note:</strong> I used a utility called <code>yes</code> to simulate pressing the &#8216;y&#8217; key when the <code>git add --patch</code> command prompted me for it. I recommend you don&#8217;t do this and instead enter your input manually.</p>
+<h3><b>Output:</b></h3>
+<pre class="sample">$ git add --patch
+diff --git a/hello.rb b/hello.rb
+index 437e63c..d6755ed 100644
+--- a/hello.rb
++++ b/hello.rb
+@@ -1,4 +1,3 @@
+-# Default is "World"
+-name = ARGV.first || "World"
++name = ARGV || ["World"]
+ 
+-puts "Hello, #{name}!"
++puts "Hello, #{name.join(" ")}!"
+(1/1) Stage this hunk [y,n,q,a,d,s,e,?]? 
+
+$ git commit -m "Can specify multiple names"
+[main 42109cd] Can specify multiple names
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+</pre>
+<h2>Second Change: Add Some More Output</h2>
+<p>Change the &#8220;Hello, World&#8221; program to print out the number of names a user entered.</p>
+<h3 class="file-heading"><em>hello.rb</em></h3>
+<pre class="file">name = ARGV || ["World"]
+
+puts "Hello, #{name.join(" ")}!"
+puts "You have #{name.length} names!"
+</pre>
+<h2>Third Change: Rename the <code>name</code> Variable</h2>
+<p>The <code>name</code> variable is indicating it&#8217;s singular when it&#8217;s actually plural. Change its name to match its usage.</p>
+<h3 class="file-heading"><em>hello.rb</em></h3>
+<pre class="file">names = ARGV || ["World"]
+
+puts "Hello, #{names.join(" ")}!"
+puts "You have #{names.length} names!"
+</pre>
+<h2>Add The Changes</h2>
+<p>Now you&#8217;ve made two changes which should be committed as two commits. Instead of undoing one of the changes, committing it, and redoing it you&#8217;ll use <code>git add --patch</code> to let you do it directly. Run the following command and press the &#8216;e&#8217; key when prompted.</p>
+<h3><b>Execute:</b></h3>
+<pre class="instructions">git add --patch</pre>
+<p>You&#8217;ll see the following open up in your editor. It is a description of the changes git will stage when the file is saved and closed. Editing this file will change exactly what is staged.</p>
+<h3><b>Output:</b></h3>
+<pre class="sample"># Manual hunk edit mode -- see bottom for a quick guide.
+@@ -1,3 +1,4 @@
+-name = ARGV || ["World"]
++names = ARGV || ["World"]
+
+-puts "Hello, #{name.join(" ")}!"
++puts "Hello, #{names.join(" ")}!"
++puts "You have #{names.length} names!"
+# ---
+# To remove '-' lines, make them ' ' lines (context).
+# To remove '+' lines, delete them.
+# Lines starting with # will be removed.
+#
+# If the patch applies cleanly, the edited hunk will immediately be
+# marked for staging.
+# If it does not apply cleanly, you will be given an opportunity to
+# edit again.  If all lines of the hunk are removed, then the edit is
+# aborted and the hunk is left unchanged.
+</pre>
+<p>Let&#8217;s do the variable rename first. Edit the file so it matches the example below. I just removed the last line starting with a &#8216;+&#8217;.</p>
+<h3><b>Output:</b></h3>
+<pre class="sample"># Manual hunk edit mode -- see bottom for a quick guide.
+@@ -1,3 +1,4 @@
+-name = ARGV || ["World"]
++names = ARGV || ["World"]
+
+-puts "Hello, #{name.join(" ")}!"
++puts "Hello, #{names.join(" ")}!"
+# ---
+# To remove '-' lines, make them ' ' lines (context).
+# To remove '+' lines, delete them.
+# Lines starting with # will be removed.
+#
+# If the patch applies cleanly, the edited hunk will immediately be
+# marked for staging.
+# If it does not apply cleanly, you will be given an opportunity to
+# edit again.  If all lines of the hunk are removed, then the edit is
+# aborted and the hunk is left unchanged.
+</pre>
+<p>Save and exit, then let&#8217;s check that we did everything correctly.</p>
+<h3><b>Execute:</b></h3>
+<pre class="instructions">git diff --staged</pre>
+<p>You should see output like below</p>
+<p class="note"><strong>Note:</strong> the <code>--staged</code> option to <code>git diff</code> will only show your currently staged changes.</p>
+<h3><b>Output:</b></h3>
+<pre class="sample">$ git diff --staged
+diff --git a/hello.rb b/hello.rb
+index d6755ed..42754aa 100644
+--- a/hello.rb
++++ b/hello.rb
+@@ -1,3 +1,4 @@
+-name = ARGV || ["World"]
++names = ARGV || ["World"]
+ 
+-puts "Hello, #{name.join(" ")}!"
++puts "Hello, #{names.join(" ")}!"
++puts "You have #{names.length} names!"
+</pre>
+<p>Finally let&#8217;s commit the change.</p>
+<h3><b>Execute:</b></h3>
+<pre class="instructions">git commit -m "Rename variable to match its usage"</pre>
+<h3><b>Output:</b></h3>
+<pre class="sample">$ git commit -m "Rename variable to match its usage"
+[main 0e34679] Rename variable to match its usage
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+</pre>
+<p>Now you&#8217;ll add the new output. This one isn&#8217;t necessary to edit, so you can just press the &#8216;y&#8217; key to add it.</p>
+<h3><b>Execute:</b></h3>
+<pre class="instructions">git add --patch</pre>
+<h3><b>Execute:</b></h3>
+<pre class="instructions">git commit -m "Tell user how many names they have"</pre>
+<h3><b>Output:</b></h3>
+<pre class="sample">$ git add --patch
+diff --git a/hello.rb b/hello.rb
+index 42754aa..1910891 100644
+--- a/hello.rb
++++ b/hello.rb
+@@ -2,3 +2,4 @@ names = ARGV || ["World"]
+ 
+ puts "Hello, #{names.join(" ")}!"
+ puts "You have #{names.length} names!"
++puts "You have #{names.length} names!"
+(1/1) Stage this hunk [y,n,q,a,d,e,?]? 
+
+$ git commit -m "Tell user how many names they have"
+[main c89088a] Tell user how many names they have
+ 1 file changed, 1 insertion(+)
+</pre>
+<h2>Wrapping Up</h2>
+<p>In this lab you learned how to interact directly with the changes to be staged before they are staged. You simply staged some lines independently of others, but you could also have modified the content of the lines as well. Note that while the interface through git can be somewhat cumbersome there are several tools that integrate with your editor to do this for you. <a href="https://marketplace.visualstudio.com/items?itemName=kahole.magit">Here is an example of one for VSCode</a></p>
+        <nav class="foot-navigation">
+      <a href="lab_09.html">
+      <svg version="1.1" width="36" height="36" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.66,15.61,18,6,8.34,15.61A1,1,0,1,0,9.75,17L17,9.81V28.94a1,1,0,1,0,2,0V9.81L26.25,17a1,1,0,0,0,1.41-1.42Z"></path></svg>
+      Previous
+    </a>
+  
+      <a href="lab_11.html">
+      <svg version="1.1" width="36" height="36" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.66,15.61,18,6,8.34,15.61A1,1,0,1,0,9.75,17L17,9.81V28.94a1,1,0,1,0,2,0V9.81L26.25,17a1,1,0,0,0,1.41-1.42Z"></path></svg>
+      Next
+    </a>
+  </nav>
+
+      </div>
+    </div>
+  </body>
+</html>
