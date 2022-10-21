@@ -113,13 +113,37 @@ git hist --all</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git fetch
 From /Users/jim/Downloads/git_tutorial/work/hello
-   0397d44..fed1203  main       -&gt; origin/main
+   a821e2e..1b7d670  main       -&gt; origin/main
 $ git hist --all
-git: 'hist' is not a git command. See 'git --help'.
-
-The most similar command is
-	bisect
-</pre>
+* 1b7d670 2022-10-21 | Changed README in original repo (origin/main, origin/HEAD) [Jim Weirich]
+* a821e2e 2022-10-21 | Updated Rakefile (HEAD -&gt; main) [Jim Weirich]
+* bbc2bb4 2022-10-21 | Hello uses Greeter [Jim Weirich]
+* c65b057 2022-10-21 | Added greeter class [Jim Weirich]
+| * e7630e8 2022-10-21 | Add excitement (origin/excitement) [Jim Weirich]
+| *   876f27d 2022-10-21 | Merge branch 'main' into greet [Jim Weirich]
+| |\  
+| |/  
+|/|   
+| * fa41ece 2022-10-21 | Updated Rakefile [Jim Weirich]
+| * b8312c0 2022-10-21 | Hello uses Greeter [Jim Weirich]
+| * 57431eb 2022-10-21 | Added greeter class [Jim Weirich]
+| | * bd1959b 2022-10-21 | Updated Rakefile (origin/greet) [Jim Weirich]
+| | * c0baf95 2022-10-21 | Hello uses Greeter [Jim Weirich]
+| | * 1ca6d85 2022-10-21 | Added greeter class [Jim Weirich]
+| |/  
+|/|   
+* | 89482ea 2022-10-21 | Added README [Jim Weirich]
+|/  
+* ed6dd1c 2022-10-21 | Added a Rakefile. [Jim Weirich]
+* 6ebe586 2022-10-21 | Moved hello.rb to lib [Jim Weirich]
+* 563b34b 2022-10-21 | Add an author/email comment [Jim Weirich]
+* 8112e3c 2022-10-21 | Tell user how many names they have (tag: v1) [Jim Weirich]
+* 61346f5 2022-10-21 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
+* c25284d 2022-10-21 | Can specify multiple names [Jim Weirich]
+* e22d85d 2022-10-21 | Added a comment [Jim Weirich]
+* b0c00d5 2022-10-21 | Added a default value [Jim Weirich]
+* 3179b0f 2022-10-21 | Using ARGV [Jim Weirich]
+* 2ea7c19 2022-10-21 | First Commit [Jim Weirich]</pre>
 <p>At this point the repository has all the commits from the original repository, but they are not integrated into the cloned repository&#8217;s local branches.</p>
 <p>Find the &#8220;Changed <span class="caps">README</span> in original repo&#8221; commit in the history above.  Notice that the commit includes &#8220;origin/main&#8221; and &#8220;origin/<span class="caps">HEAD</span>&#8221;.</p>
 <p>Now look at the &#8220;Updated Rakefile&#8221; commit.  You will see that the local main branch points to this commit, not to the new commit that we just fetched.</p>

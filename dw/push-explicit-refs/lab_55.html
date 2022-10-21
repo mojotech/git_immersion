@@ -122,11 +122,11 @@ git commit -m "Added shared comment to readme"</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git push shared main
 To ../hello.git
-   fed1203..00a4b98  main -&gt; main
+   1b7d670..41cf2cf  main -&gt; main
 </pre>
 <p class="note"><strong><span class="caps">NOTE</span>:</strong> We had to explicitly name the branch main that was receiving the push.  It is possible to set it up automatically, but I <em>never</em> remember the commands to do that.  Check out the &#8220;Git Remote Branch&#8221; gem for easy management of remote branches.</p>
 <h2>You Can Push Anything</h2>
-<p>Pushing to a remote repository requires specifying what you are pushing and where you are pushing it. The <code>git push shared main</code> command uses a shorthand to specify where the branch is going to be pushed. You could read it like this: <code>git push shared main:main</code>, where what comes before the colon is in your local repository and what comes after is in the remote repository. There is a lot of power in this ability. Recall Lab 24 where we looked at the internals of the <code>.git</code> directory. On both sides of the colon you can specify any branch name, or any path starting with the <code>refs/</code> directory. You can also specify an arbitrary local commit to push. Below are some examples:</p>
+<p>Pushing to a remote repository requires specifying what you are pushing and where you are pushing it. The <code>git push shared main</code> command uses a shorthand to specify where the branch is going to be pushed. You could read it like this: <code>git push shared main:main</code>, where what comes before the colon is in your local repository and what comes after is in the remote repository. There is a lot of power in this ability. Recall <a href="lab_24.html">Lab 24</a> where we looked at the internals of the <code>.git</code> directory. On both sides of the colon you can specify any branch name, or any path starting with the <code>refs/</code> directory. You can also specify an arbitrary local commit to push. Below are some examples:</p>
 <h3><b>Execute:</b></h3>
 <pre class="instructions"># Push a commit to a new branch
 git push shared &lt;hash&gt;:refs/heads/new-branch
@@ -137,9 +137,9 @@ git push shared greet:greet-rename
 # We can confirm they're all there
 git remote show shared</pre>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ git push shared 8e19497:refs/heads/new-branch
+<pre class="sample">$ git push shared 2ea7c19:refs/heads/new-branch
 To ../hello.git
- * [new branch]      8e19497 -&gt; new-branch
+ * [new branch]      2ea7c19 -&gt; new-branch
 $ git push shared refs/remotes/shared/new-branch:refs/heads/new-branch-rename
 To ../hello.git
  * [new branch]      shared/new-branch -&gt; new-branch-rename

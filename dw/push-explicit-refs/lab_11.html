@@ -111,45 +111,45 @@
 <p>You should see &#8230;</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git log
-commit ed4bc5f193135c768bcc2810b077132471cd8863
+commit 8112e3c77a829e62abe7f15ec1066719e2eaee54
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 16:36:11 2022 +0000
+Date:   Fri Oct 21 18:51:46 2022 +0000
 
     Tell user how many names they have
 
-commit 6be0eb8e89f2f57d69bfefc0040bbc44f3c4e20d
+commit 61346f5fdd29d77495a02b2a91290899f4a333f4
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 16:36:11 2022 +0000
+Date:   Fri Oct 21 18:51:46 2022 +0000
 
     Rename variable to match its usage
 
-commit ba12d82d797834a0ebdcde6406c555d023ae5e8d
+commit c25284d8bc6a97c8d06bf27ff99816915561ee1b
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 16:36:10 2022 +0000
+Date:   Fri Oct 21 18:51:46 2022 +0000
 
     Can specify multiple names
 
-commit 161f74f06bac787dfcdd979ad6eb17ce0026f2e9
+commit e22d85d3c0c7f9e6b3252b422b25048e7e74a692
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 16:36:10 2022 +0000
+Date:   Fri Oct 21 18:51:46 2022 +0000
 
     Added a comment
 
-commit 06071f7a3390fe4c171e74ef3bacf586a24d9e0d
+commit b0c00d571dd5d90c7809dac753247725a02e42df
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 16:36:10 2022 +0000
+Date:   Fri Oct 21 18:51:46 2022 +0000
 
     Added a default value
 
-commit c38d995e9711bba8d09d4c06a5ae9b7793ef6e5f
+commit 3179b0fb14a029503b4c85a1cdcf17de7ffb62bc
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 16:36:10 2022 +0000
+Date:   Fri Oct 21 18:51:46 2022 +0000
 
     Using ARGV
 
-commit 8e19497bcaef4e25e61a09175a054d57f00298f8
+commit 2ea7c19dbcdd93b953837c924edb02524108f9b6
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 16:36:10 2022 +0000
+Date:   Fri Oct 21 18:51:46 2022 +0000
 
     First Commit
 </pre>
@@ -161,13 +161,13 @@ Date:   Fri Oct 21 16:36:10 2022 +0000
 <p>You should see &#8230;</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git log --pretty=oneline
-ed4bc5f193135c768bcc2810b077132471cd8863 Tell user how many names they have
-6be0eb8e89f2f57d69bfefc0040bbc44f3c4e20d Rename variable to match its usage
-ba12d82d797834a0ebdcde6406c555d023ae5e8d Can specify multiple names
-161f74f06bac787dfcdd979ad6eb17ce0026f2e9 Added a comment
-06071f7a3390fe4c171e74ef3bacf586a24d9e0d Added a default value
-c38d995e9711bba8d09d4c06a5ae9b7793ef6e5f Using ARGV
-8e19497bcaef4e25e61a09175a054d57f00298f8 First Commit
+8112e3c77a829e62abe7f15ec1066719e2eaee54 Tell user how many names they have
+61346f5fdd29d77495a02b2a91290899f4a333f4 Rename variable to match its usage
+c25284d8bc6a97c8d06bf27ff99816915561ee1b Can specify multiple names
+e22d85d3c0c7f9e6b3252b422b25048e7e74a692 Added a comment
+b0c00d571dd5d90c7809dac753247725a02e42df Added a default value
+3179b0fb14a029503b4c85a1cdcf17de7ffb62bc Using ARGV
+2ea7c19dbcdd93b953837c924edb02524108f9b6 First Commit
 </pre>
 <h2>Controlling Which Entries are Displayed</h2>
 <p>There are a lot of options for selecting which entries are displayed in the log.  Play around with the following options:</p>
@@ -189,13 +189,13 @@ git log -S "Hello"</pre>
 <p>It looks like this:</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-* ed4bc5f 2022-10-21 | Tell user how many names they have (HEAD -&gt; main) [Jim Weirich]
-* 6be0eb8 2022-10-21 | Rename variable to match its usage [Jim Weirich]
-* ba12d82 2022-10-21 | Can specify multiple names [Jim Weirich]
-* 161f74f 2022-10-21 | Added a comment [Jim Weirich]
-* 06071f7 2022-10-21 | Added a default value [Jim Weirich]
-* c38d995 2022-10-21 | Using ARGV [Jim Weirich]
-* 8e19497 2022-10-21 | First Commit [Jim Weirich]</pre>
+* 8112e3c 2022-10-21 | Tell user how many names they have (HEAD -&gt; main) [Jim Weirich]
+* 61346f5 2022-10-21 | Rename variable to match its usage [Jim Weirich]
+* c25284d 2022-10-21 | Can specify multiple names [Jim Weirich]
+* e22d85d 2022-10-21 | Added a comment [Jim Weirich]
+* b0c00d5 2022-10-21 | Added a default value [Jim Weirich]
+* 3179b0f 2022-10-21 | Using ARGV [Jim Weirich]
+* 2ea7c19 2022-10-21 | First Commit [Jim Weirich]</pre>
 <p>Let&#8217;s look at it in detail:</p>
 <ul>
 	<li><code>--pretty="..."</code> defines the format of the output.</li>
