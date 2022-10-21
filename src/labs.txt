@@ -3272,6 +3272,40 @@ receiving the push.  It is possible to set it up automatically, but I
 _never_ remember the commands to do that.  Check out the "Git Remote
 Branch" gem for easy management of remote branches.
 
+h2. You Can Push Anything
+
+p. Pushing to a remote repository requires specifying what you are pushing and
+where you are pushing it. The @git push shared main@ command uses a shorthand
+to specify where the branch is going to be pushed. You could read it like this:
+@git push shared main:main@, where what comes before the colon is in your local
+repository and what comes after is in the remote repository. There is a lot of
+power in this ability. Recall Lab 24 where we looked at the internals of the
+@.git@ directory. On both sides of the colon you can specify any branch name,
+or any path starting with the @refs/@ directory. You can also specify an
+arbitrary local commit to push. Below are some examples:
+
+Set: hash=hash_for("First Commit")
+Execute:
+# Push a commit to a new branch
+git push shared <hash>:refs/heads/new-branch
+=push1
+# Rename a remote branch
+git push shared refs/remotes/shared/new-branch:refs/heads/new-branch-rename
+=push2
+# Push a local branch under a different name
+git push shared greet:greet-rename
+=push3
+# We can confirm they're all there
+git remote show shared
+=push4
+
+Output:
+=push1
+=push2
+=push3
+=push4
+EOF
+
 ----------------------------------------------------------------------
 h1. Pulling Shared Changes
 
