@@ -37,7 +37,9 @@ jobs:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Package Labs and Zip
-      run: bundle exec rake repackage
+      run: |
+        git config --global alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
+        bundle exec rake repackage
     - if: github.ref_name == 'main'
       name: Deploy Main
       run: |
