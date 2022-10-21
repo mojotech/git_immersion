@@ -3279,9 +3279,10 @@ where you are pushing it. The @git push shared main@ command uses a shorthand
 to specify where the branch is going to be pushed. You could read it like this:
 @git push shared main:main@, where what comes before the colon is in your local
 repository and what comes after is in the remote repository. There is a lot of
-power in this ability. Recall Lab 24 where we looked at the internals of the
-@.git@ directory. On both sides of the colon you can specify any branch name,
-or any path starting with the @refs/@ directory. You can also specify an
+power in this ability. Recall [Lab](Git Internals: The .git directory) where
+we looked at the internals of the @.git@ directory. On both sides of the colon
+you can specify any branch name, or any path starting with the @refs/@
+directory. You can also specify an
 arbitrary local commit to push. Below are some examples:
 
 Set: hash=hash_for("First Commit")

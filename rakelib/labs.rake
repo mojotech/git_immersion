@@ -96,6 +96,13 @@ module Labs
         if line =~ /^\s*$/
           labs[lab_index] << gathered_line << "\n\n"
           mode = :direct
+        elsif line =~ /(\[Lab\])\(([a-zA-Z0-9.:'()! ]*)\)/
+          lab_name = $2
+          sub = $1
+          link_lab = labs.find { |l| l.name == lab_name }
+          new_line = line.sub(sub, "<a href=\"lab_#{link_lab.number}.html\">Lab #{link_lab.number}</a>").sub("(#{lab_name})", "").strip
+          puts new_line
+          gathered_line << " " << new_line
         else
           gathered_line << " " << line.strip
         end
