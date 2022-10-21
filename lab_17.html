@@ -126,8 +126,8 @@ git commit -m "Oops, we didn't want this commit"</pre>
 <pre class="instructions">git revert HEAD</pre>
 <p>This will pop you into the editor.  You can edit the default commit message or leave it as is.  Save and close the file. You should see &#8230;</p>
 <h3><b>Output:</b></h3>
-<pre class="sample">[main 320df32] Revert "Oops, we didn't want this commit"
- Date: Tue Oct 18 18:26:17 2022 +0000
+<pre class="sample">[main cd8b97f] Revert "Oops, we didn't want this commit"
+ Date: Fri Oct 21 18:16:36 2022 +0000
  1 file changed, 1 insertion(+), 1 deletion(-)
 </pre>
 <p>Since we were undoing the very last commit we made, we were able to use <code>HEAD</code> as the argument to revert.  We can revert any arbitrary commit earlier in history by simply specifying its hash value.</p>
@@ -138,11 +138,15 @@ git commit -m "Oops, we didn't want this commit"</pre>
 <pre class="instructions">git hist</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git hist
-git: 'hist' is not a git command. See 'git --help'.
-
-The most similar command is
-	bisect
-</pre>
+* cd8b97f 2022-10-21 | Revert "Oops, we didn't want this commit" (HEAD -&gt; main) [Jim Weirich]
+* 88e0d02 2022-10-21 | Oops, we didn't want this commit [Jim Weirich]
+* dc492b4 2022-10-21 | Tell user how many names they have (tag: v1) [Jim Weirich]
+* 8ff1510 2022-10-21 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
+* d63f013 2022-10-21 | Can specify multiple names [Jim Weirich]
+* fb40ebb 2022-10-21 | Added a comment [Jim Weirich]
+* c2acdf4 2022-10-21 | Added a default value [Jim Weirich]
+* bbea646 2022-10-21 | Using ARGV [Jim Weirich]
+* b5c42fe 2022-10-21 | First Commit [Jim Weirich]</pre>
 <p>This technique will work with any commit (although you may have to resolve conflicts).  It is safe to use even on branches that are publicly shared on remote repositories.</p>
 <h2>Up Next</h2>
 <p>Next, let&#8217;s look at a technique that can be used to remove the most recent commits from the repository history.</p>
