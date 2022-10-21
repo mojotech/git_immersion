@@ -78,7 +78,7 @@
   <li id="lab_40_link"><a href="lab_40.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_41_link"><a href="lab_41.html">The Reflog</a></li>
   <li id="lab_42_link"><a href="lab_42.html">Rebasing Automatically</a></li>
-  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Change</a></li>
+  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Bug</a></li>
   <li id="lab_44_link"><a href="lab_44.html">Multiple Repositories</a></li>
   <li id="lab_45_link"><a href="lab_45.html">Cloning Repositories</a></li>
   <li id="lab_46_link"><a href="lab_46.html">Review the Cloned Repository</a></li>
@@ -119,9 +119,9 @@ git show</pre>
 <p>The resulting commit should appear similar to the below example.</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git show
-commit e136efa8b666501248df0f32218b0a70cb4c56e7
+commit 0e3f7e96d4c2f2f5fbcc651c588cbe0ac9aed28c
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Wed Oct 19 18:39:49 2022 +0000
+Date:   Fri Oct 21 16:03:57 2022 +0000
 
     fixup! Added greeter class
 
@@ -145,20 +145,20 @@ index 69681ef..66e6370 100644
 git log --oneline</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git log --oneline
-33e5d62 Updated Rakefile
-ee5bf56 Hello uses Greeter
-c1ee99d Added greeter class
-89fc694 Added README
-92c0b1a Added a Rakefile.
-afbb8e9 Moved hello.rb to lib
-1b107d2 Add an author/email comment
-c89088a Tell user how many names they have
-0e34679 Rename variable to match its usage
-42109cd Can specify multiple names
-1694a83 Added a comment
-8ccf114 Added a default value
-72f339b Using ARGV
-175a55c First Commit
+6f692a7 Updated Rakefile
+f78b1c1 Hello uses Greeter
+06d9348 Added greeter class
+b89c380 Added README
+22bc35b Added a Rakefile.
+5af6d7a Moved hello.rb to lib
+cabbbc6 Add an author/email comment
+66b80c3 Tell user how many names they have
+88288ae Rename variable to match its usage
+2ac4185 Can specify multiple names
+78dbacb Added a comment
+7cfd08a Added a default value
+ea94510 Using ARGV
+620bfcd First Commit
 </pre>
         <nav class="foot-navigation">
       <a href="lab_41.html">

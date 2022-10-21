@@ -78,7 +78,7 @@
   <li id="lab_40_link"><a href="lab_40.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_41_link"><a href="lab_41.html">The Reflog</a></li>
   <li id="lab_42_link"><a href="lab_42.html">Rebasing Automatically</a></li>
-  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Change</a></li>
+  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Bug</a></li>
   <li id="lab_44_link"><a href="lab_44.html">Multiple Repositories</a></li>
   <li id="lab_45_link"><a href="lab_45.html">Cloning Repositories</a></li>
   <li id="lab_46_link"><a href="lab_46.html">Review the Cloned Repository</a></li>
@@ -136,7 +136,7 @@ Or undo this operation with:
 
 Turn off this advice by setting config variable advice.detachedHead to false
 
-HEAD is now at 0e34679 Rename variable to match its usage
+HEAD is now at 88288ae Rename variable to match its usage
 $ cat hello.rb
 names = ARGV || ["World"]
 
@@ -153,11 +153,11 @@ puts "You have #{names.length} names!"
 git checkout v1-beta</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git checkout v1
-Previous HEAD position was 0e34679 Rename variable to match its usage
-HEAD is now at c89088a Tell user how many names they have
+Previous HEAD position was 88288ae Rename variable to match its usage
+HEAD is now at 66b80c3 Tell user how many names they have
 $ git checkout v1-beta
-Previous HEAD position was c89088a Tell user how many names they have
-HEAD is now at 0e34679 Rename variable to match its usage
+Previous HEAD position was 66b80c3 Tell user how many names they have
+HEAD is now at 88288ae Rename variable to match its usage
 </pre>
 <h2>Viewing Tags using the <code>tag</code> command</h2>
 <p>You can see what tags are available using the <code>git tag</code> command.</p>

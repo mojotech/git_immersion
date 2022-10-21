@@ -78,7 +78,7 @@
   <li id="lab_40_link"><a href="lab_40.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_41_link"><a href="lab_41.html">The Reflog</a></li>
   <li id="lab_42_link"><a href="lab_42.html">Rebasing Automatically</a></li>
-  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Change</a></li>
+  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Bug</a></li>
   <li id="lab_44_link"><a href="lab_44.html">Multiple Repositories</a></li>
   <li id="lab_45_link"><a href="lab_45.html">Cloning Repositories</a></li>
   <li id="lab_46_link"><a href="lab_46.html">Review the Cloned Repository</a></li>
@@ -112,23 +112,23 @@
 <pre class="instructions">git blame hello.rb</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git blame hello.rb
-1b107d2b (Jim Weirich 2022-10-19 18:39:48 +0000 1) # Default is World
-1b107d2b (Jim Weirich 2022-10-19 18:39:48 +0000 2) # Author: Jim Weirich (jim@somewhere.com)
-0e34679f (Jim Weirich 2022-10-19 18:39:48 +0000 3) names = ARGV || ["World"]
-8ccf1149 (Jim Weirich 2022-10-19 18:39:47 +0000 4) 
-0e34679f (Jim Weirich 2022-10-19 18:39:48 +0000 5) puts "Hello, #{names.join(" ")}!"
-0e34679f (Jim Weirich 2022-10-19 18:39:48 +0000 6) puts "You have #{names.length} names!"
+cabbbc6a (Jim Weirich 2022-10-21 16:03:56 +0000 1) # Default is World
+cabbbc6a (Jim Weirich 2022-10-21 16:03:56 +0000 2) # Author: Jim Weirich (jim@somewhere.com)
+88288aed (Jim Weirich 2022-10-21 16:03:56 +0000 3) names = ARGV || ["World"]
+7cfd08a4 (Jim Weirich 2022-10-21 16:03:55 +0000 4) 
+88288aed (Jim Weirich 2022-10-21 16:03:56 +0000 5) puts "Hello, #{names.join(" ")}!"
+88288aed (Jim Weirich 2022-10-21 16:03:56 +0000 6) puts "You have #{names.length} names!"
 </pre>
 <p>You can see the different commit hashes for each line of code indicating who changed them and when they changed. It is also possible to pass a commit to <code>git blame</code> to get the blame output starting at that commit. This is useful to follow the history of a line or multiple lines of code and learn the context around its changes. We&#8217;ll try it below starting at the previous commit.</p>
 <h3><b>Execute:</b></h3>
 <pre class="instructions">git blame HEAD^ hello.rb</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git blame HEAD^ hello.rb
-0e34679f (Jim Weirich 2022-10-19 18:39:48 +0000 1) names = ARGV || ["World"]
-8ccf1149 (Jim Weirich 2022-10-19 18:39:47 +0000 2) 
-0e34679f (Jim Weirich 2022-10-19 18:39:48 +0000 3) puts "Hello, #{names.join(" ")}!"
-0e34679f (Jim Weirich 2022-10-19 18:39:48 +0000 4) puts "You have #{names.length} names!"
-c89088ac (Jim Weirich 2022-10-19 18:39:48 +0000 5) puts "You have #{names.length} names!"
+88288aed (Jim Weirich 2022-10-21 16:03:56 +0000 1) names = ARGV || ["World"]
+7cfd08a4 (Jim Weirich 2022-10-21 16:03:55 +0000 2) 
+88288aed (Jim Weirich 2022-10-21 16:03:56 +0000 3) puts "Hello, #{names.join(" ")}!"
+88288aed (Jim Weirich 2022-10-21 16:03:56 +0000 4) puts "You have #{names.length} names!"
+66b80c3e (Jim Weirich 2022-10-21 16:03:56 +0000 5) puts "You have #{names.length} names!"
 </pre>
 <h2>Wrapping Up</h2>
 <p>The <code>git blame</code> command is very useful in day-to-day usage. You can use it to learn the context and history around a file or to determine who to ask for help. Most git integrations for code editors support some form of the <code>blame</code> command. I recommend configuring a git integration for your editor just for this purpose so it is as easy as possible to use <code>git blame</code>.</p>
