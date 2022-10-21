@@ -111,23 +111,23 @@
 <pre class="instructions">git blame hello.rb</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git blame hello.rb
-e00257c0 (Jim Weirich 2022-10-21 18:16:36 +0000 1) # Default is World
-e00257c0 (Jim Weirich 2022-10-21 18:16:36 +0000 2) # Author: Jim Weirich (jim@somewhere.com)
-8ff15109 (Jim Weirich 2022-10-21 18:16:36 +0000 3) names = ARGV || ["World"]
-c2acdf44 (Jim Weirich 2022-10-21 18:16:35 +0000 4) 
-8ff15109 (Jim Weirich 2022-10-21 18:16:36 +0000 5) puts "Hello, #{names.join(" ")}!"
-8ff15109 (Jim Weirich 2022-10-21 18:16:36 +0000 6) puts "You have #{names.length} names!"
+9aa662b2 (Jim Weirich 2022-10-21 19:18:10 +0000 1) # Default is World
+9aa662b2 (Jim Weirich 2022-10-21 19:18:10 +0000 2) # Author: Jim Weirich (jim@somewhere.com)
+a18a8caf (Jim Weirich 2022-10-21 19:18:10 +0000 3) names = ARGV || ["World"]
+a9bc9608 (Jim Weirich 2022-10-21 19:18:09 +0000 4) 
+a18a8caf (Jim Weirich 2022-10-21 19:18:10 +0000 5) puts "Hello, #{names.join(" ")}!"
+a18a8caf (Jim Weirich 2022-10-21 19:18:10 +0000 6) puts "You have #{names.length} names!"
 </pre>
 <p>You can see the different commit hashes for each line of code indicating who changed them and when they changed. It is also possible to pass a commit to <code>git blame</code> to get the blame output starting at that commit. This is useful to follow the history of a line or multiple lines of code and learn the context around its changes. We&#8217;ll try it below starting at the previous commit.</p>
 <h3><b>Execute:</b></h3>
 <pre class="instructions">git blame HEAD^ hello.rb</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git blame HEAD^ hello.rb
-8ff15109 (Jim Weirich 2022-10-21 18:16:36 +0000 1) names = ARGV || ["World"]
-c2acdf44 (Jim Weirich 2022-10-21 18:16:35 +0000 2) 
-8ff15109 (Jim Weirich 2022-10-21 18:16:36 +0000 3) puts "Hello, #{names.join(" ")}!"
-8ff15109 (Jim Weirich 2022-10-21 18:16:36 +0000 4) puts "You have #{names.length} names!"
-dc492b42 (Jim Weirich 2022-10-21 18:16:36 +0000 5) puts "You have #{names.length} names!"
+a18a8caf (Jim Weirich 2022-10-21 19:18:10 +0000 1) names = ARGV || ["World"]
+a9bc9608 (Jim Weirich 2022-10-21 19:18:09 +0000 2) 
+a18a8caf (Jim Weirich 2022-10-21 19:18:10 +0000 3) puts "Hello, #{names.join(" ")}!"
+a18a8caf (Jim Weirich 2022-10-21 19:18:10 +0000 4) puts "You have #{names.length} names!"
+bbbb084a (Jim Weirich 2022-10-21 19:18:10 +0000 5) puts "You have #{names.length} names!"
 </pre>
 <h2>Wrapping Up</h2>
 <p>The <code>git blame</code> command is very useful in day-to-day usage. You can use it to learn the context and history around a file or to determine who to ask for help. Most git integrations for code editors support some form of the <code>blame</code> command. I recommend configuring a git integration for your editor just for this purpose so it is as easy as possible to use <code>git blame</code>.</p>

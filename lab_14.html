@@ -135,7 +135,7 @@ Or undo this operation with:
 
 Turn off this advice by setting config variable advice.detachedHead to false
 
-HEAD is now at 8ff1510 Rename variable to match its usage
+HEAD is now at a18a8ca Rename variable to match its usage
 $ cat hello.rb
 names = ARGV || ["World"]
 
@@ -152,11 +152,11 @@ puts "You have #{names.length} names!"
 git checkout v1-beta</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git checkout v1
-Previous HEAD position was 8ff1510 Rename variable to match its usage
-HEAD is now at dc492b4 Tell user how many names they have
+Previous HEAD position was a18a8ca Rename variable to match its usage
+HEAD is now at bbbb084 Tell user how many names they have
 $ git checkout v1-beta
-Previous HEAD position was dc492b4 Tell user how many names they have
-HEAD is now at 8ff1510 Rename variable to match its usage
+Previous HEAD position was bbbb084 Tell user how many names they have
+HEAD is now at a18a8ca Rename variable to match its usage
 </pre>
 <h2>Viewing Tags using the <code>tag</code> command</h2>
 <p>You can see what tags are available using the <code>git tag</code> command.</p>
@@ -173,13 +173,13 @@ v1-beta
 <pre class="instructions">git hist main --all</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git hist main --all
-* dc492b4 2022-10-21 | Tell user how many names they have (tag: v1, main) [Jim Weirich]
-* 8ff1510 2022-10-21 | Rename variable to match its usage (HEAD, tag: v1-beta) [Jim Weirich]
-* d63f013 2022-10-21 | Can specify multiple names [Jim Weirich]
-* fb40ebb 2022-10-21 | Added a comment [Jim Weirich]
-* c2acdf4 2022-10-21 | Added a default value [Jim Weirich]
-* bbea646 2022-10-21 | Using ARGV [Jim Weirich]
-* b5c42fe 2022-10-21 | First Commit [Jim Weirich]</pre>
+* bbbb084 2022-10-21 | Tell user how many names they have (tag: v1, main) [Jim Weirich]
+* a18a8ca 2022-10-21 | Rename variable to match its usage (HEAD, tag: v1-beta) [Jim Weirich]
+* 72c9fd4 2022-10-21 | Can specify multiple names [Jim Weirich]
+* 185ef4e 2022-10-21 | Added a comment [Jim Weirich]
+* a9bc960 2022-10-21 | Added a default value [Jim Weirich]
+* 10a0383 2022-10-21 | Using ARGV [Jim Weirich]
+* 038f259 2022-10-21 | First Commit [Jim Weirich]</pre>
 <p>You can see both tags (<code>v1</code> and <code>v1-beta</code>) listed in the log output, along with the branch name (<code>main</code>).  Also <code>HEAD</code> shows you the currently checked out commit (which is <code>v1-beta</code> at the moment).</p>
         <nav class="foot-navigation">
       <a href="lab_13.html">
