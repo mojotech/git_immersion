@@ -112,19 +112,21 @@
 <p class="note"><strong>Note:</strong> You did remember to define <code>hist</code> in your <code>.gitconfig</code> file, right?  If not, review the lab on aliases.</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git hist
-git: 'hist' is not a git command. See 'git --help'.
-
-The most similar command is
-	bisect
-</pre>
+* 97ae5a1 2022-10-21 | Tell user how many names they have (HEAD -&gt; main) [Jim Weirich]
+* 9783041 2022-10-21 | Rename variable to match its usage [Jim Weirich]
+* 862bbb7 2022-10-21 | Can specify multiple names [Jim Weirich]
+* 7328be2 2022-10-21 | Added a comment [Jim Weirich]
+* 5aec6cd 2022-10-21 | Added a default value [Jim Weirich]
+* 8c9c29d 2022-10-21 | Using ARGV [Jim Weirich]
+* 9fc321c 2022-10-21 | First Commit [Jim Weirich]</pre>
 <p>Examine the log output and find the hash for the first commit.  It should be the last line of the <code>git hist</code> output.  Use that hash code (the first 7 characters are enough) in the command below to see what that commit changed.</p>
 <h3><b>Execute:</b></h3>
 <pre class="instructions">git show &lt;hash&gt;</pre>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ git show 38ccc06
-commit 38ccc061b8b8437a9437e5b5fa902404013e1a54
+<pre class="sample">$ git show 9fc321c
+commit 9fc321c2b9bddefb59267a1e840cbb266bc11ce3
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 16:39:51 2022 +0000
+Date:   Fri Oct 21 16:44:33 2022 +0000
 
     First Commit
 
@@ -144,8 +146,8 @@ cat hello.rb</pre>
 <p class="note"><strong>Note:</strong> Many commands depend on the hash values in the repository.  Since your hash values will vary from mine, whenever you see something like &lt;hash&gt; or &lt;treehash&gt; in the command, substitute in the proper hash value for your repository.</p>
 <p>You should see &#8230;</p>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ git checkout 38ccc06
-Note: switching to '38ccc06'.
+<pre class="sample">$ git checkout 9fc321c
+Note: switching to '9fc321c'.
 
 You are in 'detached HEAD' state. You can look around, make experimental
 changes and commit them, and you can discard any commits you make in this
@@ -162,7 +164,7 @@ Or undo this operation with:
 
 Turn off this advice by setting config variable advice.detachedHead to false
 
-HEAD is now at 38ccc06 First Commit
+HEAD is now at 9fc321c First Commit
 $ cat hello.rb
 puts "Hello, World"
 </pre>
@@ -175,7 +177,7 @@ cat hello.rb</pre>
 <p>You should see &#8230;</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git checkout main
-Previous HEAD position was 38ccc06 First Commit
+Previous HEAD position was 9fc321c First Commit
 Switched to branch 'main'
 $ cat hello.rb
 names = ARGV || ["World"]

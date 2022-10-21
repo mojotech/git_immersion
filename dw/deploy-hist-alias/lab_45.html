@@ -123,11 +123,34 @@ lib
 <pre class="instructions">git hist --all</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git hist --all
-git: 'hist' is not a git command. See 'git --help'.
-
-The most similar command is
-	bisect
-</pre>
+* de6f662 2022-10-21 | Updated Rakefile (HEAD -&gt; main, origin/main, origin/HEAD) [Jim Weirich]
+* dd30712 2022-10-21 | Hello uses Greeter [Jim Weirich]
+* 1c670f1 2022-10-21 | Added greeter class [Jim Weirich]
+| * f4584b2 2022-10-21 | Add excitement (origin/excitement) [Jim Weirich]
+| *   395c744 2022-10-21 | Merge branch 'main' into greet [Jim Weirich]
+| |\  
+| |/  
+|/|   
+| * c54d53f 2022-10-21 | Updated Rakefile [Jim Weirich]
+| * 18e8e0e 2022-10-21 | Hello uses Greeter [Jim Weirich]
+| * 6cc02ba 2022-10-21 | Added greeter class [Jim Weirich]
+| | * 6f0cf36 2022-10-21 | Updated Rakefile (origin/greet) [Jim Weirich]
+| | * f85dbf2 2022-10-21 | Hello uses Greeter [Jim Weirich]
+| | * 705fb8c 2022-10-21 | Added greeter class [Jim Weirich]
+| |/  
+|/|   
+* | 665f5fc 2022-10-21 | Added README [Jim Weirich]
+|/  
+* 9f9dfef 2022-10-21 | Added a Rakefile. [Jim Weirich]
+* 03bc958 2022-10-21 | Moved hello.rb to lib [Jim Weirich]
+* 92b6bdc 2022-10-21 | Add an author/email comment [Jim Weirich]
+* 97ae5a1 2022-10-21 | Tell user how many names they have (tag: v1) [Jim Weirich]
+* 9783041 2022-10-21 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
+* 862bbb7 2022-10-21 | Can specify multiple names [Jim Weirich]
+* 7328be2 2022-10-21 | Added a comment [Jim Weirich]
+* 5aec6cd 2022-10-21 | Added a default value [Jim Weirich]
+* 8c9c29d 2022-10-21 | Using ARGV [Jim Weirich]
+* 9fc321c 2022-10-21 | First Commit [Jim Weirich]</pre>
 <p>You should now see a list of all the commits in the new repository, and it should (more or less) match the history of commits in the original repository.  The only difference should be in the names of the branches.</p>
 <h2>Remote branches</h2>
 <p>You should see a <strong>main</strong> branch (along with <strong><span class="caps">HEAD</span></strong>) in the history list.  But you will also have a number of strangely named branches (<strong>origin/main</strong>, <strong>origin/greet</strong> and <strong>origin/<span class="caps">HEAD</span></strong>).  We&#8217;ll talk about them in a bit.</p>

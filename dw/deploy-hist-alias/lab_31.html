@@ -134,10 +134,10 @@ git commit -m "Add excitement"</pre>
 git show &lt;hash&gt;
 git cherry-pick &lt;hash&gt;</pre>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ git show 8ceed03
-commit 8ceed0347431f7b3601242e2fdd42e47ee2f4642
+<pre class="sample">$ git show f4584b2
+commit f4584b2763dc8ce1c34e84ab473c9d31faf6b06c
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 16:39:53 2022 +0000
+Date:   Fri Oct 21 16:44:34 2022 +0000
 
     Add excitement
 
@@ -160,9 +160,9 @@ index 69681ef..95d9419 100644
 +    @excited ? "!" : "."
    end
  end
-$ git cherry-pick 8ceed03
-[greet 8ceed03] Add excitement
- Date: Fri Oct 21 16:39:53 2022 +0000
+$ git cherry-pick f4584b2
+[greet f4584b2] Add excitement
+ Date: Fri Oct 21 16:44:34 2022 +0000
  1 file changed, 6 insertions(+), 2 deletions(-)
 </pre>
 <h2>Up Next</h2>

@@ -136,8 +136,8 @@ git commit --amend -m "Add an author/email comment"</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git add hello.rb
 $ git commit --amend -m "Add an author/email comment"
-[main 2b37765] Add an author/email comment
- Date: Fri Oct 21 16:39:52 2022 +0000
+[main 92b6bdc] Add an author/email comment
+ Date: Fri Oct 21 16:44:33 2022 +0000
  1 file changed, 2 insertions(+), 1 deletion(-)
 </pre>
 <h2>Review the History</h2>
@@ -145,11 +145,14 @@ $ git commit --amend -m "Add an author/email comment"
 <pre class="instructions">git hist</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git hist
-git: 'hist' is not a git command. See 'git --help'.
-
-The most similar command is
-	bisect
-</pre>
+* 92b6bdc 2022-10-21 | Add an author/email comment (HEAD -&gt; main) [Jim Weirich]
+* 97ae5a1 2022-10-21 | Tell user how many names they have (tag: v1) [Jim Weirich]
+* 9783041 2022-10-21 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
+* 862bbb7 2022-10-21 | Can specify multiple names [Jim Weirich]
+* 7328be2 2022-10-21 | Added a comment [Jim Weirich]
+* 5aec6cd 2022-10-21 | Added a default value [Jim Weirich]
+* 8c9c29d 2022-10-21 | Using ARGV [Jim Weirich]
+* 9fc321c 2022-10-21 | First Commit [Jim Weirich]</pre>
 <p>We can see the original &#8220;author&#8221; commit is now gone, and it is replaced by the &#8220;author/email&#8221; commit.  You can achieve the same effect by resetting the branch back one commit and then recommitting the new changes.</p>
         <nav class="foot-navigation">
       <a href="lab_19.html">

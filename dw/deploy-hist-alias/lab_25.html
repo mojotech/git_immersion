@@ -113,11 +113,7 @@
 <p>This should show the latest commit made in the repository.  The SHA1 hash on your system is probably different from what is on mine, but you should see something like this.</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git hist --max-count=1
-git: 'hist' is not a git command. See 'git --help'.
-
-The most similar command is
-	bisect
-</pre>
+* 9f9dfef 2022-10-21 | Added a Rakefile. (HEAD -&gt; main) [Jim Weirich]</pre>
 <h2>Dumping the Latest Commit</h2>
 <p>Using the SHA1 hash from the commit listed above &#8230;</p>
 <h3><b>Execute:</b></h3>
@@ -125,13 +121,13 @@ The most similar command is
 git cat-file -p &lt;hash&gt;</pre>
 <p>Here&#8217;s my output &#8230;</p>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ git cat-file -t d21fef9
+<pre class="sample">$ git cat-file -t 9f9dfef
 commit
-$ git cat-file -p d21fef9
+$ git cat-file -p 9f9dfef
 tree 411af6240f8f5ada935b2116bb8c138b85bd6481
-parent 250fa0c735b234b5e1bc45f6f94a63ab3c879ae8
-author Jim Weirich &lt;jim (at) edgecase.com&gt; 1666370392 +0000
-committer Jim Weirich &lt;jim (at) edgecase.com&gt; 1666370392 +0000
+parent 03bc9586735cf5e433a94f5ddf1376b095ba0bec
+author Jim Weirich &lt;jim (at) edgecase.com&gt; 1666370674 +0000
+committer Jim Weirich &lt;jim (at) edgecase.com&gt; 1666370674 +0000
 
 Added a Rakefile.
 </pre>
