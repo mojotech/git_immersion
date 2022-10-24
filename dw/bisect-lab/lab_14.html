@@ -136,7 +136,7 @@ Or undo this operation with:
 
 Turn off this advice by setting config variable advice.detachedHead to false
 
-HEAD is now at 88288ae Rename variable to match its usage
+HEAD is now at ed247e9 Rename variable to match its usage
 $ cat hello.rb
 names = ARGV || ["World"]
 
@@ -153,11 +153,11 @@ puts "You have #{names.length} names!"
 git checkout v1-beta</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git checkout v1
-Previous HEAD position was 88288ae Rename variable to match its usage
-HEAD is now at 66b80c3 Tell user how many names they have
+Previous HEAD position was ed247e9 Rename variable to match its usage
+HEAD is now at 4163a3d Tell user how many names they have
 $ git checkout v1-beta
-Previous HEAD position was 66b80c3 Tell user how many names they have
-HEAD is now at 88288ae Rename variable to match its usage
+Previous HEAD position was 4163a3d Tell user how many names they have
+HEAD is now at ed247e9 Rename variable to match its usage
 </pre>
 <h2>Viewing Tags using the <code>tag</code> command</h2>
 <p>You can see what tags are available using the <code>git tag</code> command.</p>
@@ -174,11 +174,13 @@ v1-beta
 <pre class="instructions">git hist main --all</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git hist main --all
-git: 'hist' is not a git command. See 'git --help'.
-
-The most similar command is
-	bisect
-</pre>
+* 4163a3d 2022-10-24 | Tell user how many names they have (tag: v1, main) [Jim Weirich]
+* ed247e9 2022-10-24 | Rename variable to match its usage (HEAD, tag: v1-beta) [Jim Weirich]
+* f1ae4e3 2022-10-24 | Can specify multiple names [Jim Weirich]
+* 139d07e 2022-10-24 | Added a comment [Jim Weirich]
+* d44c7aa 2022-10-24 | Added a default value [Jim Weirich]
+* 2f8a0ac 2022-10-24 | Using ARGV [Jim Weirich]
+* 6af75ba 2022-10-24 | First Commit [Jim Weirich]</pre>
 <p>You can see both tags (<code>v1</code> and <code>v1-beta</code>) listed in the log output, along with the branch name (<code>main</code>).  Also <code>HEAD</code> shows you the currently checked out commit (which is <code>v1-beta</code> at the moment).</p>
         <nav class="foot-navigation">
       <a href="lab_13.html">

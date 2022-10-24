@@ -125,6 +125,44 @@ git commit -m "Added shared comment to readme"</pre>
 Everything up-to-date
 </pre>
 <p class="note"><strong><span class="caps">NOTE</span>:</strong> We had to explicitly name the branch main that was receiving the push.  It is possible to set it up automatically, but I <em>never</em> remember the commands to do that.  Check out the &#8220;Git Remote Branch&#8221; gem for easy management of remote branches.</p>
+<h2>You Can Push Anything</h2>
+<p>Pushing to a remote repository requires specifying what you are pushing and where you are pushing it. The <code>git push shared main</code> command uses a shorthand to specify where the branch is going to be pushed. You could read it like this: <code>git push shared main:main</code>, where what comes before the colon is in your local repository and what comes after is in the remote repository. There is a lot of power in this ability. Recall <a href="lab_24.html">Lab 24</a> where we looked at the internals of the <code>.git</code> directory. On both sides of the colon you can specify any branch name, or any path starting with the <code>refs/</code> directory. You can also specify an arbitrary local commit to push. Below are some examples:</p>
+<h3><b>Execute:</b></h3>
+<pre class="instructions"># Push a commit to a new branch
+git push shared &lt;hash&gt;:refs/heads/new-branch
+# Rename a remote branch
+git push shared refs/remotes/shared/new-branch:refs/heads/new-branch-rename
+# Push a local branch under a different name
+git push shared greet:greet-rename
+# We can confirm they're all there
+git remote show shared</pre>
+<h3><b>Output:</b></h3>
+<pre class="sample">$ git push shared 6af75ba:refs/heads/new-branch
+To ../hello.git
+ * [new branch]      6af75ba -&gt; new-branch
+$ git push shared refs/remotes/shared/new-branch:refs/heads/new-branch-rename
+To ../hello.git
+ * [new branch]      shared/new-branch -&gt; new-branch-rename
+$ git push shared greet:greet-rename
+To ../hello.git
+ * [new branch]      greet -&gt; greet-rename
+$ git remote show shared
+* remote shared
+  Fetch URL: ../hello.git
+  Push  URL: ../hello.git
+  HEAD branch: (unknown)
+  Remote branches:
+    excitement        new (next fetch will store in remotes/shared)
+    greet             new (next fetch will store in remotes/shared)
+    greet-rename      tracked
+    main              tracked
+    new-branch        tracked
+    new-branch-rename tracked
+  Local refs configured for 'git push':
+    excitement pushes to excitement (up to date)
+    greet      pushes to greet      (up to date)
+    main       pushes to main       (up to date)
+</pre>
         <nav class="foot-navigation">
       <a href="lab_55.html">
       <svg version="1.1" width="36" height="36" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.66,15.61,18,6,8.34,15.61A1,1,0,1,0,9.75,17L17,9.81V28.94a1,1,0,1,0,2,0V9.81L26.25,17a1,1,0,0,0,1.41-1.42Z"></path></svg>

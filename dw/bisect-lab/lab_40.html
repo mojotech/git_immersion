@@ -125,11 +125,21 @@ git commit -m "Add missing punctuation"</pre>
 <pre class="instructions">git hist</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git hist
-git: 'hist' is not a git command. See 'git --help'.
-
-The most similar command is
-	bisect
-</pre>
+* c9bffe1 2022-10-24 | Add missing punctuation (HEAD -&gt; main) [Jim Weirich]
+* 58d5656 2022-10-24 | Updated Rakefile (greet) [Jim Weirich]
+* 42b6a50 2022-10-24 | Hello uses Greeter [Jim Weirich]
+* a3599e2 2022-10-24 | Added greeter class [Jim Weirich]
+* dd1607f 2022-10-24 | Added README [Jim Weirich]
+* 3e3d47f 2022-10-24 | Added a Rakefile. [Jim Weirich]
+* dd09cc3 2022-10-24 | Moved hello.rb to lib [Jim Weirich]
+* cbc40c9 2022-10-24 | Add an author/email comment [Jim Weirich]
+* 4163a3d 2022-10-24 | Tell user how many names they have (tag: v1) [Jim Weirich]
+* ed247e9 2022-10-24 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
+* f1ae4e3 2022-10-24 | Can specify multiple names [Jim Weirich]
+* 139d07e 2022-10-24 | Added a comment [Jim Weirich]
+* d44c7aa 2022-10-24 | Added a default value [Jim Weirich]
+* 2f8a0ac 2022-10-24 | Using ARGV [Jim Weirich]
+* 6af75ba 2022-10-24 | First Commit [Jim Weirich]</pre>
 <p>Then perform the rebase</p>
 <h3><b>Execute:</b></h3>
 <pre class="instructions">git rebase -i &lt;hash&gt;^</pre>
@@ -211,10 +221,10 @@ pick 6cac757 Added shared comment to readme
 <h3><b>Execute:</b></h3>
 <pre class="instructions">git show &lt;hash&gt;</pre>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ git show 06d9348
-commit 06d9348341070c24fadb5e388e3c66e654ac15a7
+<pre class="sample">$ git show 9307589
+commit 93075894260fdd399c8f6fa610411c1abd1b3f06
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 16:03:57 2022 +0000
+Date:   Mon Oct 24 15:39:44 2022 +0000
 
     Added greeter class
 

@@ -124,11 +124,27 @@ git commit -m "Made interactive"</pre>
 <pre class="instructions">git hist --all</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git hist --all
-git: 'hist' is not a git command. See 'git --help'.
-
-The most similar command is
-	bisect
-</pre>
+* e1a6b7b 2022-10-24 | Add some suspicion (greet) [Jim Weirich]
+* f282450 2022-10-24 | Add excitement (excitement) [Jim Weirich]
+*   887c0f7 2022-10-24 | Merge branch 'main' into greet [Jim Weirich]
+|\  
+* | 9bda2fe 2022-10-24 | Updated Rakefile [Jim Weirich]
+* | bd78aa4 2022-10-24 | Hello uses Greeter [Jim Weirich]
+* | 850c25a 2022-10-24 | Added greeter class [Jim Weirich]
+| | * ea0e201 2022-10-24 | Made interactive (HEAD -&gt; main) [Jim Weirich]
+| |/  
+| * dd1607f 2022-10-24 | Added README [Jim Weirich]
+|/  
+* 3e3d47f 2022-10-24 | Added a Rakefile. [Jim Weirich]
+* dd09cc3 2022-10-24 | Moved hello.rb to lib [Jim Weirich]
+* cbc40c9 2022-10-24 | Add an author/email comment [Jim Weirich]
+* 4163a3d 2022-10-24 | Tell user how many names they have (tag: v1) [Jim Weirich]
+* ed247e9 2022-10-24 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
+* f1ae4e3 2022-10-24 | Can specify multiple names [Jim Weirich]
+* 139d07e 2022-10-24 | Added a comment [Jim Weirich]
+* d44c7aa 2022-10-24 | Added a default value [Jim Weirich]
+* 2f8a0ac 2022-10-24 | Using ARGV [Jim Weirich]
+* 6af75ba 2022-10-24 | First Commit [Jim Weirich]</pre>
 <p>Main at commit &#8220;Added <span class="caps">README</span>&#8221; has been merged to the greet branch, but there is now an additional commit on main that has not been merged back to greet.</p>
 <h2>Up Next</h2>
 <p>The latest change in main conflicts with some existing changes in greet.  Next we will resolve those changes.</p>

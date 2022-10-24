@@ -112,11 +112,21 @@
 <pre class="instructions">git hist --all</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git hist --all
-git: 'hist' is not a git command. See 'git --help'.
-
-The most similar command is
-	bisect
-</pre>
+* 9bda2fe 2022-10-24 | Updated Rakefile (greet) [Jim Weirich]
+* bd78aa4 2022-10-24 | Hello uses Greeter [Jim Weirich]
+* 850c25a 2022-10-24 | Added greeter class [Jim Weirich]
+| * dd1607f 2022-10-24 | Added README (HEAD -&gt; main) [Jim Weirich]
+|/  
+* 3e3d47f 2022-10-24 | Added a Rakefile. [Jim Weirich]
+* dd09cc3 2022-10-24 | Moved hello.rb to lib [Jim Weirich]
+* cbc40c9 2022-10-24 | Add an author/email comment [Jim Weirich]
+* 4163a3d 2022-10-24 | Tell user how many names they have (tag: v1) [Jim Weirich]
+* ed247e9 2022-10-24 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
+* f1ae4e3 2022-10-24 | Can specify multiple names [Jim Weirich]
+* 139d07e 2022-10-24 | Added a comment [Jim Weirich]
+* d44c7aa 2022-10-24 | Added a default value [Jim Weirich]
+* 2f8a0ac 2022-10-24 | Using ARGV [Jim Weirich]
+* 6af75ba 2022-10-24 | First Commit [Jim Weirich]</pre>
 <p>Here is our first chance to see the <code>--graph</code> option on <code>git hist</code> in action. Adding the <code>--graph</code> option to <code>git log</code> causes it to draw the commit tree using simple <span class="caps">ASCII</span> characters.  We can see both branches (greet and main), and that the main branch is the current <span class="caps">HEAD</span>. The common ancestor to both branches is the &#8220;Added a Rakefile&#8221; branch.</p>
 <p>The <code>--all</code> flag makes sure that we see all the branches.  The default is to show only the current branch.</p>
         <nav class="foot-navigation">

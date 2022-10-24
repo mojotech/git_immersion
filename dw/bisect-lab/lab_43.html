@@ -106,7 +106,8 @@
 <ul>
 	<li>Learn how to use <code>git bisect</code> to find a commit that introduced a change.</li>
 </ul>
-<p>Bugs happen, and it can be necessary to find the cause of a bug without knowing what code specifically is involved. Git allows you to efficiently search for a commit as long as you can describe your search criteria in terms of a test that can be executed.</p>
+<p>Bugs happen, and it can be necessary to find the cause of a bug without knowing what code specifically is involved. Git allows you to efficiently search a series of commits to find the commit that introduced the bug.</p>
+<p>Git bisect asks you to declare a known good commit and a known bad commit. Then git bisect will pick a commit in the middle of that set and ask you test that commit. You&#8217;ll test your project at that point either manually or via an automated test, and then you&#8217;ll mark the commit as good or bad. Git bisect will continue to pick the midpoint between the latest good and bad commits until you land on the exact commit that introduced the bug.</p>
 <p>In this lab we will be considering it a bug to allow users to specify their name and finding that commit that introduced that behavior.  While you could find it manually in this project, when there are hundreds or thousands of commits this becomes impractical. <code>git bisect</code> will make this task trivial. We will not be changing any code, only finding the commit that introduced the behavior.</p>
 <h2>The Test</h2>
 <p>The first thing we need is a test. <code>git bisect</code> works by checking out different commits and seeing if the test succeeds or fails. The test can be anything. It can be a manual test you perform by running the project, a project test suite, or another command or script. For the bug we&#8217;re searching for we&#8217;ll need to run our program and inspect the output. If the output includes the name we specified then we know it still has the bug.</p>
@@ -126,11 +127,11 @@ git bisect bad HEAD</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git bisect start
 status: waiting for both good and bad commits
-$ git bisect good 620bfcd
+$ git bisect good 6af75ba
 status: waiting for bad commit, 1 good commit known
 $ git bisect bad HEAD
 Bisecting: 6 revisions left to test after this (roughly 3 steps)
-[66b80c3e42171983be057f488ec8ce85380606b2] Tell user how many names they have
+[4163a3d53bec2969b17e5494ee9d855fef150c53] Tell user how many names they have
 </pre>
 <p>You&#8217;ll see an estimate of how many steps are left. Run the test and based on its output run either <code>git bisect good</code> or <code>git bisect bad</code>. Below is an example of what this might look like. One thing to note is that git starts you halfway between the two commits you gave it. This could mean your test process needs to change slightly to accommodate unrelated changes. In this instance the <code>hello.rb</code> file changed locations, so the command to execute it needs to be modified. As you move through the bisect keep this in mind and use whichever command is appropriate to the current repository state. Also notice how the command output changes as you move through the bisect.</p>
 <h3><b>Execute:</b></h3>
@@ -143,7 +144,7 @@ You have 1 names!
 You have 1 names!
 $ git bisect bad
 Bisecting: 2 revisions left to test after this (roughly 2 steps)
-[78dbacb39cec6bfe4bb74104c3144e447660c64e] Added a comment
+[139d07e7471a97a217426ca4f54312a7c5f39e5d] Added a comment
 </pre>
 <p>Now, we repeat the process until the bisect is finished.</p>
 <h3><b>Execute:</b></h3>
@@ -159,23 +160,23 @@ Hello, BisectString!
 
 $ git bisect bad
 Bisecting: 0 revisions left to test after this (roughly 1 step)
-[7cfd08a41f8601d5c1a5226a31b134e1d0ef59bc] Added a default value
+[d44c7aa0f399d1c443d45fe3bd9601352cd890b6] Added a default value
 
 $ ruby hello.rb BisectString
 Hello, BisectString!
 
 $ git bisect bad
 Bisecting: 0 revisions left to test after this (roughly 0 steps)
-[ea945103f05be4c3d77ae5670a51dc2d5b4aea0d] Using ARGV
+[2f8a0acbde347d5a561d68b02ac5be452901ab6d] Using ARGV
 
 $ ruby hello.rb BisectString
 Hello, BisectString!
 
 $ git bisect bad
-ea945103f05be4c3d77ae5670a51dc2d5b4aea0d is the first bad commit
-commit ea945103f05be4c3d77ae5670a51dc2d5b4aea0d
+2f8a0acbde347d5a561d68b02ac5be452901ab6d is the first bad commit
+commit 2f8a0acbde347d5a561d68b02ac5be452901ab6d
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 16:03:55 2022 +0000
+Date:   Mon Oct 24 15:39:42 2022 +0000
 
     Using ARGV
 
@@ -188,8 +189,8 @@ Date:   Fri Oct 21 16:03:55 2022 +0000
 ruby hello.rb BisectString</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git checkout HEAD^
-Previous HEAD position was ea94510 Using ARGV
-HEAD is now at 620bfcd First Commit
+Previous HEAD position was 2f8a0ac Using ARGV
+HEAD is now at 6af75ba First Commit
 $ ruby hello.rb BisectString
 Hello, World
 </pre>
@@ -234,28 +235,28 @@ git bisect run "./bisect.sh"</pre>
 status: waiting for both good and bad commits
 $ git bisect bad HEAD
 status: waiting for good commit(s), bad commit known
-$ git bisect good 620bfcd
+$ git bisect good 6af75ba
 Bisecting: 6 revisions left to test after this (roughly 3 steps)
-[66b80c3e42171983be057f488ec8ce85380606b2] Tell user how many names they have
+[4163a3d53bec2969b17e5494ee9d855fef150c53] Tell user how many names they have
 $ git bisect run "./bisect.sh"
 running  './bisect.sh'
 Hello, BisectString!
 Bisecting: 2 revisions left to test after this (roughly 2 steps)
-[78dbacb39cec6bfe4bb74104c3144e447660c64e] Added a comment
+[139d07e7471a97a217426ca4f54312a7c5f39e5d] Added a comment
 running  './bisect.sh'
 Hello, BisectString!
 Bisecting: 0 revisions left to test after this (roughly 1 step)
-[7cfd08a41f8601d5c1a5226a31b134e1d0ef59bc] Added a default value
+[d44c7aa0f399d1c443d45fe3bd9601352cd890b6] Added a default value
 running  './bisect.sh'
 Hello, BisectString!
 Bisecting: 0 revisions left to test after this (roughly 0 steps)
-[ea945103f05be4c3d77ae5670a51dc2d5b4aea0d] Using ARGV
+[2f8a0acbde347d5a561d68b02ac5be452901ab6d] Using ARGV
 running  './bisect.sh'
 Hello, BisectString!
-ea945103f05be4c3d77ae5670a51dc2d5b4aea0d is the first bad commit
-commit ea945103f05be4c3d77ae5670a51dc2d5b4aea0d
+2f8a0acbde347d5a561d68b02ac5be452901ab6d is the first bad commit
+commit 2f8a0acbde347d5a561d68b02ac5be452901ab6d
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 16:03:55 2022 +0000
+Date:   Mon Oct 24 15:39:42 2022 +0000
 
     Using ARGV
 
