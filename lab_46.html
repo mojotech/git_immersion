@@ -78,58 +78,79 @@
   <li id="lab_40_link"><a href="lab_40.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_41_link"><a href="lab_41.html">The Reflog</a></li>
   <li id="lab_42_link"><a href="lab_42.html">Rebasing Automatically</a></li>
-  <li id="lab_43_link"><a href="lab_43.html">Multiple Repositories</a></li>
-  <li id="lab_44_link"><a href="lab_44.html">Cloning Repositories</a></li>
-  <li id="lab_45_link"><a href="lab_45.html">Review the Cloned Repository</a></li>
-  <li id="lab_46_link"><a href="lab_46.html">What is Origin?</a></li>
-  <li id="lab_47_link"><a href="lab_47.html">Remote Branches</a></li>
-  <li id="lab_48_link"><a href="lab_48.html">Change the Original Repository</a></li>
-  <li id="lab_49_link"><a href="lab_49.html">Fetching Changes</a></li>
-  <li id="lab_50_link"><a href="lab_50.html">Merging Pulled Changes</a></li>
-  <li id="lab_51_link"><a href="lab_51.html">Pulling Changes</a></li>
-  <li id="lab_52_link"><a href="lab_52.html">Adding a Tracking Branch</a></li>
-  <li id="lab_53_link"><a href="lab_53.html">Bare Repositories</a></li>
-  <li id="lab_54_link"><a href="lab_54.html">Adding a Remote Repository</a></li>
-  <li id="lab_55_link"><a href="lab_55.html">Pushing a Change</a></li>
-  <li id="lab_56_link"><a href="lab_56.html">Pulling Shared Changes</a></li>
-  <li id="lab_57_link"><a href="lab_57.html">Advanced / Future Topics</a></li>
-  <li id="lab_58_link"><a href="lab_58.html">Thank You</a></li>
+  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Bug</a></li>
+  <li id="lab_44_link"><a href="lab_44.html">Multiple Repositories</a></li>
+  <li id="lab_45_link"><a href="lab_45.html">Cloning Repositories</a></li>
+  <li id="lab_46_link"><a href="lab_46.html">Review the Cloned Repository</a></li>
+  <li id="lab_47_link"><a href="lab_47.html">What is Origin?</a></li>
+  <li id="lab_48_link"><a href="lab_48.html">Remote Branches</a></li>
+  <li id="lab_49_link"><a href="lab_49.html">Change the Original Repository</a></li>
+  <li id="lab_50_link"><a href="lab_50.html">Fetching Changes</a></li>
+  <li id="lab_51_link"><a href="lab_51.html">Merging Pulled Changes</a></li>
+  <li id="lab_52_link"><a href="lab_52.html">Pulling Changes</a></li>
+  <li id="lab_53_link"><a href="lab_53.html">Adding a Tracking Branch</a></li>
+  <li id="lab_54_link"><a href="lab_54.html">Bare Repositories</a></li>
+  <li id="lab_55_link"><a href="lab_55.html">Adding a Remote Repository</a></li>
+  <li id="lab_56_link"><a href="lab_56.html">Pushing a Change</a></li>
+  <li id="lab_57_link"><a href="lab_57.html">Pulling Shared Changes</a></li>
+  <li id="lab_58_link"><a href="lab_58.html">Advanced / Future Topics</a></li>
+  <li id="lab_59_link"><a href="lab_59.html">Thank You</a></li>
 
           </ol>
         </nav>
       </div>
 
       <div id="content" tabindex="-1">
-        <h1 class="lab_title"><em>lab 46</em>  What is Origin?</h1>
+        <h1 class="lab_title"><em>lab 46</em>  Review the Cloned Repository</h1>
 <h2>Goals</h2>
 <ul>
-	<li>Learn about naming remote repositories.</li>
+	<li>Learn about branches on remote repositories.</li>
 </ul>
+<h2>Look at the cloned repository</h2>
+<p>Let&#8217;s take a look at the cloned repository.</p>
 <h3><b>Execute:</b></h3>
-<pre class="instructions">git remote</pre>
+<pre class="instructions">cd cloned_hello
+ls</pre>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ git remote
-origin
+<pre class="sample">$ cd cloned_hello
+$ ls
+hello.rb
 </pre>
-<p>We see that the cloned repository knows about a remote repository named origin.  Let&#8217;s see if we can get more information about origin:</p>
+<p>You should see a list of all the files in the top level of the original repository (<code>README</code>, <code>Rakefile</code> and <code>lib</code>).</p>
+<h2>Review the Repository History</h2>
 <h3><b>Execute:</b></h3>
-<pre class="instructions">git remote show origin</pre>
+<pre class="instructions">git hist --all</pre>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ git remote show origin
-* remote origin
-  Fetch URL: /Users/jim/Downloads/git_tutorial/work/hello
-  Push  URL: /Users/jim/Downloads/git_tutorial/work/hello
-  HEAD branch: main
-  Remote branches:
-    excitement tracked
-    greet      tracked
-    main       tracked
-  Local branch configured for 'git pull':
-    main merges with remote main
-  Local ref configured for 'git push':
-    main pushes to main (up to date)
-</pre>
-<p>Now we see that the remote repository &#8220;origin&#8221; is simply the original <strong>hello</strong> repository.  Remote repositories typically live on a separate machine, possibly a centralized server.  As we can see here, however, they can just as well point to a repository on the same machine. There is nothing particularly special about the name &#8220;origin&#8221;, however the convention is to use the name &#8220;origin&#8221; for the primary centralized repository (if there is one).</p>
+<pre class="sample">$ git hist --all
+* 71425e9 2022-10-24 | Add excitement (origin/excitement) [Jim Weirich]
+*   b1df40e 2022-10-24 | Merge branch 'main' into greet [Jim Weirich]
+|\  
+* | 18e7dbd 2022-10-24 | Updated Rakefile [Jim Weirich]
+* | 2a024f1 2022-10-24 | Hello uses Greeter [Jim Weirich]
+* | 85316c2 2022-10-24 | Added greeter class [Jim Weirich]
+| | * 62eac9b 2022-10-24 | Updated Rakefile (origin/greet) [Jim Weirich]
+| | * 7a0c973 2022-10-24 | Hello uses Greeter [Jim Weirich]
+| | * 5729241 2022-10-24 | Added greeter class [Jim Weirich]
+| |/  
+| | * a3d1a30 2022-10-24 | Updated Rakefile (origin/main) [Jim Weirich]
+| | * 2a07cf7 2022-10-24 | Hello uses Greeter [Jim Weirich]
+| | * 09b3f43 2022-10-24 | Added greeter class [Jim Weirich]
+| |/  
+| * 62f7394 2022-10-24 | Added README [Jim Weirich]
+|/  
+* 0022837 2022-10-24 | Added a Rakefile. [Jim Weirich]
+* 3172288 2022-10-24 | Moved hello.rb to lib [Jim Weirich]
+* 3e56dbf 2022-10-24 | Add an author/email comment [Jim Weirich]
+* 1dee7f9 2022-10-24 | Tell user how many names they have (tag: v1) [Jim Weirich]
+* c72af6b 2022-10-24 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
+* 8cdd2cd 2022-10-24 | Can specify multiple names [Jim Weirich]
+* 28fe396 2022-10-24 | Added a comment [Jim Weirich]
+* 15c7573 2022-10-24 | Added a default value [Jim Weirich]
+* 7d55044 2022-10-24 | Using ARGV (HEAD) [Jim Weirich]
+* 91b926e 2022-10-24 | First Commit [Jim Weirich]</pre>
+<p>You should now see a list of all the commits in the new repository, and it should (more or less) match the history of commits in the original repository.  The only difference should be in the names of the branches.</p>
+<h2>Remote branches</h2>
+<p>You should see a <strong>main</strong> branch (along with <strong><span class="caps">HEAD</span></strong>) in the history list.  But you will also have a number of strangely named branches (<strong>origin/main</strong>, <strong>origin/greet</strong> and <strong>origin/<span class="caps">HEAD</span></strong>).  We&#8217;ll talk about them in a bit.</p>
         <nav class="foot-navigation">
       <a href="lab_45.html">
       <svg version="1.1" width="36" height="36" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.66,15.61,18,6,8.34,15.61A1,1,0,1,0,9.75,17L17,9.81V28.94a1,1,0,1,0,2,0V9.81L26.25,17a1,1,0,0,0,1.41-1.42Z"></path></svg>

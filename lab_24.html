@@ -78,22 +78,23 @@
   <li id="lab_40_link"><a href="lab_40.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_41_link"><a href="lab_41.html">The Reflog</a></li>
   <li id="lab_42_link"><a href="lab_42.html">Rebasing Automatically</a></li>
-  <li id="lab_43_link"><a href="lab_43.html">Multiple Repositories</a></li>
-  <li id="lab_44_link"><a href="lab_44.html">Cloning Repositories</a></li>
-  <li id="lab_45_link"><a href="lab_45.html">Review the Cloned Repository</a></li>
-  <li id="lab_46_link"><a href="lab_46.html">What is Origin?</a></li>
-  <li id="lab_47_link"><a href="lab_47.html">Remote Branches</a></li>
-  <li id="lab_48_link"><a href="lab_48.html">Change the Original Repository</a></li>
-  <li id="lab_49_link"><a href="lab_49.html">Fetching Changes</a></li>
-  <li id="lab_50_link"><a href="lab_50.html">Merging Pulled Changes</a></li>
-  <li id="lab_51_link"><a href="lab_51.html">Pulling Changes</a></li>
-  <li id="lab_52_link"><a href="lab_52.html">Adding a Tracking Branch</a></li>
-  <li id="lab_53_link"><a href="lab_53.html">Bare Repositories</a></li>
-  <li id="lab_54_link"><a href="lab_54.html">Adding a Remote Repository</a></li>
-  <li id="lab_55_link"><a href="lab_55.html">Pushing a Change</a></li>
-  <li id="lab_56_link"><a href="lab_56.html">Pulling Shared Changes</a></li>
-  <li id="lab_57_link"><a href="lab_57.html">Advanced / Future Topics</a></li>
-  <li id="lab_58_link"><a href="lab_58.html">Thank You</a></li>
+  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Bug</a></li>
+  <li id="lab_44_link"><a href="lab_44.html">Multiple Repositories</a></li>
+  <li id="lab_45_link"><a href="lab_45.html">Cloning Repositories</a></li>
+  <li id="lab_46_link"><a href="lab_46.html">Review the Cloned Repository</a></li>
+  <li id="lab_47_link"><a href="lab_47.html">What is Origin?</a></li>
+  <li id="lab_48_link"><a href="lab_48.html">Remote Branches</a></li>
+  <li id="lab_49_link"><a href="lab_49.html">Change the Original Repository</a></li>
+  <li id="lab_50_link"><a href="lab_50.html">Fetching Changes</a></li>
+  <li id="lab_51_link"><a href="lab_51.html">Merging Pulled Changes</a></li>
+  <li id="lab_52_link"><a href="lab_52.html">Pulling Changes</a></li>
+  <li id="lab_53_link"><a href="lab_53.html">Adding a Tracking Branch</a></li>
+  <li id="lab_54_link"><a href="lab_54.html">Bare Repositories</a></li>
+  <li id="lab_55_link"><a href="lab_55.html">Adding a Remote Repository</a></li>
+  <li id="lab_56_link"><a href="lab_56.html">Pushing a Change</a></li>
+  <li id="lab_57_link"><a href="lab_57.html">Pulling Shared Changes</a></li>
+  <li id="lab_58_link"><a href="lab_58.html">Advanced / Future Topics</a></li>
+  <li id="lab_59_link"><a href="lab_59.html">Thank You</a></li>
 
           </ol>
         </nav>
@@ -120,16 +121,16 @@ HEAD		branches   description	index  logs  packed-refs
 <pre class="instructions">ls -C .git/objects</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ ls -C .git/objects
-03  11	19  28	35  3d	41  43	64  72	87  9a	9d  a6	ab  b2	cc  de	info
-10  18	27  2f	3a  3f	42  59	69  78	90  9c	a1  a9	af  bb	d6  fc	pack
+00  15	1d  28	31  3a	3e  41	43  69	7d  8c	91  9d	a7  b2	c7  fc	  pack
+11  19	27  2f	35  3d	3f  42	59  78	87  90	9c  a2	af  b7	d6  info
 </pre>
 <p>You should see a bunch of directories with 2 letter names.  The directory names are the first two letters of the sha1 hash of the object stored in git.</p>
 <h2>Deeper into the Object Store</h2>
 <h3><b>Execute:</b></h3>
 <pre class="instructions">ls -C .git/objects/&lt;dir&gt;</pre>
 <h3><b>Output:</b></h3>
-<pre class="sample">$ ls -C .git/objects/03
-8f259d251850e6ea04e3cf573af4773a0b83e7
+<pre class="sample">$ ls -C .git/objects/00
+22837ea47af65b8aadf78560c8edde8211d475
 </pre>
 <p>Look in one of the two-letter directories.  You should see some files with 38-character names.  These are the files that contain the objects stored in git.  These files are compressed and encoded, so looking at their contents directly won&#8217;t be very helpful, but we will take a closer look in a bit.</p>
 <h2>Config File</h2>
@@ -163,7 +164,7 @@ $ ls .git/refs/tags
 v1
 v1-beta
 $ cat .git/refs/tags/v1
-bbbb084a502831a34d2c83b461a885fa9fbb357b
+1dee7f9aea43849aaa80edbc7bc43e63eb6f5315
 </pre>
 <p>You should recognize the files in the tags subdirectory.  Each file corresponds to a tag you created with the <code>git tag</code> command earlier. Its content is just the hash of the commit tied to the tag.</p>
 <p>The heads directory is similar, but is used for branches rather than tags.  We only have one branch at the moment, so all you will see is main in this directory.</p>

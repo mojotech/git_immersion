@@ -78,22 +78,23 @@
   <li id="lab_40_link"><a href="lab_40.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_41_link"><a href="lab_41.html">The Reflog</a></li>
   <li id="lab_42_link"><a href="lab_42.html">Rebasing Automatically</a></li>
-  <li id="lab_43_link"><a href="lab_43.html">Multiple Repositories</a></li>
-  <li id="lab_44_link"><a href="lab_44.html">Cloning Repositories</a></li>
-  <li id="lab_45_link"><a href="lab_45.html">Review the Cloned Repository</a></li>
-  <li id="lab_46_link"><a href="lab_46.html">What is Origin?</a></li>
-  <li id="lab_47_link"><a href="lab_47.html">Remote Branches</a></li>
-  <li id="lab_48_link"><a href="lab_48.html">Change the Original Repository</a></li>
-  <li id="lab_49_link"><a href="lab_49.html">Fetching Changes</a></li>
-  <li id="lab_50_link"><a href="lab_50.html">Merging Pulled Changes</a></li>
-  <li id="lab_51_link"><a href="lab_51.html">Pulling Changes</a></li>
-  <li id="lab_52_link"><a href="lab_52.html">Adding a Tracking Branch</a></li>
-  <li id="lab_53_link"><a href="lab_53.html">Bare Repositories</a></li>
-  <li id="lab_54_link"><a href="lab_54.html">Adding a Remote Repository</a></li>
-  <li id="lab_55_link"><a href="lab_55.html">Pushing a Change</a></li>
-  <li id="lab_56_link"><a href="lab_56.html">Pulling Shared Changes</a></li>
-  <li id="lab_57_link"><a href="lab_57.html">Advanced / Future Topics</a></li>
-  <li id="lab_58_link"><a href="lab_58.html">Thank You</a></li>
+  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Bug</a></li>
+  <li id="lab_44_link"><a href="lab_44.html">Multiple Repositories</a></li>
+  <li id="lab_45_link"><a href="lab_45.html">Cloning Repositories</a></li>
+  <li id="lab_46_link"><a href="lab_46.html">Review the Cloned Repository</a></li>
+  <li id="lab_47_link"><a href="lab_47.html">What is Origin?</a></li>
+  <li id="lab_48_link"><a href="lab_48.html">Remote Branches</a></li>
+  <li id="lab_49_link"><a href="lab_49.html">Change the Original Repository</a></li>
+  <li id="lab_50_link"><a href="lab_50.html">Fetching Changes</a></li>
+  <li id="lab_51_link"><a href="lab_51.html">Merging Pulled Changes</a></li>
+  <li id="lab_52_link"><a href="lab_52.html">Pulling Changes</a></li>
+  <li id="lab_53_link"><a href="lab_53.html">Adding a Tracking Branch</a></li>
+  <li id="lab_54_link"><a href="lab_54.html">Bare Repositories</a></li>
+  <li id="lab_55_link"><a href="lab_55.html">Adding a Remote Repository</a></li>
+  <li id="lab_56_link"><a href="lab_56.html">Pushing a Change</a></li>
+  <li id="lab_57_link"><a href="lab_57.html">Pulling Shared Changes</a></li>
+  <li id="lab_58_link"><a href="lab_58.html">Advanced / Future Topics</a></li>
+  <li id="lab_59_link"><a href="lab_59.html">Thank You</a></li>
 
           </ol>
         </nav>
@@ -121,15 +122,15 @@
 <pre class="instructions">git hist</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git hist
-* ccb5283 2022-10-21 | Revert "Oops, we didn't want this commit" (HEAD -&gt; main) [Jim Weirich]
-* def0bdd 2022-10-21 | Oops, we didn't want this commit [Jim Weirich]
-* bbbb084 2022-10-21 | Tell user how many names they have (tag: v1) [Jim Weirich]
-* a18a8ca 2022-10-21 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
-* 72c9fd4 2022-10-21 | Can specify multiple names [Jim Weirich]
-* 185ef4e 2022-10-21 | Added a comment [Jim Weirich]
-* a9bc960 2022-10-21 | Added a default value [Jim Weirich]
-* 10a0383 2022-10-21 | Using ARGV [Jim Weirich]
-* 038f259 2022-10-21 | First Commit [Jim Weirich]</pre>
+* b7b217e 2022-10-24 | Revert "Oops, we didn't want this commit" (HEAD -&gt; main) [Jim Weirich]
+* a21a584 2022-10-24 | Oops, we didn't want this commit [Jim Weirich]
+* 1dee7f9 2022-10-24 | Tell user how many names they have (tag: v1) [Jim Weirich]
+* c72af6b 2022-10-24 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
+* 8cdd2cd 2022-10-24 | Can specify multiple names [Jim Weirich]
+* 28fe396 2022-10-24 | Added a comment [Jim Weirich]
+* 15c7573 2022-10-24 | Added a default value [Jim Weirich]
+* 7d55044 2022-10-24 | Using ARGV [Jim Weirich]
+* 91b926e 2022-10-24 | First Commit [Jim Weirich]</pre>
 <p>We see that we have an &#8220;Oops&#8221; commit and a &#8220;Revert Oops&#8221; commit as the last two commits made in this branch.  Let&#8217;s remove them using reset.</p>
 <h2>First, Mark this Branch</h2>
 <p>But before we remove the commits, let&#8217;s mark the latest commit with a tag so we can find it again.</p>
@@ -142,15 +143,15 @@
 git hist</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git reset --hard v1
-HEAD is now at bbbb084 Tell user how many names they have
+HEAD is now at 1dee7f9 Tell user how many names they have
 $ git hist
-* bbbb084 2022-10-21 | Tell user how many names they have (HEAD -&gt; main, tag: v1) [Jim Weirich]
-* a18a8ca 2022-10-21 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
-* 72c9fd4 2022-10-21 | Can specify multiple names [Jim Weirich]
-* 185ef4e 2022-10-21 | Added a comment [Jim Weirich]
-* a9bc960 2022-10-21 | Added a default value [Jim Weirich]
-* 10a0383 2022-10-21 | Using ARGV [Jim Weirich]
-* 038f259 2022-10-21 | First Commit [Jim Weirich]</pre>
+* 1dee7f9 2022-10-24 | Tell user how many names they have (HEAD -&gt; main, tag: v1) [Jim Weirich]
+* c72af6b 2022-10-24 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
+* 8cdd2cd 2022-10-24 | Can specify multiple names [Jim Weirich]
+* 28fe396 2022-10-24 | Added a comment [Jim Weirich]
+* 15c7573 2022-10-24 | Added a default value [Jim Weirich]
+* 7d55044 2022-10-24 | Using ARGV [Jim Weirich]
+* 91b926e 2022-10-24 | First Commit [Jim Weirich]</pre>
 <p>Our main branch now points to the v1 commit and the Oops commit and the Revert Oops commit are no longer in the branch.  The <code>--hard</code> parameter indicates that the working directory should be updated to be consistent with the new branch head.</p>
 <h2>Nothing is Ever Lost</h2>
 <p>But what happened to the bad commits?  It turns out that the commits are still in the repository.  In fact, we can still reference them.  Remember that at the beginning of this lab we tagged the reverting commit with the tag &#8220;oops&#8221;.  Let&#8217;s look at <em>all</em> the commits.</p>
@@ -158,15 +159,15 @@ $ git hist
 <pre class="instructions">git hist --all</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git hist --all
-* ccb5283 2022-10-21 | Revert "Oops, we didn't want this commit" (tag: oops) [Jim Weirich]
-* def0bdd 2022-10-21 | Oops, we didn't want this commit [Jim Weirich]
-* bbbb084 2022-10-21 | Tell user how many names they have (HEAD -&gt; main, tag: v1) [Jim Weirich]
-* a18a8ca 2022-10-21 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
-* 72c9fd4 2022-10-21 | Can specify multiple names [Jim Weirich]
-* 185ef4e 2022-10-21 | Added a comment [Jim Weirich]
-* a9bc960 2022-10-21 | Added a default value [Jim Weirich]
-* 10a0383 2022-10-21 | Using ARGV [Jim Weirich]
-* 038f259 2022-10-21 | First Commit [Jim Weirich]</pre>
+* b7b217e 2022-10-24 | Revert "Oops, we didn't want this commit" (tag: oops) [Jim Weirich]
+* a21a584 2022-10-24 | Oops, we didn't want this commit [Jim Weirich]
+* 1dee7f9 2022-10-24 | Tell user how many names they have (HEAD -&gt; main, tag: v1) [Jim Weirich]
+* c72af6b 2022-10-24 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
+* 8cdd2cd 2022-10-24 | Can specify multiple names [Jim Weirich]
+* 28fe396 2022-10-24 | Added a comment [Jim Weirich]
+* 15c7573 2022-10-24 | Added a default value [Jim Weirich]
+* 7d55044 2022-10-24 | Using ARGV [Jim Weirich]
+* 91b926e 2022-10-24 | First Commit [Jim Weirich]</pre>
 <p>Here we see that the bad commits haven&#8217;t disappeared.  They are still in the repository.  It&#8217;s just that they are no longer listed in the main branch.  If we hadn&#8217;t tagged them, they would still be in the repository, but there would be no way to reference them other than using their hash names.  Commits that are unreferenced remain in the repository until the system runs the garbage collection software.</p>
 <h2>Dangers of Reset</h2>
 <p>Resets on local branches are generally safe.  Any &#8220;accidents&#8221; can usually be recovered from by just resetting again with the desired commit.</p>

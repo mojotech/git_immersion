@@ -78,22 +78,23 @@
   <li id="lab_40_link"><a href="lab_40.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_41_link"><a href="lab_41.html">The Reflog</a></li>
   <li id="lab_42_link"><a href="lab_42.html">Rebasing Automatically</a></li>
-  <li id="lab_43_link"><a href="lab_43.html">Multiple Repositories</a></li>
-  <li id="lab_44_link"><a href="lab_44.html">Cloning Repositories</a></li>
-  <li id="lab_45_link"><a href="lab_45.html">Review the Cloned Repository</a></li>
-  <li id="lab_46_link"><a href="lab_46.html">What is Origin?</a></li>
-  <li id="lab_47_link"><a href="lab_47.html">Remote Branches</a></li>
-  <li id="lab_48_link"><a href="lab_48.html">Change the Original Repository</a></li>
-  <li id="lab_49_link"><a href="lab_49.html">Fetching Changes</a></li>
-  <li id="lab_50_link"><a href="lab_50.html">Merging Pulled Changes</a></li>
-  <li id="lab_51_link"><a href="lab_51.html">Pulling Changes</a></li>
-  <li id="lab_52_link"><a href="lab_52.html">Adding a Tracking Branch</a></li>
-  <li id="lab_53_link"><a href="lab_53.html">Bare Repositories</a></li>
-  <li id="lab_54_link"><a href="lab_54.html">Adding a Remote Repository</a></li>
-  <li id="lab_55_link"><a href="lab_55.html">Pushing a Change</a></li>
-  <li id="lab_56_link"><a href="lab_56.html">Pulling Shared Changes</a></li>
-  <li id="lab_57_link"><a href="lab_57.html">Advanced / Future Topics</a></li>
-  <li id="lab_58_link"><a href="lab_58.html">Thank You</a></li>
+  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Bug</a></li>
+  <li id="lab_44_link"><a href="lab_44.html">Multiple Repositories</a></li>
+  <li id="lab_45_link"><a href="lab_45.html">Cloning Repositories</a></li>
+  <li id="lab_46_link"><a href="lab_46.html">Review the Cloned Repository</a></li>
+  <li id="lab_47_link"><a href="lab_47.html">What is Origin?</a></li>
+  <li id="lab_48_link"><a href="lab_48.html">Remote Branches</a></li>
+  <li id="lab_49_link"><a href="lab_49.html">Change the Original Repository</a></li>
+  <li id="lab_50_link"><a href="lab_50.html">Fetching Changes</a></li>
+  <li id="lab_51_link"><a href="lab_51.html">Merging Pulled Changes</a></li>
+  <li id="lab_52_link"><a href="lab_52.html">Pulling Changes</a></li>
+  <li id="lab_53_link"><a href="lab_53.html">Adding a Tracking Branch</a></li>
+  <li id="lab_54_link"><a href="lab_54.html">Bare Repositories</a></li>
+  <li id="lab_55_link"><a href="lab_55.html">Adding a Remote Repository</a></li>
+  <li id="lab_56_link"><a href="lab_56.html">Pushing a Change</a></li>
+  <li id="lab_57_link"><a href="lab_57.html">Pulling Shared Changes</a></li>
+  <li id="lab_58_link"><a href="lab_58.html">Advanced / Future Topics</a></li>
+  <li id="lab_59_link"><a href="lab_59.html">Thank You</a></li>
 
           </ol>
         </nav>
@@ -123,27 +124,27 @@ git commit -m "Made interactive"</pre>
 <pre class="instructions">git hist --all</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git hist --all
-* 91f3631 2022-10-21 | Add some suspicion (greet) [Jim Weirich]
-* 5798e51 2022-10-21 | Add excitement (excitement) [Jim Weirich]
-*   0b10299 2022-10-21 | Merge branch 'main' into greet [Jim Weirich]
+* 5e8ac5c 2022-10-24 | Add some suspicion (greet) [Jim Weirich]
+* 71425e9 2022-10-24 | Add excitement (excitement) [Jim Weirich]
+*   b1df40e 2022-10-24 | Merge branch 'main' into greet [Jim Weirich]
 |\  
-* | 6a57a7c 2022-10-21 | Updated Rakefile [Jim Weirich]
-* | 4c26f0a 2022-10-21 | Hello uses Greeter [Jim Weirich]
-* | 6ed30f5 2022-10-21 | Added greeter class [Jim Weirich]
-| | * ecc2f9a 2022-10-21 | Made interactive (HEAD -&gt; main) [Jim Weirich]
+* | 18e7dbd 2022-10-24 | Updated Rakefile [Jim Weirich]
+* | 2a024f1 2022-10-24 | Hello uses Greeter [Jim Weirich]
+* | 85316c2 2022-10-24 | Added greeter class [Jim Weirich]
+| | * 06325a5 2022-10-24 | Made interactive (HEAD -&gt; main) [Jim Weirich]
 | |/  
-| * 596574d 2022-10-21 | Added README [Jim Weirich]
+| * 62f7394 2022-10-24 | Added README [Jim Weirich]
 |/  
-* a6d0479 2022-10-21 | Added a Rakefile. [Jim Weirich]
-* aba6d76 2022-10-21 | Moved hello.rb to lib [Jim Weirich]
-* 9aa662b 2022-10-21 | Add an author/email comment [Jim Weirich]
-* bbbb084 2022-10-21 | Tell user how many names they have (tag: v1) [Jim Weirich]
-* a18a8ca 2022-10-21 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
-* 72c9fd4 2022-10-21 | Can specify multiple names [Jim Weirich]
-* 185ef4e 2022-10-21 | Added a comment [Jim Weirich]
-* a9bc960 2022-10-21 | Added a default value [Jim Weirich]
-* 10a0383 2022-10-21 | Using ARGV [Jim Weirich]
-* 038f259 2022-10-21 | First Commit [Jim Weirich]</pre>
+* 0022837 2022-10-24 | Added a Rakefile. [Jim Weirich]
+* 3172288 2022-10-24 | Moved hello.rb to lib [Jim Weirich]
+* 3e56dbf 2022-10-24 | Add an author/email comment [Jim Weirich]
+* 1dee7f9 2022-10-24 | Tell user how many names they have (tag: v1) [Jim Weirich]
+* c72af6b 2022-10-24 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
+* 8cdd2cd 2022-10-24 | Can specify multiple names [Jim Weirich]
+* 28fe396 2022-10-24 | Added a comment [Jim Weirich]
+* 15c7573 2022-10-24 | Added a default value [Jim Weirich]
+* 7d55044 2022-10-24 | Using ARGV [Jim Weirich]
+* 91b926e 2022-10-24 | First Commit [Jim Weirich]</pre>
 <p>Main at commit &#8220;Added <span class="caps">README</span>&#8221; has been merged to the greet branch, but there is now an additional commit on main that has not been merged back to greet.</p>
 <h2>Up Next</h2>
 <p>The latest change in main conflicts with some existing changes in greet.  Next we will resolve those changes.</p>

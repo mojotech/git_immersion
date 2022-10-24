@@ -78,43 +78,91 @@
   <li id="lab_40_link"><a href="lab_40.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_41_link"><a href="lab_41.html">The Reflog</a></li>
   <li id="lab_42_link"><a href="lab_42.html">Rebasing Automatically</a></li>
-  <li id="lab_43_link"><a href="lab_43.html">Multiple Repositories</a></li>
-  <li id="lab_44_link"><a href="lab_44.html">Cloning Repositories</a></li>
-  <li id="lab_45_link"><a href="lab_45.html">Review the Cloned Repository</a></li>
-  <li id="lab_46_link"><a href="lab_46.html">What is Origin?</a></li>
-  <li id="lab_47_link"><a href="lab_47.html">Remote Branches</a></li>
-  <li id="lab_48_link"><a href="lab_48.html">Change the Original Repository</a></li>
-  <li id="lab_49_link"><a href="lab_49.html">Fetching Changes</a></li>
-  <li id="lab_50_link"><a href="lab_50.html">Merging Pulled Changes</a></li>
-  <li id="lab_51_link"><a href="lab_51.html">Pulling Changes</a></li>
-  <li id="lab_52_link"><a href="lab_52.html">Adding a Tracking Branch</a></li>
-  <li id="lab_53_link"><a href="lab_53.html">Bare Repositories</a></li>
-  <li id="lab_54_link"><a href="lab_54.html">Adding a Remote Repository</a></li>
-  <li id="lab_55_link"><a href="lab_55.html">Pushing a Change</a></li>
-  <li id="lab_56_link"><a href="lab_56.html">Pulling Shared Changes</a></li>
-  <li id="lab_57_link"><a href="lab_57.html">Advanced / Future Topics</a></li>
-  <li id="lab_58_link"><a href="lab_58.html">Thank You</a></li>
+  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Bug</a></li>
+  <li id="lab_44_link"><a href="lab_44.html">Multiple Repositories</a></li>
+  <li id="lab_45_link"><a href="lab_45.html">Cloning Repositories</a></li>
+  <li id="lab_46_link"><a href="lab_46.html">Review the Cloned Repository</a></li>
+  <li id="lab_47_link"><a href="lab_47.html">What is Origin?</a></li>
+  <li id="lab_48_link"><a href="lab_48.html">Remote Branches</a></li>
+  <li id="lab_49_link"><a href="lab_49.html">Change the Original Repository</a></li>
+  <li id="lab_50_link"><a href="lab_50.html">Fetching Changes</a></li>
+  <li id="lab_51_link"><a href="lab_51.html">Merging Pulled Changes</a></li>
+  <li id="lab_52_link"><a href="lab_52.html">Pulling Changes</a></li>
+  <li id="lab_53_link"><a href="lab_53.html">Adding a Tracking Branch</a></li>
+  <li id="lab_54_link"><a href="lab_54.html">Bare Repositories</a></li>
+  <li id="lab_55_link"><a href="lab_55.html">Adding a Remote Repository</a></li>
+  <li id="lab_56_link"><a href="lab_56.html">Pushing a Change</a></li>
+  <li id="lab_57_link"><a href="lab_57.html">Pulling Shared Changes</a></li>
+  <li id="lab_58_link"><a href="lab_58.html">Advanced / Future Topics</a></li>
+  <li id="lab_59_link"><a href="lab_59.html">Thank You</a></li>
 
           </ol>
         </nav>
       </div>
 
       <div id="content" tabindex="-1">
-        <h1 class="lab_title"><em>lab 56</em>  Pulling Shared Changes</h1>
+        <h1 class="lab_title"><em>lab 56</em>  Pushing a Change</h1>
 <h2>Goals</h2>
 <ul>
-	<li>Learn how to pull changes from a shared repository.</li>
+	<li>Learn how to push a change to a remote repository.</li>
 </ul>
-<p>Quick hop over to the clone repository and let&#8217;s pull down the changes just pushed to the shared repo.</p>
+<p>Since bare repositories are usually shared on some sort of network server, it is usually difficult to cd into the repo and pull changes. So we need to push our changes into other repositories.</p>
+<p>Let&#8217;s start by creating a change to be pushed.  Edit the <span class="caps">README</span> and commit it</p>
+<h3 class="file-heading"><em><span class="caps">README</span></em></h3>
+<pre class="file">This is the Hello World example from the git tutorial.
+(Changed in the original and pushed to shared)
+</pre>
 <h3><b>Execute:</b></h3>
-<pre class="instructions">cd ../cloned_hello</pre>
-<p style="color:red;"><strong><span class="caps">NOTE</span>: Now in the <em>cloned_hello</em> repo.</strong></p>
-<p>Continue with&#8230;</p>
+<pre class="instructions">git checkout main
+git add README
+git commit -m "Added shared comment to readme"</pre>
+<p>Now push the change to the shared repo.</p>
 <h3><b>Execute:</b></h3>
-<pre class="instructions">git remote add shared ../hello.git
-git branch --track shared main
-git pull shared main
-cat README</pre>
+<pre class="instructions">git push shared main</pre>
+<p><em>shared</em> is the name of the repository receiving the changes we are pushing. (Remember, we added it as a remote in the previous lab.)</p>
+<h3><b>Output:</b></h3>
+<pre class="sample">$ git push shared main
+Everything up-to-date
+</pre>
+<p class="note"><strong><span class="caps">NOTE</span>:</strong> We had to explicitly name the branch main that was receiving the push.  It is possible to set it up automatically, but I <em>never</em> remember the commands to do that.  Check out the &#8220;Git Remote Branch&#8221; gem for easy management of remote branches.</p>
+<h2>You Can Push Anything</h2>
+<p>Pushing to a remote repository requires specifying what you are pushing and where you are pushing it. The <code>git push shared main</code> command uses a shorthand to specify where the branch is going to be pushed. You could read it like this: <code>git push shared main:main</code>, where what comes before the colon is in your local repository and what comes after is in the remote repository. There is a lot of power in this ability. Recall <a href="lab_24.html">Lab 24</a> where we looked at the internals of the <code>.git</code> directory. On both sides of the colon you can specify any branch name, or any path starting with the <code>refs/</code> directory. You can also specify an arbitrary local commit to push. Below are some examples:</p>
+<h3><b>Execute:</b></h3>
+<pre class="instructions"># Push a commit to a new branch
+git push shared &lt;hash&gt;:refs/heads/new-branch
+# Rename a remote branch
+git push shared refs/remotes/shared/new-branch:refs/heads/new-branch-rename
+# Push a local branch under a different name
+git push shared greet:greet-rename
+# We can confirm they're all there
+git remote show shared</pre>
+<h3><b>Output:</b></h3>
+<pre class="sample">$ git push shared 91b926e:refs/heads/new-branch
+To ../hello.git
+ * [new branch]      91b926e -&gt; new-branch
+$ git push shared refs/remotes/shared/new-branch:refs/heads/new-branch-rename
+To ../hello.git
+ * [new branch]      shared/new-branch -&gt; new-branch-rename
+$ git push shared greet:greet-rename
+To ../hello.git
+ * [new branch]      greet -&gt; greet-rename
+$ git remote show shared
+* remote shared
+  Fetch URL: ../hello.git
+  Push  URL: ../hello.git
+  HEAD branch: (unknown)
+  Remote branches:
+    excitement        new (next fetch will store in remotes/shared)
+    greet             new (next fetch will store in remotes/shared)
+    greet-rename      tracked
+    main              tracked
+    new-branch        tracked
+    new-branch-rename tracked
+  Local refs configured for 'git push':
+    excitement pushes to excitement (up to date)
+    greet      pushes to greet      (up to date)
+    main       pushes to main       (up to date)
+</pre>
         <nav class="foot-navigation">
       <a href="lab_55.html">
       <svg version="1.1" width="36" height="36" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.66,15.61,18,6,8.34,15.61A1,1,0,1,0,9.75,17L17,9.81V28.94a1,1,0,1,0,2,0V9.81L26.25,17a1,1,0,0,0,1.41-1.42Z"></path></svg>

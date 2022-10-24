@@ -78,22 +78,23 @@
   <li id="lab_40_link"><a href="lab_40.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_41_link"><a href="lab_41.html">The Reflog</a></li>
   <li id="lab_42_link"><a href="lab_42.html">Rebasing Automatically</a></li>
-  <li id="lab_43_link"><a href="lab_43.html">Multiple Repositories</a></li>
-  <li id="lab_44_link"><a href="lab_44.html">Cloning Repositories</a></li>
-  <li id="lab_45_link"><a href="lab_45.html">Review the Cloned Repository</a></li>
-  <li id="lab_46_link"><a href="lab_46.html">What is Origin?</a></li>
-  <li id="lab_47_link"><a href="lab_47.html">Remote Branches</a></li>
-  <li id="lab_48_link"><a href="lab_48.html">Change the Original Repository</a></li>
-  <li id="lab_49_link"><a href="lab_49.html">Fetching Changes</a></li>
-  <li id="lab_50_link"><a href="lab_50.html">Merging Pulled Changes</a></li>
-  <li id="lab_51_link"><a href="lab_51.html">Pulling Changes</a></li>
-  <li id="lab_52_link"><a href="lab_52.html">Adding a Tracking Branch</a></li>
-  <li id="lab_53_link"><a href="lab_53.html">Bare Repositories</a></li>
-  <li id="lab_54_link"><a href="lab_54.html">Adding a Remote Repository</a></li>
-  <li id="lab_55_link"><a href="lab_55.html">Pushing a Change</a></li>
-  <li id="lab_56_link"><a href="lab_56.html">Pulling Shared Changes</a></li>
-  <li id="lab_57_link"><a href="lab_57.html">Advanced / Future Topics</a></li>
-  <li id="lab_58_link"><a href="lab_58.html">Thank You</a></li>
+  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Bug</a></li>
+  <li id="lab_44_link"><a href="lab_44.html">Multiple Repositories</a></li>
+  <li id="lab_45_link"><a href="lab_45.html">Cloning Repositories</a></li>
+  <li id="lab_46_link"><a href="lab_46.html">Review the Cloned Repository</a></li>
+  <li id="lab_47_link"><a href="lab_47.html">What is Origin?</a></li>
+  <li id="lab_48_link"><a href="lab_48.html">Remote Branches</a></li>
+  <li id="lab_49_link"><a href="lab_49.html">Change the Original Repository</a></li>
+  <li id="lab_50_link"><a href="lab_50.html">Fetching Changes</a></li>
+  <li id="lab_51_link"><a href="lab_51.html">Merging Pulled Changes</a></li>
+  <li id="lab_52_link"><a href="lab_52.html">Pulling Changes</a></li>
+  <li id="lab_53_link"><a href="lab_53.html">Adding a Tracking Branch</a></li>
+  <li id="lab_54_link"><a href="lab_54.html">Bare Repositories</a></li>
+  <li id="lab_55_link"><a href="lab_55.html">Adding a Remote Repository</a></li>
+  <li id="lab_56_link"><a href="lab_56.html">Pushing a Change</a></li>
+  <li id="lab_57_link"><a href="lab_57.html">Pulling Shared Changes</a></li>
+  <li id="lab_58_link"><a href="lab_58.html">Advanced / Future Topics</a></li>
+  <li id="lab_59_link"><a href="lab_59.html">Thank You</a></li>
 
           </ol>
         </nav>
@@ -111,21 +112,21 @@
 <pre class="instructions">git hist --all</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git hist --all
-* 6a57a7c 2022-10-21 | Updated Rakefile (greet) [Jim Weirich]
-* 4c26f0a 2022-10-21 | Hello uses Greeter [Jim Weirich]
-* 6ed30f5 2022-10-21 | Added greeter class [Jim Weirich]
-| * 596574d 2022-10-21 | Added README (HEAD -&gt; main) [Jim Weirich]
+* 18e7dbd 2022-10-24 | Updated Rakefile (greet) [Jim Weirich]
+* 2a024f1 2022-10-24 | Hello uses Greeter [Jim Weirich]
+* 85316c2 2022-10-24 | Added greeter class [Jim Weirich]
+| * 62f7394 2022-10-24 | Added README (HEAD -&gt; main) [Jim Weirich]
 |/  
-* a6d0479 2022-10-21 | Added a Rakefile. [Jim Weirich]
-* aba6d76 2022-10-21 | Moved hello.rb to lib [Jim Weirich]
-* 9aa662b 2022-10-21 | Add an author/email comment [Jim Weirich]
-* bbbb084 2022-10-21 | Tell user how many names they have (tag: v1) [Jim Weirich]
-* a18a8ca 2022-10-21 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
-* 72c9fd4 2022-10-21 | Can specify multiple names [Jim Weirich]
-* 185ef4e 2022-10-21 | Added a comment [Jim Weirich]
-* a9bc960 2022-10-21 | Added a default value [Jim Weirich]
-* 10a0383 2022-10-21 | Using ARGV [Jim Weirich]
-* 038f259 2022-10-21 | First Commit [Jim Weirich]</pre>
+* 0022837 2022-10-24 | Added a Rakefile. [Jim Weirich]
+* 3172288 2022-10-24 | Moved hello.rb to lib [Jim Weirich]
+* 3e56dbf 2022-10-24 | Add an author/email comment [Jim Weirich]
+* 1dee7f9 2022-10-24 | Tell user how many names they have (tag: v1) [Jim Weirich]
+* c72af6b 2022-10-24 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
+* 8cdd2cd 2022-10-24 | Can specify multiple names [Jim Weirich]
+* 28fe396 2022-10-24 | Added a comment [Jim Weirich]
+* 15c7573 2022-10-24 | Added a default value [Jim Weirich]
+* 7d55044 2022-10-24 | Using ARGV [Jim Weirich]
+* 91b926e 2022-10-24 | First Commit [Jim Weirich]</pre>
 <p>Here is our first chance to see the <code>--graph</code> option on <code>git hist</code> in action. Adding the <code>--graph</code> option to <code>git log</code> causes it to draw the commit tree using simple <span class="caps">ASCII</span> characters.  We can see both branches (greet and main), and that the main branch is the current <span class="caps">HEAD</span>. The common ancestor to both branches is the &#8220;Added a Rakefile&#8221; branch.</p>
 <p>The <code>--all</code> flag makes sure that we see all the branches.  The default is to show only the current branch.</p>
         <nav class="foot-navigation">

@@ -78,22 +78,23 @@
   <li id="lab_40_link"><a href="lab_40.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_41_link"><a href="lab_41.html">The Reflog</a></li>
   <li id="lab_42_link"><a href="lab_42.html">Rebasing Automatically</a></li>
-  <li id="lab_43_link"><a href="lab_43.html">Multiple Repositories</a></li>
-  <li id="lab_44_link"><a href="lab_44.html">Cloning Repositories</a></li>
-  <li id="lab_45_link"><a href="lab_45.html">Review the Cloned Repository</a></li>
-  <li id="lab_46_link"><a href="lab_46.html">What is Origin?</a></li>
-  <li id="lab_47_link"><a href="lab_47.html">Remote Branches</a></li>
-  <li id="lab_48_link"><a href="lab_48.html">Change the Original Repository</a></li>
-  <li id="lab_49_link"><a href="lab_49.html">Fetching Changes</a></li>
-  <li id="lab_50_link"><a href="lab_50.html">Merging Pulled Changes</a></li>
-  <li id="lab_51_link"><a href="lab_51.html">Pulling Changes</a></li>
-  <li id="lab_52_link"><a href="lab_52.html">Adding a Tracking Branch</a></li>
-  <li id="lab_53_link"><a href="lab_53.html">Bare Repositories</a></li>
-  <li id="lab_54_link"><a href="lab_54.html">Adding a Remote Repository</a></li>
-  <li id="lab_55_link"><a href="lab_55.html">Pushing a Change</a></li>
-  <li id="lab_56_link"><a href="lab_56.html">Pulling Shared Changes</a></li>
-  <li id="lab_57_link"><a href="lab_57.html">Advanced / Future Topics</a></li>
-  <li id="lab_58_link"><a href="lab_58.html">Thank You</a></li>
+  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Bug</a></li>
+  <li id="lab_44_link"><a href="lab_44.html">Multiple Repositories</a></li>
+  <li id="lab_45_link"><a href="lab_45.html">Cloning Repositories</a></li>
+  <li id="lab_46_link"><a href="lab_46.html">Review the Cloned Repository</a></li>
+  <li id="lab_47_link"><a href="lab_47.html">What is Origin?</a></li>
+  <li id="lab_48_link"><a href="lab_48.html">Remote Branches</a></li>
+  <li id="lab_49_link"><a href="lab_49.html">Change the Original Repository</a></li>
+  <li id="lab_50_link"><a href="lab_50.html">Fetching Changes</a></li>
+  <li id="lab_51_link"><a href="lab_51.html">Merging Pulled Changes</a></li>
+  <li id="lab_52_link"><a href="lab_52.html">Pulling Changes</a></li>
+  <li id="lab_53_link"><a href="lab_53.html">Adding a Tracking Branch</a></li>
+  <li id="lab_54_link"><a href="lab_54.html">Bare Repositories</a></li>
+  <li id="lab_55_link"><a href="lab_55.html">Adding a Remote Repository</a></li>
+  <li id="lab_56_link"><a href="lab_56.html">Pushing a Change</a></li>
+  <li id="lab_57_link"><a href="lab_57.html">Pulling Shared Changes</a></li>
+  <li id="lab_58_link"><a href="lab_58.html">Advanced / Future Topics</a></li>
+  <li id="lab_59_link"><a href="lab_59.html">Thank You</a></li>
 
           </ol>
         </nav>
@@ -136,8 +137,8 @@ git commit --amend -m "Add an author/email comment"</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git add hello.rb
 $ git commit --amend -m "Add an author/email comment"
-[main 9aa662b] Add an author/email comment
- Date: Fri Oct 21 19:18:10 2022 +0000
+[main 3e56dbf] Add an author/email comment
+ Date: Mon Oct 24 19:02:01 2022 +0000
  1 file changed, 2 insertions(+), 1 deletion(-)
 </pre>
 <h2>Review the History</h2>
@@ -145,14 +146,14 @@ $ git commit --amend -m "Add an author/email comment"
 <pre class="instructions">git hist</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git hist
-* 9aa662b 2022-10-21 | Add an author/email comment (HEAD -&gt; main) [Jim Weirich]
-* bbbb084 2022-10-21 | Tell user how many names they have (tag: v1) [Jim Weirich]
-* a18a8ca 2022-10-21 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
-* 72c9fd4 2022-10-21 | Can specify multiple names [Jim Weirich]
-* 185ef4e 2022-10-21 | Added a comment [Jim Weirich]
-* a9bc960 2022-10-21 | Added a default value [Jim Weirich]
-* 10a0383 2022-10-21 | Using ARGV [Jim Weirich]
-* 038f259 2022-10-21 | First Commit [Jim Weirich]</pre>
+* 3e56dbf 2022-10-24 | Add an author/email comment (HEAD -&gt; main) [Jim Weirich]
+* 1dee7f9 2022-10-24 | Tell user how many names they have (tag: v1) [Jim Weirich]
+* c72af6b 2022-10-24 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
+* 8cdd2cd 2022-10-24 | Can specify multiple names [Jim Weirich]
+* 28fe396 2022-10-24 | Added a comment [Jim Weirich]
+* 15c7573 2022-10-24 | Added a default value [Jim Weirich]
+* 7d55044 2022-10-24 | Using ARGV [Jim Weirich]
+* 91b926e 2022-10-24 | First Commit [Jim Weirich]</pre>
 <p>We can see the original &#8220;author&#8221; commit is now gone, and it is replaced by the &#8220;author/email&#8221; commit.  You can achieve the same effect by resetting the branch back one commit and then recommitting the new changes.</p>
         <nav class="foot-navigation">
       <a href="lab_19.html">

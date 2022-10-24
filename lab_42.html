@@ -78,22 +78,23 @@
   <li id="lab_40_link"><a href="lab_40.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_41_link"><a href="lab_41.html">The Reflog</a></li>
   <li id="lab_42_link"><a href="lab_42.html">Rebasing Automatically</a></li>
-  <li id="lab_43_link"><a href="lab_43.html">Multiple Repositories</a></li>
-  <li id="lab_44_link"><a href="lab_44.html">Cloning Repositories</a></li>
-  <li id="lab_45_link"><a href="lab_45.html">Review the Cloned Repository</a></li>
-  <li id="lab_46_link"><a href="lab_46.html">What is Origin?</a></li>
-  <li id="lab_47_link"><a href="lab_47.html">Remote Branches</a></li>
-  <li id="lab_48_link"><a href="lab_48.html">Change the Original Repository</a></li>
-  <li id="lab_49_link"><a href="lab_49.html">Fetching Changes</a></li>
-  <li id="lab_50_link"><a href="lab_50.html">Merging Pulled Changes</a></li>
-  <li id="lab_51_link"><a href="lab_51.html">Pulling Changes</a></li>
-  <li id="lab_52_link"><a href="lab_52.html">Adding a Tracking Branch</a></li>
-  <li id="lab_53_link"><a href="lab_53.html">Bare Repositories</a></li>
-  <li id="lab_54_link"><a href="lab_54.html">Adding a Remote Repository</a></li>
-  <li id="lab_55_link"><a href="lab_55.html">Pushing a Change</a></li>
-  <li id="lab_56_link"><a href="lab_56.html">Pulling Shared Changes</a></li>
-  <li id="lab_57_link"><a href="lab_57.html">Advanced / Future Topics</a></li>
-  <li id="lab_58_link"><a href="lab_58.html">Thank You</a></li>
+  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Bug</a></li>
+  <li id="lab_44_link"><a href="lab_44.html">Multiple Repositories</a></li>
+  <li id="lab_45_link"><a href="lab_45.html">Cloning Repositories</a></li>
+  <li id="lab_46_link"><a href="lab_46.html">Review the Cloned Repository</a></li>
+  <li id="lab_47_link"><a href="lab_47.html">What is Origin?</a></li>
+  <li id="lab_48_link"><a href="lab_48.html">Remote Branches</a></li>
+  <li id="lab_49_link"><a href="lab_49.html">Change the Original Repository</a></li>
+  <li id="lab_50_link"><a href="lab_50.html">Fetching Changes</a></li>
+  <li id="lab_51_link"><a href="lab_51.html">Merging Pulled Changes</a></li>
+  <li id="lab_52_link"><a href="lab_52.html">Pulling Changes</a></li>
+  <li id="lab_53_link"><a href="lab_53.html">Adding a Tracking Branch</a></li>
+  <li id="lab_54_link"><a href="lab_54.html">Bare Repositories</a></li>
+  <li id="lab_55_link"><a href="lab_55.html">Adding a Remote Repository</a></li>
+  <li id="lab_56_link"><a href="lab_56.html">Pushing a Change</a></li>
+  <li id="lab_57_link"><a href="lab_57.html">Pulling Shared Changes</a></li>
+  <li id="lab_58_link"><a href="lab_58.html">Advanced / Future Topics</a></li>
+  <li id="lab_59_link"><a href="lab_59.html">Thank You</a></li>
 
           </ol>
         </nav>
@@ -118,9 +119,9 @@ git show</pre>
 <p>The resulting commit should appear similar to the below example.</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git show
-commit 9ac9f3ccffc0daed7cd0444774c3eefedc1330dc
+commit 22226f2fdee3fee270b49efccdb3e5d0097fc6a9
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 19:18:12 2022 +0000
+Date:   Mon Oct 24 19:02:02 2022 +0000
 
     fixup! Added greeter class
 
@@ -144,20 +145,20 @@ index 69681ef..66e6370 100644
 git log --oneline</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git log --oneline
-53fc2a9 Updated Rakefile
-167345b Hello uses Greeter
-336553b Added greeter class
-596574d Added README
-a6d0479 Added a Rakefile.
-aba6d76 Moved hello.rb to lib
-9aa662b Add an author/email comment
-bbbb084 Tell user how many names they have
-a18a8ca Rename variable to match its usage
-72c9fd4 Can specify multiple names
-185ef4e Added a comment
-a9bc960 Added a default value
-10a0383 Using ARGV
-038f259 First Commit
+a3d1a30 Updated Rakefile
+2a07cf7 Hello uses Greeter
+09b3f43 Added greeter class
+62f7394 Added README
+0022837 Added a Rakefile.
+3172288 Moved hello.rb to lib
+3e56dbf Add an author/email comment
+1dee7f9 Tell user how many names they have
+c72af6b Rename variable to match its usage
+8cdd2cd Can specify multiple names
+28fe396 Added a comment
+15c7573 Added a default value
+7d55044 Using ARGV
+91b926e First Commit
 </pre>
         <nav class="foot-navigation">
       <a href="lab_41.html">

@@ -78,22 +78,23 @@
   <li id="lab_40_link"><a href="lab_40.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_41_link"><a href="lab_41.html">The Reflog</a></li>
   <li id="lab_42_link"><a href="lab_42.html">Rebasing Automatically</a></li>
-  <li id="lab_43_link"><a href="lab_43.html">Multiple Repositories</a></li>
-  <li id="lab_44_link"><a href="lab_44.html">Cloning Repositories</a></li>
-  <li id="lab_45_link"><a href="lab_45.html">Review the Cloned Repository</a></li>
-  <li id="lab_46_link"><a href="lab_46.html">What is Origin?</a></li>
-  <li id="lab_47_link"><a href="lab_47.html">Remote Branches</a></li>
-  <li id="lab_48_link"><a href="lab_48.html">Change the Original Repository</a></li>
-  <li id="lab_49_link"><a href="lab_49.html">Fetching Changes</a></li>
-  <li id="lab_50_link"><a href="lab_50.html">Merging Pulled Changes</a></li>
-  <li id="lab_51_link"><a href="lab_51.html">Pulling Changes</a></li>
-  <li id="lab_52_link"><a href="lab_52.html">Adding a Tracking Branch</a></li>
-  <li id="lab_53_link"><a href="lab_53.html">Bare Repositories</a></li>
-  <li id="lab_54_link"><a href="lab_54.html">Adding a Remote Repository</a></li>
-  <li id="lab_55_link"><a href="lab_55.html">Pushing a Change</a></li>
-  <li id="lab_56_link"><a href="lab_56.html">Pulling Shared Changes</a></li>
-  <li id="lab_57_link"><a href="lab_57.html">Advanced / Future Topics</a></li>
-  <li id="lab_58_link"><a href="lab_58.html">Thank You</a></li>
+  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Bug</a></li>
+  <li id="lab_44_link"><a href="lab_44.html">Multiple Repositories</a></li>
+  <li id="lab_45_link"><a href="lab_45.html">Cloning Repositories</a></li>
+  <li id="lab_46_link"><a href="lab_46.html">Review the Cloned Repository</a></li>
+  <li id="lab_47_link"><a href="lab_47.html">What is Origin?</a></li>
+  <li id="lab_48_link"><a href="lab_48.html">Remote Branches</a></li>
+  <li id="lab_49_link"><a href="lab_49.html">Change the Original Repository</a></li>
+  <li id="lab_50_link"><a href="lab_50.html">Fetching Changes</a></li>
+  <li id="lab_51_link"><a href="lab_51.html">Merging Pulled Changes</a></li>
+  <li id="lab_52_link"><a href="lab_52.html">Pulling Changes</a></li>
+  <li id="lab_53_link"><a href="lab_53.html">Adding a Tracking Branch</a></li>
+  <li id="lab_54_link"><a href="lab_54.html">Bare Repositories</a></li>
+  <li id="lab_55_link"><a href="lab_55.html">Adding a Remote Repository</a></li>
+  <li id="lab_56_link"><a href="lab_56.html">Pushing a Change</a></li>
+  <li id="lab_57_link"><a href="lab_57.html">Pulling Shared Changes</a></li>
+  <li id="lab_58_link"><a href="lab_58.html">Advanced / Future Topics</a></li>
+  <li id="lab_59_link"><a href="lab_59.html">Thank You</a></li>
 
           </ol>
         </nav>
@@ -126,8 +127,8 @@ git commit -m "Oops, we didn't want this commit"</pre>
 <pre class="instructions">git revert HEAD</pre>
 <p>This will pop you into the editor.  You can edit the default commit message or leave it as is.  Save and close the file. You should see &#8230;</p>
 <h3><b>Output:</b></h3>
-<pre class="sample">[main ccb5283] Revert "Oops, we didn't want this commit"
- Date: Fri Oct 21 19:18:10 2022 +0000
+<pre class="sample">[main b7b217e] Revert "Oops, we didn't want this commit"
+ Date: Mon Oct 24 19:02:01 2022 +0000
  1 file changed, 1 insertion(+), 1 deletion(-)
 </pre>
 <p>Since we were undoing the very last commit we made, we were able to use <code>HEAD</code> as the argument to revert.  We can revert any arbitrary commit earlier in history by simply specifying its hash value.</p>
@@ -138,15 +139,15 @@ git commit -m "Oops, we didn't want this commit"</pre>
 <pre class="instructions">git hist</pre>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git hist
-* ccb5283 2022-10-21 | Revert "Oops, we didn't want this commit" (HEAD -&gt; main) [Jim Weirich]
-* def0bdd 2022-10-21 | Oops, we didn't want this commit [Jim Weirich]
-* bbbb084 2022-10-21 | Tell user how many names they have (tag: v1) [Jim Weirich]
-* a18a8ca 2022-10-21 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
-* 72c9fd4 2022-10-21 | Can specify multiple names [Jim Weirich]
-* 185ef4e 2022-10-21 | Added a comment [Jim Weirich]
-* a9bc960 2022-10-21 | Added a default value [Jim Weirich]
-* 10a0383 2022-10-21 | Using ARGV [Jim Weirich]
-* 038f259 2022-10-21 | First Commit [Jim Weirich]</pre>
+* b7b217e 2022-10-24 | Revert "Oops, we didn't want this commit" (HEAD -&gt; main) [Jim Weirich]
+* a21a584 2022-10-24 | Oops, we didn't want this commit [Jim Weirich]
+* 1dee7f9 2022-10-24 | Tell user how many names they have (tag: v1) [Jim Weirich]
+* c72af6b 2022-10-24 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
+* 8cdd2cd 2022-10-24 | Can specify multiple names [Jim Weirich]
+* 28fe396 2022-10-24 | Added a comment [Jim Weirich]
+* 15c7573 2022-10-24 | Added a default value [Jim Weirich]
+* 7d55044 2022-10-24 | Using ARGV [Jim Weirich]
+* 91b926e 2022-10-24 | First Commit [Jim Weirich]</pre>
 <p>This technique will work with any commit (although you may have to resolve conflicts).  It is safe to use even on branches that are publicly shared on remote repositories.</p>
 <h2>Up Next</h2>
 <p>Next, let&#8217;s look at a technique that can be used to remove the most recent commits from the repository history.</p>

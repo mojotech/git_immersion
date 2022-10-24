@@ -78,53 +78,40 @@
   <li id="lab_40_link"><a href="lab_40.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_41_link"><a href="lab_41.html">The Reflog</a></li>
   <li id="lab_42_link"><a href="lab_42.html">Rebasing Automatically</a></li>
-  <li id="lab_43_link"><a href="lab_43.html">Multiple Repositories</a></li>
-  <li id="lab_44_link"><a href="lab_44.html">Cloning Repositories</a></li>
-  <li id="lab_45_link"><a href="lab_45.html">Review the Cloned Repository</a></li>
-  <li id="lab_46_link"><a href="lab_46.html">What is Origin?</a></li>
-  <li id="lab_47_link"><a href="lab_47.html">Remote Branches</a></li>
-  <li id="lab_48_link"><a href="lab_48.html">Change the Original Repository</a></li>
-  <li id="lab_49_link"><a href="lab_49.html">Fetching Changes</a></li>
-  <li id="lab_50_link"><a href="lab_50.html">Merging Pulled Changes</a></li>
-  <li id="lab_51_link"><a href="lab_51.html">Pulling Changes</a></li>
-  <li id="lab_52_link"><a href="lab_52.html">Adding a Tracking Branch</a></li>
-  <li id="lab_53_link"><a href="lab_53.html">Bare Repositories</a></li>
-  <li id="lab_54_link"><a href="lab_54.html">Adding a Remote Repository</a></li>
-  <li id="lab_55_link"><a href="lab_55.html">Pushing a Change</a></li>
-  <li id="lab_56_link"><a href="lab_56.html">Pulling Shared Changes</a></li>
-  <li id="lab_57_link"><a href="lab_57.html">Advanced / Future Topics</a></li>
-  <li id="lab_58_link"><a href="lab_58.html">Thank You</a></li>
+  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Bug</a></li>
+  <li id="lab_44_link"><a href="lab_44.html">Multiple Repositories</a></li>
+  <li id="lab_45_link"><a href="lab_45.html">Cloning Repositories</a></li>
+  <li id="lab_46_link"><a href="lab_46.html">Review the Cloned Repository</a></li>
+  <li id="lab_47_link"><a href="lab_47.html">What is Origin?</a></li>
+  <li id="lab_48_link"><a href="lab_48.html">Remote Branches</a></li>
+  <li id="lab_49_link"><a href="lab_49.html">Change the Original Repository</a></li>
+  <li id="lab_50_link"><a href="lab_50.html">Fetching Changes</a></li>
+  <li id="lab_51_link"><a href="lab_51.html">Merging Pulled Changes</a></li>
+  <li id="lab_52_link"><a href="lab_52.html">Pulling Changes</a></li>
+  <li id="lab_53_link"><a href="lab_53.html">Adding a Tracking Branch</a></li>
+  <li id="lab_54_link"><a href="lab_54.html">Bare Repositories</a></li>
+  <li id="lab_55_link"><a href="lab_55.html">Adding a Remote Repository</a></li>
+  <li id="lab_56_link"><a href="lab_56.html">Pushing a Change</a></li>
+  <li id="lab_57_link"><a href="lab_57.html">Pulling Shared Changes</a></li>
+  <li id="lab_58_link"><a href="lab_58.html">Advanced / Future Topics</a></li>
+  <li id="lab_59_link"><a href="lab_59.html">Thank You</a></li>
 
           </ol>
         </nav>
       </div>
 
       <div id="content" tabindex="-1">
-        <h1 class="lab_title"><em>lab 52</em>  Adding a Tracking Branch</h1>
+        <h1 class="lab_title"><em>lab 52</em>  Pulling Changes</h1>
 <h2>Goals</h2>
 <ul>
-	<li>Learn how to add a local branch that tracks a remote branch.</li>
+	<li>Learn that <code>git pull</code> is equivalent to a <code>git fetch</code> followed by a <code>git merge</code>.</li>
 </ul>
-<p>The branches starting with remotes/origin are branches from the original repo.  Notice that you don&#8217;t have a branch called greet anymore, but it knows that the original repo had a greet branch.</p>
-<h2>Add a local branch that tracks a remote branch.</h2>
-<h3><b>Execute:</b></h3>
-<pre class="instructions">git branch --track greet origin/greet
-git branch -a
-git hist --max-count=2</pre>
-<h3><b>Output:</b></h3>
-<pre class="sample">$ git branch --track greet origin/greet
-branch 'greet' set up to track 'origin/greet'.
-$ git branch -a
-  greet
-* main
-  remotes/origin/HEAD -&gt; origin/main
-  remotes/origin/excitement
-  remotes/origin/greet
-  remotes/origin/main
-$ git hist --max-count=2
-* 1e007e8 2022-10-21 | Changed README in original repo (HEAD -&gt; main, origin/main, origin/HEAD) [Jim Weirich]
-* 53fc2a9 2022-10-21 | Updated Rakefile [Jim Weirich]</pre>
-<p>We can now see the greet branch in the branch list and in the log.</p>
+<h2>Discussion</h2>
+<p>We&#8217;re not going to go through the process of creating another change and pulling it again, but we do want you to know that doing:</p>
+<pre class="instructions">git pull</pre>
+<p>is indeed equivalent to the two steps:</p>
+<pre class="instructions">git fetch
+git merge origin/main</pre>
         <nav class="foot-navigation">
       <a href="lab_51.html">
       <svg version="1.1" width="36" height="36" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.66,15.61,18,6,8.34,15.61A1,1,0,1,0,9.75,17L17,9.81V28.94a1,1,0,1,0,2,0V9.81L26.25,17a1,1,0,0,0,1.41-1.42Z"></path></svg>

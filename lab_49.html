@@ -78,85 +78,50 @@
   <li id="lab_40_link"><a href="lab_40.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_41_link"><a href="lab_41.html">The Reflog</a></li>
   <li id="lab_42_link"><a href="lab_42.html">Rebasing Automatically</a></li>
-  <li id="lab_43_link"><a href="lab_43.html">Multiple Repositories</a></li>
-  <li id="lab_44_link"><a href="lab_44.html">Cloning Repositories</a></li>
-  <li id="lab_45_link"><a href="lab_45.html">Review the Cloned Repository</a></li>
-  <li id="lab_46_link"><a href="lab_46.html">What is Origin?</a></li>
-  <li id="lab_47_link"><a href="lab_47.html">Remote Branches</a></li>
-  <li id="lab_48_link"><a href="lab_48.html">Change the Original Repository</a></li>
-  <li id="lab_49_link"><a href="lab_49.html">Fetching Changes</a></li>
-  <li id="lab_50_link"><a href="lab_50.html">Merging Pulled Changes</a></li>
-  <li id="lab_51_link"><a href="lab_51.html">Pulling Changes</a></li>
-  <li id="lab_52_link"><a href="lab_52.html">Adding a Tracking Branch</a></li>
-  <li id="lab_53_link"><a href="lab_53.html">Bare Repositories</a></li>
-  <li id="lab_54_link"><a href="lab_54.html">Adding a Remote Repository</a></li>
-  <li id="lab_55_link"><a href="lab_55.html">Pushing a Change</a></li>
-  <li id="lab_56_link"><a href="lab_56.html">Pulling Shared Changes</a></li>
-  <li id="lab_57_link"><a href="lab_57.html">Advanced / Future Topics</a></li>
-  <li id="lab_58_link"><a href="lab_58.html">Thank You</a></li>
+  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Bug</a></li>
+  <li id="lab_44_link"><a href="lab_44.html">Multiple Repositories</a></li>
+  <li id="lab_45_link"><a href="lab_45.html">Cloning Repositories</a></li>
+  <li id="lab_46_link"><a href="lab_46.html">Review the Cloned Repository</a></li>
+  <li id="lab_47_link"><a href="lab_47.html">What is Origin?</a></li>
+  <li id="lab_48_link"><a href="lab_48.html">Remote Branches</a></li>
+  <li id="lab_49_link"><a href="lab_49.html">Change the Original Repository</a></li>
+  <li id="lab_50_link"><a href="lab_50.html">Fetching Changes</a></li>
+  <li id="lab_51_link"><a href="lab_51.html">Merging Pulled Changes</a></li>
+  <li id="lab_52_link"><a href="lab_52.html">Pulling Changes</a></li>
+  <li id="lab_53_link"><a href="lab_53.html">Adding a Tracking Branch</a></li>
+  <li id="lab_54_link"><a href="lab_54.html">Bare Repositories</a></li>
+  <li id="lab_55_link"><a href="lab_55.html">Adding a Remote Repository</a></li>
+  <li id="lab_56_link"><a href="lab_56.html">Pushing a Change</a></li>
+  <li id="lab_57_link"><a href="lab_57.html">Pulling Shared Changes</a></li>
+  <li id="lab_58_link"><a href="lab_58.html">Advanced / Future Topics</a></li>
+  <li id="lab_59_link"><a href="lab_59.html">Thank You</a></li>
 
           </ol>
         </nav>
       </div>
 
       <div id="content" tabindex="-1">
-        <h1 class="lab_title"><em>lab 49</em>  Fetching Changes</h1>
+        <h1 class="lab_title"><em>lab 49</em>  Change the Original Repository</h1>
 <h2>Goals</h2>
 <ul>
-	<li>Learn how to pull changes from a remote repository.</li>
+	<li>Make some changes to the original repository so we can try to pull the changes</li>
 </ul>
+<h2>Make a change in the original <strong>hello</strong> repository</h2>
 <h3><b>Execute:</b></h3>
-<pre class="instructions">cd ../cloned_hello
-git fetch
-git hist --all</pre>
-<p class="note red"><strong><span class="caps">NOTE</span>: Now in the <em>cloned_hello</em> repo</strong></p>
-<h3><b>Output:</b></h3>
-<pre class="sample">$ git fetch
-From /Users/jim/Downloads/git_tutorial/work/hello
-   53fc2a9..1e007e8  main       -&gt; origin/main
-$ git hist --all
-* 1e007e8 2022-10-21 | Changed README in original repo (origin/main, origin/HEAD) [Jim Weirich]
-* 53fc2a9 2022-10-21 | Updated Rakefile (HEAD -&gt; main) [Jim Weirich]
-* 167345b 2022-10-21 | Hello uses Greeter [Jim Weirich]
-* 336553b 2022-10-21 | Added greeter class [Jim Weirich]
-| * 5798e51 2022-10-21 | Add excitement (origin/excitement) [Jim Weirich]
-| *   0b10299 2022-10-21 | Merge branch 'main' into greet [Jim Weirich]
-| |\  
-| |/  
-|/|   
-| * 6a57a7c 2022-10-21 | Updated Rakefile [Jim Weirich]
-| * 4c26f0a 2022-10-21 | Hello uses Greeter [Jim Weirich]
-| * 6ed30f5 2022-10-21 | Added greeter class [Jim Weirich]
-| | * 645f9cf 2022-10-21 | Updated Rakefile (origin/greet) [Jim Weirich]
-| | * ed42049 2022-10-21 | Hello uses Greeter [Jim Weirich]
-| | * 4df9b04 2022-10-21 | Added greeter class [Jim Weirich]
-| |/  
-|/|   
-* | 596574d 2022-10-21 | Added README [Jim Weirich]
-|/  
-* a6d0479 2022-10-21 | Added a Rakefile. [Jim Weirich]
-* aba6d76 2022-10-21 | Moved hello.rb to lib [Jim Weirich]
-* 9aa662b 2022-10-21 | Add an author/email comment [Jim Weirich]
-* bbbb084 2022-10-21 | Tell user how many names they have (tag: v1) [Jim Weirich]
-* a18a8ca 2022-10-21 | Rename variable to match its usage (tag: v1-beta) [Jim Weirich]
-* 72c9fd4 2022-10-21 | Can specify multiple names [Jim Weirich]
-* 185ef4e 2022-10-21 | Added a comment [Jim Weirich]
-* a9bc960 2022-10-21 | Added a default value [Jim Weirich]
-* 10a0383 2022-10-21 | Using ARGV [Jim Weirich]
-* 038f259 2022-10-21 | First Commit [Jim Weirich]</pre>
-<p>At this point the repository has all the commits from the original repository, but they are not integrated into the cloned repository&#8217;s local branches.</p>
-<p>Find the &#8220;Changed <span class="caps">README</span> in original repo&#8221; commit in the history above.  Notice that the commit includes &#8220;origin/main&#8221; and &#8220;origin/<span class="caps">HEAD</span>&#8221;.</p>
-<p>Now look at the &#8220;Updated Rakefile&#8221; commit.  You will see that the local main branch points to this commit, not to the new commit that we just fetched.</p>
-<p>The upshot of this is that the &#8220;git fetch&#8221; command will fetch new commits from the remote repository, but it will not merge these commits into the local branches.</p>
-<h2>Check the <span class="caps">README</span></h2>
-<p>We can demonstrate that the cloned <span class="caps">README</span> is unchanged.</p>
-<h3><b>Execute:</b></h3>
-<pre class="instructions">cat README</pre>
-<h3><b>Output:</b></h3>
-<pre class="sample">$ cat README
-This is the Hello World example from the git tutorial.
+<pre class="instructions">cd ../hello
+# (You should be in the original hello repository now)</pre>
+<p style="color:red;"><strong><span class="caps">NOTE</span>: Now in the <em>hello</em> repo</strong></p>
+<p>Make the following changes to <span class="caps">README</span>:</p>
+<h3 class="file-heading"><em><span class="caps">README</span></em></h3>
+<pre class="file">This is the Hello World example from the git tutorial.
+(changed in original)
 </pre>
-<p>See, no changes.</p>
+<p>Now add and commit this change</p>
+<h3><b>Execute:</b></h3>
+<pre class="instructions">git add README
+git commit -m "Changed README in original repo"</pre>
+<h2>Up Next</h2>
+<p>The original repository now has later changes that are not in the cloned version.  Next we will pull those changes across to the cloned repository.</p>
         <nav class="foot-navigation">
       <a href="lab_48.html">
       <svg version="1.1" width="36" height="36" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.66,15.61,18,6,8.34,15.61A1,1,0,1,0,9.75,17L17,9.81V28.94a1,1,0,1,0,2,0V9.81L26.25,17a1,1,0,0,0,1.41-1.42Z"></path></svg>

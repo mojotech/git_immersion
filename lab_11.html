@@ -78,22 +78,23 @@
   <li id="lab_40_link"><a href="lab_40.html">Using Rebase to Modify Old Commits</a></li>
   <li id="lab_41_link"><a href="lab_41.html">The Reflog</a></li>
   <li id="lab_42_link"><a href="lab_42.html">Rebasing Automatically</a></li>
-  <li id="lab_43_link"><a href="lab_43.html">Multiple Repositories</a></li>
-  <li id="lab_44_link"><a href="lab_44.html">Cloning Repositories</a></li>
-  <li id="lab_45_link"><a href="lab_45.html">Review the Cloned Repository</a></li>
-  <li id="lab_46_link"><a href="lab_46.html">What is Origin?</a></li>
-  <li id="lab_47_link"><a href="lab_47.html">Remote Branches</a></li>
-  <li id="lab_48_link"><a href="lab_48.html">Change the Original Repository</a></li>
-  <li id="lab_49_link"><a href="lab_49.html">Fetching Changes</a></li>
-  <li id="lab_50_link"><a href="lab_50.html">Merging Pulled Changes</a></li>
-  <li id="lab_51_link"><a href="lab_51.html">Pulling Changes</a></li>
-  <li id="lab_52_link"><a href="lab_52.html">Adding a Tracking Branch</a></li>
-  <li id="lab_53_link"><a href="lab_53.html">Bare Repositories</a></li>
-  <li id="lab_54_link"><a href="lab_54.html">Adding a Remote Repository</a></li>
-  <li id="lab_55_link"><a href="lab_55.html">Pushing a Change</a></li>
-  <li id="lab_56_link"><a href="lab_56.html">Pulling Shared Changes</a></li>
-  <li id="lab_57_link"><a href="lab_57.html">Advanced / Future Topics</a></li>
-  <li id="lab_58_link"><a href="lab_58.html">Thank You</a></li>
+  <li id="lab_43_link"><a href="lab_43.html">Finding Commits That Introduced a Bug</a></li>
+  <li id="lab_44_link"><a href="lab_44.html">Multiple Repositories</a></li>
+  <li id="lab_45_link"><a href="lab_45.html">Cloning Repositories</a></li>
+  <li id="lab_46_link"><a href="lab_46.html">Review the Cloned Repository</a></li>
+  <li id="lab_47_link"><a href="lab_47.html">What is Origin?</a></li>
+  <li id="lab_48_link"><a href="lab_48.html">Remote Branches</a></li>
+  <li id="lab_49_link"><a href="lab_49.html">Change the Original Repository</a></li>
+  <li id="lab_50_link"><a href="lab_50.html">Fetching Changes</a></li>
+  <li id="lab_51_link"><a href="lab_51.html">Merging Pulled Changes</a></li>
+  <li id="lab_52_link"><a href="lab_52.html">Pulling Changes</a></li>
+  <li id="lab_53_link"><a href="lab_53.html">Adding a Tracking Branch</a></li>
+  <li id="lab_54_link"><a href="lab_54.html">Bare Repositories</a></li>
+  <li id="lab_55_link"><a href="lab_55.html">Adding a Remote Repository</a></li>
+  <li id="lab_56_link"><a href="lab_56.html">Pushing a Change</a></li>
+  <li id="lab_57_link"><a href="lab_57.html">Pulling Shared Changes</a></li>
+  <li id="lab_58_link"><a href="lab_58.html">Advanced / Future Topics</a></li>
+  <li id="lab_59_link"><a href="lab_59.html">Thank You</a></li>
 
           </ol>
         </nav>
@@ -111,45 +112,45 @@
 <p>You should see &#8230;</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git log
-commit bbbb084a502831a34d2c83b461a885fa9fbb357b
+commit 1dee7f9aea43849aaa80edbc7bc43e63eb6f5315
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 19:18:10 2022 +0000
+Date:   Mon Oct 24 19:02:01 2022 +0000
 
     Tell user how many names they have
 
-commit a18a8caf1c062055439f61c79d487778a2828351
+commit c72af6b9810f51d8315497fe97f2da83d4f9f80d
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 19:18:10 2022 +0000
+Date:   Mon Oct 24 19:02:01 2022 +0000
 
     Rename variable to match its usage
 
-commit 72c9fd4593285744a96c3015f7d565213e4bcb14
+commit 8cdd2cde2c9bd9044453a027178e76f44a7821da
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 19:18:09 2022 +0000
+Date:   Mon Oct 24 19:02:00 2022 +0000
 
     Can specify multiple names
 
-commit 185ef4e8b57126adca11d6d44973bc45e97e67ff
+commit 28fe3964845c16ff89ac6793c4f9c91fde44f109
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 19:18:09 2022 +0000
+Date:   Mon Oct 24 19:02:00 2022 +0000
 
     Added a comment
 
-commit a9bc960820910c5840bfff46555f3773f680617d
+commit 15c7573dd7a7e91fca1db3a72da1ca4757c90137
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 19:18:09 2022 +0000
+Date:   Mon Oct 24 19:02:00 2022 +0000
 
     Added a default value
 
-commit 10a038323b2cd330464a28e6db7432b5916b689b
+commit 7d55044c68b2827a88297c1c44afc61792577352
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 19:18:09 2022 +0000
+Date:   Mon Oct 24 19:02:00 2022 +0000
 
     Using ARGV
 
-commit 038f259d251850e6ea04e3cf573af4773a0b83e7
+commit 91b926ef01fd87e82d603834821cab7c88877ed9
 Author: Jim Weirich &lt;jim (at) edgecase.com&gt;
-Date:   Fri Oct 21 19:18:09 2022 +0000
+Date:   Mon Oct 24 19:01:59 2022 +0000
 
     First Commit
 </pre>
@@ -161,13 +162,13 @@ Date:   Fri Oct 21 19:18:09 2022 +0000
 <p>You should see &#8230;</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git log --pretty=oneline
-bbbb084a502831a34d2c83b461a885fa9fbb357b Tell user how many names they have
-a18a8caf1c062055439f61c79d487778a2828351 Rename variable to match its usage
-72c9fd4593285744a96c3015f7d565213e4bcb14 Can specify multiple names
-185ef4e8b57126adca11d6d44973bc45e97e67ff Added a comment
-a9bc960820910c5840bfff46555f3773f680617d Added a default value
-10a038323b2cd330464a28e6db7432b5916b689b Using ARGV
-038f259d251850e6ea04e3cf573af4773a0b83e7 First Commit
+1dee7f9aea43849aaa80edbc7bc43e63eb6f5315 Tell user how many names they have
+c72af6b9810f51d8315497fe97f2da83d4f9f80d Rename variable to match its usage
+8cdd2cde2c9bd9044453a027178e76f44a7821da Can specify multiple names
+28fe3964845c16ff89ac6793c4f9c91fde44f109 Added a comment
+15c7573dd7a7e91fca1db3a72da1ca4757c90137 Added a default value
+7d55044c68b2827a88297c1c44afc61792577352 Using ARGV
+91b926ef01fd87e82d603834821cab7c88877ed9 First Commit
 </pre>
 <h2>Controlling Which Entries are Displayed</h2>
 <p>There are a lot of options for selecting which entries are displayed in the log.  Play around with the following options:</p>
@@ -189,13 +190,13 @@ git log -S "Hello"</pre>
 <p>It looks like this:</p>
 <h3><b>Output:</b></h3>
 <pre class="sample">$ git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-* bbbb084 2022-10-21 | Tell user how many names they have (HEAD -&gt; main) [Jim Weirich]
-* a18a8ca 2022-10-21 | Rename variable to match its usage [Jim Weirich]
-* 72c9fd4 2022-10-21 | Can specify multiple names [Jim Weirich]
-* 185ef4e 2022-10-21 | Added a comment [Jim Weirich]
-* a9bc960 2022-10-21 | Added a default value [Jim Weirich]
-* 10a0383 2022-10-21 | Using ARGV [Jim Weirich]
-* 038f259 2022-10-21 | First Commit [Jim Weirich]</pre>
+* 1dee7f9 2022-10-24 | Tell user how many names they have (HEAD -&gt; main) [Jim Weirich]
+* c72af6b 2022-10-24 | Rename variable to match its usage [Jim Weirich]
+* 8cdd2cd 2022-10-24 | Can specify multiple names [Jim Weirich]
+* 28fe396 2022-10-24 | Added a comment [Jim Weirich]
+* 15c7573 2022-10-24 | Added a default value [Jim Weirich]
+* 7d55044 2022-10-24 | Using ARGV [Jim Weirich]
+* 91b926e 2022-10-24 | First Commit [Jim Weirich]</pre>
 <p>Let&#8217;s look at it in detail:</p>
 <ul>
 	<li><code>--pretty="..."</code> defines the format of the output.</li>
